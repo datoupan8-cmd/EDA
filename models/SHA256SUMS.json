@@ -1,0 +1,10 @@
+{
+  "models/component_yolo11n_continue_v2_best.pt": "51b4735d19315ba3ada49143e6f912aa414589f7961e140faab177dc6db7e776",
+  "models/component_yolo11n_baseline_best.pt": "42860935a0626a4445f2e30bf020c8e76ec01a87b816c6aacdf6288657bf1ac5",
+  "models/easyocr/craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+  "models/easyocr/english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8",
+  "vendor/ocr_runtime/bidi/bidi.cp314-win_amd64.pyd": "fd01c90e27d114887516989236104fff17c7456c22d653fe5c4073f243b8cf77",
+  "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_PP-OCRv4_det_infer.onnx": "d2a7720d45a54257208b1e13e36a8479894cb74155a5efe29462512d42f49da9",
+  "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_PP-OCRv4_rec_infer.onnx": "48fc40f24f6d2a207a2b1091d3437eb3cc3eb6b676dc3ef9c37384005483683b",
+  "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_ppocr_mobile_v2.0_cls_infer.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+}

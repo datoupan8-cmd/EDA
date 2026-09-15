@@ -1,0 +1,61 @@
+# Python / virtual environments
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Editors and operating-system files
+.idea/
+.vscode/
+.codex/
+.agents/
+.ultralytics/
+wandb/
+.DS_Store
+Thumbs.db
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+
+# Generated predictions, caches, submissions, and logs
+runs/*
+!runs/README.md
+submission/
+*.log
+
+# Generated evaluation details. Keep compact, reviewable reference artifacts.
+reports/*.json
+reports/*.csv
+reports/*.txt
+!reports/github_baseline_reference.json
+!reports/refactor_parity_report.json
+!reports/frozen_downstream_checksums.json
+!reports/v4_ablation_metrics.json
+!reports/v4_1_metrics_summary.json
+!reports/package_manifest.json
+
+# Historical manifests contain machine-specific paths and are not current GT.
+splits/*.json
+
+# Official data stays outside Git: every teammate supplies --dataset-root.
+data/
+datasets/
+Race/
+200_train_cases/
+10_GTcase/
+
+# Local delivery archives are release artifacts, not source files.
+*.zip
+
+# Vendored command wrappers and caches are not needed for imports.
+vendor/**/bin/
+vendor/**/__pycache__/

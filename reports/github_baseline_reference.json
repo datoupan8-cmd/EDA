@@ -1,0 +1,36 @@
+{
+  "OFFICIAL_SCORE": false,
+  "description": "Local non-official reference for the unchanged V4.1 modular baseline",
+  "dataset_scope": "latest official 200_train_cases/0001..0150",
+  "sealed_holdout_used": false,
+  "success_count": 150,
+  "failure_count": 0,
+  "metrics": {
+    "Component_macro_f1": 0.38097357536727977,
+    "Pin_macro_f1": 0.1751359894061623,
+    "NetHypergraph_macro_f1": 0.1578951601671773,
+    "NetLine_macro_f1": 0.02992378589882358,
+    "PinPair_macro_f1": 0.018088802494737228,
+    "FinalScore": 21.63317546101189
+  },
+  "parity": {
+    "prediction_json_equal_cases": 150,
+    "prediction_json_different_cases": 0,
+    "semantic_diagnostics_equal_cases": 150,
+    "semantic_diagnostics_different_cases": 0
+  },
+  "verified_environment": {
+    "os": "Windows 11",
+    "python": "3.14.7",
+    "numpy": "2.5.3",
+    "opencv-python": "5.0.0.93",
+    "scipy": "1.18.1",
+    "scikit-image": "0.26.0",
+    "onnxruntime": "1.30.0",
+    "Pillow": "12.3.0",
+    "torch": "2.14.0+cu130",
+    "ultralytics": "8.4.148",
+    "easyocr_bundled": "1.7.2",
+    "rapidocr_bundled": "1.4.4"
+  }
+}
