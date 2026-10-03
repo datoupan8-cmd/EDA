@@ -1,0 +1,190 @@
+"""Synthetic-only tests: diagnostic leniency must not fabricate identity."""
+import copy
+import unittest
+
+import evaluate_diagnostic as diagnostic
+import evaluate_v2 as strict
+
+
+def component(kind="r", bbox=(0, 0, 10, 10), name="part", value=None):
+    return {"type": kind, "bbox": list(bbox), "Name": name, "value": value}
+
+
+def pin(x, y, name=""):
+    return {"pinname": name, "point": {"x": x, "y": y}}
+
+
+def sample(components, pins=None, nets=()):
+    return {"components": components, "pins": {key: (pins or {}).get(key, {}) for key in components},
+            "nets": {f"net_{i}": {"hyperGraph": "(" + ",".join(refs) + ")", "edges": {}}
+                     for i, refs in enumerate(nets)}}
+
+
+class DiagnosticEvaluationTests(unittest.TestCase):
+    def test_visible_identity_is_case_insensitive_including_pin_and_model(self):
+        pred = sample({"u1": component("box", name="abc123")}, {"u1": {"pin_a1": pin(0, 0, "vCc")}}, [("u1.a1",)])
+        gt = sample({"U1": component("box", name="ABC123")}, {"U1": {"pin_A1": pin(0, 0, "VCC")}}, [("U1.A1",)])
+        self.assertEqual(strict.evaluate_case(pred, gt)["metrics"]["Component"]["tp"], 0)
+        result = diagnostic.evaluate_case(pred, gt)["identity_normalized"]
+        for family in ("Component", "Pin", "NetHypergraph"):
+            self.assertEqual(result["metrics"][family]["f1"], 1)
+
+    def test_milli_and_mega_values_are_not_folded(self):
+        pred = sample({"R1": component(value="1m")})
+        gt = sample({"R1": component(value="1M")})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["Component"]["tp"], 0)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Component"]["tp"], 1)
+        self.assertEqual(result["error_breakdown"]["components"]["value_mismatch_on_typed_bbox_match"], 1)
+
+    def test_unlabeled_reference_component_allows_generated_name(self):
+        for key in ("∅7", "__unresolved_7"):
+            pred = sample({"R72": component()})
+            gt = sample({key: component()})
+            result = diagnostic.evaluate_case(pred, gt)
+            self.assertEqual(result["identity_normalized"]["metrics"]["Component"]["tp"], 1)
+            self.assertEqual(result["matching"]["identity_normalized"]["components"], {"R72": key})
+
+    def test_unlabeled_exemption_still_requires_type_and_bbox(self):
+        gt = sample({"∅7": component()})
+        for c in (component("c"), component(bbox=(100, 100, 110, 110))):
+            result = diagnostic.evaluate_case(sample({"R72": c}), gt)
+            self.assertEqual(result["identity_normalized"]["metrics"]["Component"]["tp"], 0)
+
+    def test_visible_wrong_key_is_not_forgiven(self):
+        pred = sample({"R99": component()})
+        gt = sample({"R1": component()})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["Component"]["tp"], 0)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Component"]["tp"], 1)
+        self.assertEqual(result["error_breakdown"]["components"]["wrong_visible_identifier_on_typed_bbox_match"], 1)
+
+    def test_component_case_collision_never_overcounts(self):
+        pred = sample({"R1": component(), "r1": component()})
+        gt = sample({"R1": component()})
+        result = diagnostic.evaluate_case(pred, gt)
+        for key in ("identity_normalized", "geometry_connectivity"):
+            self.assertEqual(result[key]["metrics"]["Component"]["tp"], 1)
+            self.assertEqual(len(result["matching"][key]["components"]), 1)
+        self.assertEqual(result["error_breakdown"]["components"]["pred_casefold_key_collisions"], 1)
+
+    def test_pin_case_collision_never_overcounts_or_merges_networks(self):
+        pred = sample({"U1": component("box")}, {"U1": {"pin_a": pin(0, 0), "pin_A": pin(1, 0)}},
+                      [("U1.a",), ("U1.A",)])
+        gt = sample({"U1": component("box")}, {"U1": {"pin_A": pin(0, 0)}}, [("U1.A",)])
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["Pin"]["tp"], 1)
+        self.assertEqual(result["identity_normalized"]["metrics"]["NetHypergraph"]["tp"], 1)
+        self.assertEqual(result["error_breakdown"]["pins"]["pred_casefold_key_collisions"], 1)
+
+    def test_temporary_pin_is_geometry_only_even_if_reference_string_equal(self):
+        for number in ("UNK1", "UNK_left_1", "__TMP_2", "__unresolved_1"):
+            pred = sample({"U1": component("box")}, {"U1": {f"pin_{number}": pin(0, 0)}}, [(f"U1.{number}",)])
+            gt = copy.deepcopy(pred)
+            result = diagnostic.evaluate_case(pred, gt)
+            self.assertEqual(result["identity_normalized"]["metrics"]["Pin"]["tp"], 0)
+            self.assertEqual(result["identity_normalized"]["metrics"]["NetHypergraph"]["tp"], 0)
+            self.assertEqual(result["geometry_connectivity"]["metrics"]["Pin"]["tp"], 1)
+
+    def test_geometry_remaps_pin_numbers_for_connectivity_but_not_identity(self):
+        pred = sample({"R1": component()}, {"R1": {"pin_x": pin(0, 0), "pin_y": pin(10, 0)}}, [("R1.x", "R1.y")])
+        gt = sample({"R1": component()}, {"R1": {"pin_1": pin(0, 0), "pin_2": pin(10, 0)}}, [("R1.1", "R1.2")])
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["PinPair"]["f1"], 0)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["PinPair"]["f1"], 1)
+        self.assertEqual(result["error_breakdown"]["pins"]["wrong_number_on_point_match"], 2)
+
+    def test_geometry_point_tolerance_is_five_pixels_not_nearest_unbounded(self):
+        pred = sample({"R1": component()}, {"R1": {"pin_1": pin(6, 0)}})
+        gt = sample({"R1": component()}, {"R1": {"pin_1": pin(0, 0)}})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Pin"]["tp"], 0)
+        self.assertEqual(result["error_breakdown"]["pins"]["point_error_on_identity_match"], 1)
+
+    def test_assignment_maximizes_match_count_instead_of_greedy_nearest(self):
+        # P0 can use either G; P1 can only use G0. A nearest-first greedy fails.
+        pred = sample({"R1": component()}, {"R1": {"pin_x": pin(0, 0), "pin_y": pin(-4, 0)}})
+        gt = sample({"R1": component()}, {"R1": {"pin_1": pin(0, 0), "pin_2": pin(4, 0)}})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Pin"]["tp"], 2)
+
+    def test_gnd_serial_relief_does_not_invent_internal_pin_number(self):
+        pred = sample({"GND8": component("gnd")}, {"GND8": {"pin_UNK1": pin(0, 0)}})
+        gt = sample({"GND2": component("gnd")}, {"GND2": {"pin_153": pin(0, 0)}})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["Component"]["tp"], 1)
+        self.assertEqual(result["identity_normalized"]["metrics"]["Pin"]["tp"], 0)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Pin"]["tp"], 1)
+
+    def test_inputs_unchanged_and_both_views_aggregate(self):
+        pred = sample({"r1": component()}, {"r1": {"pin_1": pin(0, 0)}}, [("r1.1",)])
+        gt = sample({"R1": component()}, {"R1": {"pin_1": pin(0, 0)}}, [("R1.1",)])
+        before = copy.deepcopy((pred, gt))
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual((pred, gt), before)
+        for view in ("identity_normalized", "geometry_connectivity"):
+            aggregate = strict.aggregate([{"status": "ok", "source": "Datasheet", "evaluation": result[view]}])
+            self.assertEqual(aggregate["overall"]["case_count"], 1)
+            self.assertEqual(aggregate["overall"]["metrics"]["Pin"]["macro_f1"], 1)
+
+    def test_plain_exact_case_agrees_with_strict(self):
+        data = sample({"R1": component()}, {"R1": {"pin_1": pin(0, 0, "A"), "pin_2": pin(10, 0, "B")}},
+                      [("R1.1", "R1.2")])
+        actual = diagnostic.evaluate_case(data, data)["identity_normalized"]
+        expected = strict.evaluate_case(data, data)
+        self.assertEqual(actual, expected)
+
+    def test_case_collision_preserves_each_distinct_reference_component(self):
+        pred = sample({"R1": component(), "r1": component(bbox=(50, 0, 60, 10))})
+        gt = sample({"r1": component(), "R1": component(bbox=(50, 0, 60, 10))})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["Component"]["tp"], 2)
+        self.assertEqual(result["matching"]["identity_normalized"]["components"], {"R1": "r1", "r1": "R1"})
+
+    def test_geometry_does_not_forgive_type_errors(self):
+        pred = sample({"R1": component("r")}, {"R1": {"pin_1": pin(0, 0)}})
+        gt = sample({"R1": component("c")}, {"R1": {"pin_1": pin(0, 0)}})
+        result = diagnostic.evaluate_case(pred, gt)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Component"]["tp"], 0)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["Pin"]["tp"], 0)
+        self.assertEqual(result["error_breakdown"]["components"]["type_error_on_identity_match"], 1)
+        self.assertEqual(result["error_breakdown"]["components"]["different_type_on_untyped_bbox_match"], 1)
+
+    def test_geometry_still_penalizes_false_merge_and_break(self):
+        pins = {"R1": {f"pin_{n}": pin(n * 10, 0) for n in range(1, 5)}}
+        pred = sample({"R1": component()}, pins, [("R1.1", "R1.2", "R1.3", "R1.4")])
+        gt = sample({"R1": component()}, pins, [("R1.1", "R1.2"), ("R1.3", "R1.4")])
+        merged = diagnostic.evaluate_case(pred, gt)
+        split = diagnostic.evaluate_case(gt, pred)
+        self.assertLess(merged["geometry_connectivity"]["metrics"]["PinPair"]["f1"], 1)
+        self.assertEqual(merged["error_breakdown"]["connectivity"]["geometry_extra_pin_pairs"], 4)
+        self.assertEqual(split["error_breakdown"]["connectivity"]["geometry_missing_pin_pairs"], 4)
+
+    def test_line_tolerance_stays_five_pixels(self):
+        data = sample({"R1": component()}, {"R1": {"pin_1": pin(0, 0)}}, [("R1.1",)])
+        gt = copy.deepcopy(data)
+        data["nets"]["net_0"]["edges"] = {"edge_1": [{"x": 0, "y": 0}, {"x": 10, "y": 0}]}
+        gt["nets"]["net_0"]["edges"] = {"edge_1": [{"x": 0, "y": 6}, {"x": 10, "y": 6}]}
+        result = diagnostic.evaluate_case(data, gt)
+        self.assertEqual(result["identity_normalized"]["metrics"]["NetLine"]["tp"], 0)
+        self.assertEqual(result["geometry_connectivity"]["metrics"]["NetLine"]["tp"], 0)
+
+    def test_uppercase_pin_prefix_has_same_observable_filter(self):
+        pred = sample({"R1": component()}, {"R1": {"PIN_123": pin(0, 0, "VCC")}})
+        gt = sample({"R1": component()}, {"R1": {"pin_123": pin(0, 0, "VCC")}})
+        result = diagnostic.evaluate_case(pred, gt)["identity_normalized"]
+        self.assertEqual(result["metrics"]["Pin"]["tp"], 1)
+        self.assertEqual(result["observable_only"]["Pin"]["pred"], 0)
+        self.assertEqual(result["observable_only"]["Pin"]["gt"], 0)
+
+    def test_empty_case_conventions_and_nonempty_miss(self):
+        empty = sample({})
+        result = diagnostic.evaluate_case(empty, empty)
+        for view in ("identity_normalized", "geometry_connectivity"):
+            self.assertTrue(all(metric["f1"] == 1 for metric in result[view]["metrics"].values()))
+        miss = diagnostic.evaluate_case(empty, sample({"R1": component()}))
+        self.assertEqual(miss["identity_normalized"]["metrics"]["Component"]["f1"], 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
