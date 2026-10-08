@@ -11,6 +11,7 @@ from pathlib import Path
 from pcb.assignment import maximum_weight_assignment
 from pcb.component_proposal_fusion import bbox_iou
 from pcb.io import write_json
+from evaluate_diagnostic import evaluate_case as diagnostic_case
 from evaluate_v2 import evaluate_case, source_from_name
 
 OFFICIAL_SCORE = False
@@ -110,8 +111,10 @@ def component_case(prediction, target, diagnostics):
     errors["Duplicate Prediction"] += duplicate_pairs
 
     full = evaluate_case(prediction, target, diagnostics)
+    normalized = diagnostic_case(prediction, target, diagnostics)
     return {
         "strict_component": full["metrics"]["Component"],
+        "normalized_component": normalized["identity_normalized"]["metrics"]["Component"],
         "downstream": {name: full["metrics"][name] for name in ("Pin", "NetHypergraph", "NetLine", "PinPair")},
         "FinalScore": full["FinalScore"],
         "symbol_type_bbox": type_bbox,
@@ -137,7 +140,7 @@ def aggregate(rows):
     for name, subset in groups.items():
         if not subset: continue
         block = {"case_count": len(subset)}
-        for family in ("strict_component", "symbol_type_bbox", "bbox", "designator_ocr", "designator_association", "component_key_recall", "geometry_fallback"):
+        for family in ("strict_component", "normalized_component", "symbol_type_bbox", "bbox", "designator_ocr", "designator_association", "component_key_recall", "geometry_fallback"):
             values = [r["evaluation"][family] for r in subset]
             block[family] = metric(sum(v["tp"] for v in values), sum(v["pred"] for v in values), sum(v["gt"] for v in values))
             block[family]["macro_f1"] = sum(v["f1"] for v in values) / len(values)
@@ -180,7 +183,11 @@ def main():
         case_id = f"{number:04d}"
         try:
             case = args.target_root / case_id
-            target_path = next(case.glob("*_target.json")); image_path = next(case.glob("*.png"))
+            targets = sorted(case.glob("*_target*.json"))
+            images = sorted(case.glob("*.png"))
+            if len(targets) != 1 or len(images) != 1:
+                raise ValueError(f"{case_id}: expected one target JSON and one PNG")
+            target_path, image_path = targets[0], images[0]
             prediction = json.loads((args.prediction_dir / case_id / "result.json").read_text(encoding="utf-8"))
             diagnostics_path = args.prediction_dir / case_id / "diagnostics.json"
             diagnostics = json.loads(diagnostics_path.read_text(encoding="utf-8")) if diagnostics_path.exists() else {}

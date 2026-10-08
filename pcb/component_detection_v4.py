@@ -8,7 +8,10 @@ import numpy as np
 
 from .component_detector_yolo import YoloComponentDetector
 from .component_proposal_fusion import ComponentProposal, fuse_proposals
-from .component_text_assignment import assign_designators, assign_names, assign_values, build_components
+from .component_text_assignment import (
+    assign_designators, assign_names, assign_values, build_components,
+    recover_near_box_designators,
+)
 from .schema import Text
 from .text_detection import classify_tokens
 
@@ -85,6 +88,7 @@ def detect_components_v4(
     if text_rules not in {"v4", "v4_1"}:
         raise ValueError("text_rules must be 'v4' or 'v4_1'")
     roles = classify_tokens(texts, large_boxes, expanded_rules=expanded_rules)
+    roles, near_box_recovery = recover_near_box_designators(fused, roles)
     designators, designator_diagnostics = assign_designators(fused, roles, global_assignment=stage != "B")
     components, provenance = build_components(fused, designators)
     method_by_index = {row["proposal_index"]: row["method"] for row in designator_diagnostics["accepted"]}
@@ -98,7 +102,8 @@ def detect_components_v4(
         name_diagnostics = assign_names(components, roles, provenance)
         name_diagnostics["enabled"] = True
     if stage in {"E", "F", "BEST"}:
-        value_diagnostics = assign_values(components, roles, provenance, expanded_rules=expanded_rules)
+        value_diagnostics = assign_values(components, roles, provenance,
+                                          expanded_rules=expanded_rules, designators=designators)
         value_diagnostics["enabled"] = True
 
     diagnostics = {
@@ -117,6 +122,7 @@ def detect_components_v4(
              "reason": role.reason, "confidence": role.confidence, "normalized": role.normalized}
             for role in roles
         ],
+        "near_box_designator_recovery": near_box_recovery,
         "designator_assignment": designator_diagnostics,
         "name_assignment": name_diagnostics,
         "value_assignment": value_diagnostics,

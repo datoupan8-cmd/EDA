@@ -8,7 +8,7 @@ from collections.abc import Sequence
 from .assignment import maximum_weight_assignment
 from .component_proposal_fusion import ComponentProposal
 from .schema import Component
-from .text_detection import TokenRole, compatible_types_for_designator, value_compatible
+from .text_detection import DESIGNATOR_RE, TokenRole, compatible_types_for_designator, prefix_type, value_compatible
 
 
 BOX_FAMILY = frozenset({"box", "block", "amp", "amp_3pin", "amp_5pin", "opt", "other"})
@@ -70,6 +70,44 @@ def designator_weight(proposal: ComponentProposal, role: TokenRole) -> float:
         if min(horizontal_offset, vertical_offset) < 1.2:
             layout *= 1.10
     return float(proposal.confidence) * max(.05, float(role.confidence)) * layout * math.exp(-.85 * center_distance - gap / max(10.0, 3 * th))
+
+
+def recover_near_box_designators(
+    proposals: Sequence[ComponentProposal], roles: Sequence[TokenRole],
+) -> tuple[list[TokenRole], dict[str, object]]:
+    """Rescue passive designators suppressed by a nearby chip box only when a symbol supports them."""
+    recovered = []
+    accepted = []
+    for role in roles:
+        if role.reason != "near_large_box_boundary":
+            recovered.append(role)
+            continue
+        match = DESIGNATOR_RE.fullmatch(role.normalized)
+        if match is None:
+            recovered.append(role)
+            continue
+        key, tail = match.group(1).upper(), match.group(2).strip()
+        component_type = prefix_type(key)
+        if component_type not in {"r", "c", "l"}:
+            recovered.append(role)
+            continue
+        candidate = TokenRole(role.index, role.token, "DESIGNATOR", role.normalized,
+                              key, component_type, tail, role.confidence,
+                              "near_box_with_component_candidate")
+        text_height = max(3.0, role.token.bbox[3] - role.token.bbox[1])
+        nearby = [
+            (designator_weight(proposal, candidate), index)
+            for index, proposal in enumerate(proposals)
+            if proposal.type == component_type
+            and bbox_gap(role.token.bbox, proposal.bbox) <= 2.0 * text_height
+        ]
+        if nearby and max(nearby)[0] >= .055:
+            score, proposal_index = max(nearby)
+            recovered.append(candidate)
+            accepted.append({"token": role.token.text, "proposal_index": proposal_index, "score": score})
+        else:
+            recovered.append(role)
+    return recovered, {"accepted": accepted, "count": len(accepted)}
 
 
 def assign_designators(
@@ -191,12 +229,28 @@ def assign_names(components: Sequence[Component], roles: Sequence[TokenRole], pr
     return {"accepted": accepted, "candidate_count": len(candidates)}
 
 
-def assign_values(components: Sequence[Component], roles: Sequence[TokenRole], provenance: list[dict[str, object]], expanded_rules: bool = True):
+def assign_values(components: Sequence[Component], roles: Sequence[TokenRole], provenance: list[dict[str, object]], expanded_rules: bool = True,
+                  designators: dict[int, TokenRole] | None = None):
     supported = {"r", "c", "l", "v", "battary", "motor", "fuse", "circle_header", "crystal", "crystal_2pin", "crystal_3pin", "crystal_4pin"} if expanded_rules else {"r", "c", "l"}
-    indices = [i for i, component in enumerate(components) if component.type in supported]
+    accepted = []
+    bound_indices = set()
+    for index, role in (designators or {}).items():
+        if (index >= len(components) or role.reason != "designator_value_pair"
+                or components[index].type not in supported
+                or components[index].key != role.designator
+                or not value_compatible(components[index].type, role.tail, expanded_rules)):
+            continue
+        value = role.tail.strip()
+        components[index].value = value
+        provenance[index]["value_source"] = "ocr_designator_tail"
+        bound_indices.add(index)
+        accepted.append({"component": components[index].key, "token": value,
+                         "score": role.confidence, "method": "designator_tail"})
+    indices = [i for i, component in enumerate(components) if component.type in supported and i not in bound_indices]
     candidates = [role for role in roles if role.role == "VALUE"]
     if not indices or not candidates:
-        return {"accepted": [], "candidate_count": len(candidates)}
+        return {"accepted": accepted, "candidate_count": len(candidates) + len(bound_indices),
+                "bound_count": len(bound_indices)}
     weights = []
     for role in candidates:
         row = []
@@ -213,7 +267,6 @@ def assign_values(components: Sequence[Component], roles: Sequence[TokenRole], p
             normalized = math.dist(pc, role.token.center) / max(8.0, math.sqrt(width * height))
             row.append(float(role.confidence) * math.exp(-.9 * normalized))
         weights.append(row)
-    accepted = []
     for token_index, local_component_index in maximum_weight_assignment(weights):
         score = weights[token_index][local_component_index]
         if score < .055:
@@ -223,4 +276,5 @@ def assign_values(components: Sequence[Component], roles: Sequence[TokenRole], p
         components[component_index].value = value
         provenance[component_index]["value_source"] = "ocr_global_assignment"
         accepted.append({"component": components[component_index].key, "token": value, "score": score})
-    return {"accepted": accepted, "candidate_count": len(candidates)}
+    return {"accepted": accepted, "candidate_count": len(candidates) + len(bound_indices),
+            "bound_count": len(bound_indices)}
