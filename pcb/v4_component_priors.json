@@ -1,0 +1,676 @@
+{
+  "case_range": [
+    1,
+    150
+  ],
+  "sealed_holdout_used": false,
+  "prefix_type_counts": [
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "gnd",
+      "count": 1469
+    },
+    {
+      "prefix": "R",
+      "type": "r",
+      "count": 1067
+    },
+    {
+      "prefix": "C",
+      "type": "c",
+      "count": 1026
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "v",
+      "count": 704
+    },
+    {
+      "prefix": "U",
+      "type": "box",
+      "count": 586
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "net_input",
+      "count": 175
+    },
+    {
+      "prefix": "TP",
+      "type": "pin",
+      "count": 147
+    },
+    {
+      "prefix": "D",
+      "type": "d",
+      "count": 127
+    },
+    {
+      "prefix": "SW",
+      "type": "switch",
+      "count": 89
+    },
+    {
+      "prefix": "L",
+      "type": "l",
+      "count": 70
+    },
+    {
+      "prefix": "LED",
+      "type": "led",
+      "count": 61
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "other",
+      "count": 58
+    },
+    {
+      "prefix": "D",
+      "type": "led",
+      "count": 54
+    },
+    {
+      "prefix": "TP",
+      "type": "testpoint",
+      "count": 43
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "net_short",
+      "count": 36
+    },
+    {
+      "prefix": "Q",
+      "type": "bjt",
+      "count": 36
+    },
+    {
+      "prefix": "Q",
+      "type": "mosfet",
+      "count": 35
+    },
+    {
+      "prefix": "X",
+      "type": "crystal_2pin",
+      "count": 23
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "m3螺丝",
+      "count": 22
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "buzzer",
+      "count": 19
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "battary",
+      "count": 18
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "net_output",
+      "count": 18
+    },
+    {
+      "prefix": "S",
+      "type": "switch",
+      "count": 17
+    },
+    {
+      "prefix": "F",
+      "type": "fuse",
+      "count": 16
+    },
+    {
+      "prefix": "USB",
+      "type": "box",
+      "count": 14
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "net_bidirection",
+      "count": 12
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "block",
+      "count": 11
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "jumper",
+      "count": 9
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "amp",
+      "count": 7
+    },
+    {
+      "prefix": "C",
+      "type": "crystal_2pin",
+      "count": 6
+    },
+    {
+      "prefix": "CVC",
+      "type": "c",
+      "count": 5
+    },
+    {
+      "prefix": "U",
+      "type": "amp_3pin",
+      "count": 5
+    },
+    {
+      "prefix": "Y",
+      "type": "crystal_2pin",
+      "count": 5
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "esd",
+      "count": 4
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "motor",
+      "count": 4
+    },
+    {
+      "prefix": "CN",
+      "type": "box",
+      "count": 3
+    },
+    {
+      "prefix": "IC",
+      "type": "box",
+      "count": 3
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "amp_5pin",
+      "count": 3
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "ant",
+      "count": 3
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "circle_header",
+      "count": 3
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "transfomer",
+      "count": 3
+    },
+    {
+      "prefix": "OUT",
+      "type": "box",
+      "count": 3
+    },
+    {
+      "prefix": "RVC",
+      "type": "r",
+      "count": 3
+    },
+    {
+      "prefix": "X",
+      "type": "box",
+      "count": 3
+    },
+    {
+      "prefix": "X",
+      "type": "crystal_3pin",
+      "count": 3
+    },
+    {
+      "prefix": "X",
+      "type": "crystal_4pin",
+      "count": 3
+    },
+    {
+      "prefix": "CCLAMP",
+      "type": "c",
+      "count": 2
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "amp_3pin",
+      "count": 2
+    },
+    {
+      "prefix": "JP",
+      "type": "box",
+      "count": 2
+    },
+    {
+      "prefix": "O",
+      "type": "box",
+      "count": 2
+    },
+    {
+      "prefix": "PA",
+      "type": "box",
+      "count": 2
+    },
+    {
+      "prefix": "U",
+      "type": "amp",
+      "count": 2
+    },
+    {
+      "prefix": "U",
+      "type": "amp_5pin",
+      "count": 2
+    },
+    {
+      "prefix": "U",
+      "type": "bjt",
+      "count": 2
+    },
+    {
+      "prefix": "USH",
+      "type": "box",
+      "count": 2
+    },
+    {
+      "prefix": "Y",
+      "type": "crystal_3pin",
+      "count": 2
+    },
+    {
+      "prefix": "C",
+      "type": "crystal_4pin",
+      "count": 1
+    },
+    {
+      "prefix": "CF",
+      "type": "c",
+      "count": 1
+    },
+    {
+      "prefix": "COMP",
+      "type": "c",
+      "count": 1
+    },
+    {
+      "prefix": "CY",
+      "type": "c",
+      "count": 1
+    },
+    {
+      "prefix": "INT",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "opt",
+      "count": 1
+    },
+    {
+      "prefix": "INTERNAL_OR_SPECIAL",
+      "type": "seg",
+      "count": 1
+    },
+    {
+      "prefix": "INTVCC",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "IR",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "OSCINX",
+      "type": "crystal_3pin",
+      "count": 1
+    },
+    {
+      "prefix": "PT",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "Q",
+      "type": "bjt_pnp",
+      "count": 1
+    },
+    {
+      "prefix": "R",
+      "type": "crystal_2pin",
+      "count": 1
+    },
+    {
+      "prefix": "RC",
+      "type": "r",
+      "count": 1
+    },
+    {
+      "prefix": "RES",
+      "type": "r",
+      "count": 1
+    },
+    {
+      "prefix": "RP",
+      "type": "r",
+      "count": 1
+    },
+    {
+      "prefix": "RT",
+      "type": "r",
+      "count": 1
+    },
+    {
+      "prefix": "RV",
+      "type": "r",
+      "count": 1
+    },
+    {
+      "prefix": "SG",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "TP",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "TP",
+      "type": "v",
+      "count": 1
+    },
+    {
+      "prefix": "U",
+      "type": "mosfet",
+      "count": 1
+    },
+    {
+      "prefix": "U",
+      "type": "mosfet_pnp",
+      "count": 1
+    },
+    {
+      "prefix": "X",
+      "type": "crystal",
+      "count": 1
+    },
+    {
+      "prefix": "XOSC",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "XOU",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "XSC",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "Y",
+      "type": "box",
+      "count": 1
+    },
+    {
+      "prefix": "Y",
+      "type": "crystal_4pin",
+      "count": 1
+    }
+  ],
+  "type_statistics": {
+    "amp": {
+      "count": 9,
+      "median_width": 129.0,
+      "median_height": 119.0,
+      "median_pin_count": 2
+    },
+    "amp_3pin": {
+      "count": 7,
+      "median_width": 30.0,
+      "median_height": 30.0,
+      "median_pin_count": 3
+    },
+    "amp_5pin": {
+      "count": 5,
+      "median_width": 40.0,
+      "median_height": 40.0,
+      "median_pin_count": 5
+    },
+    "ant": {
+      "count": 3,
+      "median_width": 104.0,
+      "median_height": 115.0,
+      "median_pin_count": 3
+    },
+    "battary": {
+      "count": 18,
+      "median_width": 42.0,
+      "median_height": 20.0,
+      "median_pin_count": 2
+    },
+    "bjt": {
+      "count": 38,
+      "median_width": 29.0,
+      "median_height": 20.0,
+      "median_pin_count": 3
+    },
+    "bjt_pnp": {
+      "count": 1,
+      "median_width": 29.0,
+      "median_height": 20.0,
+      "median_pin_count": 3
+    },
+    "block": {
+      "count": 11,
+      "median_width": 15.0,
+      "median_height": 13.0,
+      "median_pin_count": 1
+    },
+    "box": {
+      "count": 630,
+      "median_width": 60.0,
+      "median_height": 70.0,
+      "median_pin_count": 5
+    },
+    "buzzer": {
+      "count": 19,
+      "median_width": 33.0,
+      "median_height": 42.0,
+      "median_pin_count": 2
+    },
+    "c": {
+      "count": 1036,
+      "median_width": 16.0,
+      "median_height": 20.0,
+      "median_pin_count": 2
+    },
+    "circle_header": {
+      "count": 3,
+      "median_width": 41.0,
+      "median_height": 43.0,
+      "median_pin_count": 2
+    },
+    "crystal": {
+      "count": 1,
+      "median_width": 16.0,
+      "median_height": 15.0,
+      "median_pin_count": 1
+    },
+    "crystal_2pin": {
+      "count": 35,
+      "median_width": 15.0,
+      "median_height": 10.0,
+      "median_pin_count": 2
+    },
+    "crystal_3pin": {
+      "count": 6,
+      "median_width": 10.0,
+      "median_height": 15.0,
+      "median_pin_count": 3
+    },
+    "crystal_4pin": {
+      "count": 5,
+      "median_width": 40.0,
+      "median_height": 40.0,
+      "median_pin_count": 4
+    },
+    "d": {
+      "count": 127,
+      "median_width": 14.0,
+      "median_height": 20.0,
+      "median_pin_count": 2
+    },
+    "esd": {
+      "count": 4,
+      "median_width": 30.0,
+      "median_height": 21.0,
+      "median_pin_count": 2
+    },
+    "fuse": {
+      "count": 16,
+      "median_width": 22.0,
+      "median_height": 10.0,
+      "median_pin_count": 2
+    },
+    "gnd": {
+      "count": 1469,
+      "median_width": 20.0,
+      "median_height": 19.0,
+      "median_pin_count": 1
+    },
+    "jumper": {
+      "count": 9,
+      "median_width": 58.0,
+      "median_height": 87.0,
+      "median_pin_count": 2
+    },
+    "l": {
+      "count": 70,
+      "median_width": 34.0,
+      "median_height": 6.0,
+      "median_pin_count": 2
+    },
+    "led": {
+      "count": 115,
+      "median_width": 14.0,
+      "median_height": 20.0,
+      "median_pin_count": 2
+    },
+    "m3螺丝": {
+      "count": 22,
+      "median_width": 20.0,
+      "median_height": 23.0,
+      "median_pin_count": 0
+    },
+    "mosfet": {
+      "count": 36,
+      "median_width": 20.0,
+      "median_height": 29.0,
+      "median_pin_count": 3
+    },
+    "mosfet_pnp": {
+      "count": 1,
+      "median_width": 20.0,
+      "median_height": 29.0,
+      "median_pin_count": 3
+    },
+    "motor": {
+      "count": 4,
+      "median_width": 59.0,
+      "median_height": 57.0,
+      "median_pin_count": 0
+    },
+    "net_bidirection": {
+      "count": 12,
+      "median_width": 30.0,
+      "median_height": 10.0,
+      "median_pin_count": 1
+    },
+    "net_input": {
+      "count": 175,
+      "median_width": 30.0,
+      "median_height": 10.0,
+      "median_pin_count": 1
+    },
+    "net_output": {
+      "count": 18,
+      "median_width": 30.0,
+      "median_height": 10.0,
+      "median_pin_count": 1
+    },
+    "net_short": {
+      "count": 36,
+      "median_width": 17.0,
+      "median_height": 8.0,
+      "median_pin_count": 2
+    },
+    "opt": {
+      "count": 1,
+      "median_width": 71.0,
+      "median_height": 35.0,
+      "median_pin_count": 4
+    },
+    "other": {
+      "count": 58,
+      "median_width": 47.0,
+      "median_height": 36.0,
+      "median_pin_count": 2
+    },
+    "pin": {
+      "count": 147,
+      "median_width": 20.0,
+      "median_height": 20.0,
+      "median_pin_count": 1
+    },
+    "r": {
+      "count": 1075,
+      "median_width": 8.0,
+      "median_height": 20.0,
+      "median_pin_count": 2
+    },
+    "seg": {
+      "count": 1,
+      "median_width": 903.0,
+      "median_height": 85.0,
+      "median_pin_count": 1
+    },
+    "switch": {
+      "count": 106,
+      "median_width": 33.0,
+      "median_height": 25.0,
+      "median_pin_count": 2
+    },
+    "testpoint": {
+      "count": 43,
+      "median_width": 20.0,
+      "median_height": 20.0,
+      "median_pin_count": 1
+    },
+    "transfomer": {
+      "count": 3,
+      "median_width": 58.0,
+      "median_height": 97.0,
+      "median_pin_count": 3
+    },
+    "v": {
+      "count": 705,
+      "median_width": 10.0,
+      "median_height": 10.0,
+      "median_pin_count": 1
+    }
+  }
+}

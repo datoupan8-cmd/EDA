@@ -1,0 +1,4291 @@
+{
+  "contract": "latest official public set, development cases 0001..0150 only",
+  "sealed_holdout_used_for_development": false,
+  "contains_case_ids_or_absolute_coordinates": false,
+  "type_counts": {
+    "box": 630,
+    "c": 1036,
+    "crystal_3pin": 6,
+    "r": 1075,
+    "mosfet": 36,
+    "v": 705,
+    "pin": 147,
+    "l": 70,
+    "gnd": 1469,
+    "crystal_4pin": 5,
+    "crystal_2pin": 35,
+    "fuse": 16,
+    "bjt_pnp": 1,
+    "buzzer": 19,
+    "bjt": 38,
+    "motor": 4,
+    "battary": 18,
+    "other": 58,
+    "switch": 106,
+    "d": 127,
+    "transfomer": 3,
+    "jumper": 9,
+    "testpoint": 43,
+    "block": 11,
+    "net_bidirection": 12,
+    "net_input": 175,
+    "led": 115,
+    "net_output": 18,
+    "seg": 1,
+    "amp_5pin": 5,
+    "amp": 9,
+    "amp_3pin": 7,
+    "circle_header": 3,
+    "ant": 3,
+    "esd": 4,
+    "m3螺丝": 22,
+    "net_short": 36,
+    "crystal": 1,
+    "mosfet_pnp": 1,
+    "opt": 1
+  },
+  "dimensions": {
+    "KiCad|box": {
+      "width": {
+        "count": 22,
+        "p10": 27.6,
+        "median": 83.0,
+        "p90": 166.3
+      },
+      "height": {
+        "count": 22,
+        "p10": 48.2,
+        "median": 100.5,
+        "p90": 443.4000000000004
+      }
+    },
+    "ALL|box": {
+      "width": {
+        "count": 630,
+        "p10": 20.0,
+        "median": 60.0,
+        "p90": 238.10000000000002
+      },
+      "height": {
+        "count": 630,
+        "p10": 30.0,
+        "median": 70.0,
+        "p90": 351.0
+      }
+    },
+    "KiCad|c": {
+      "width": {
+        "count": 47,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 47,
+        "p10": 16.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|c": {
+      "width": {
+        "count": 1036,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 1036,
+        "p10": 16.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "KiCad|crystal_3pin": {
+      "width": {
+        "count": 2,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 15.0,
+        "median": 15.0,
+        "p90": 15.0
+      }
+    },
+    "ALL|crystal_3pin": {
+      "width": {
+        "count": 6,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 12.5
+      },
+      "height": {
+        "count": 6,
+        "p10": 12.5,
+        "median": 15.0,
+        "p90": 15.0
+      }
+    },
+    "KiCad|r": {
+      "width": {
+        "count": 33,
+        "p10": 8.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 33,
+        "p10": 8.0,
+        "median": 8.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|r": {
+      "width": {
+        "count": 1075,
+        "p10": 8.0,
+        "median": 8.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 1075,
+        "p10": 8.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "KiCad|mosfet": {
+      "width": {
+        "count": 1,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      }
+    },
+    "ALL|mosfet": {
+      "width": {
+        "count": 36,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 36,
+        "p10": 20.0,
+        "median": 29.0,
+        "p90": 29.0
+      }
+    },
+    "KiCad|v": {
+      "width": {
+        "count": 30,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 30,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "ALL|v": {
+      "width": {
+        "count": 705,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 705,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "KiCad|pin": {
+      "width": {
+        "count": 82,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 82,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|pin": {
+      "width": {
+        "count": 147,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 147,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "KiCad|l": {
+      "width": {
+        "count": 2,
+        "p10": 34.0,
+        "median": 34.0,
+        "p90": 34.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 6.0
+      }
+    },
+    "ALL|l": {
+      "width": {
+        "count": 70,
+        "p10": 6.0,
+        "median": 34.0,
+        "p90": 34.0
+      },
+      "height": {
+        "count": 70,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 34.0
+      }
+    },
+    "KiCad|gnd": {
+      "width": {
+        "count": 54,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 54,
+        "p10": 19.0,
+        "median": 19.0,
+        "p90": 19.0
+      }
+    },
+    "ALL|gnd": {
+      "width": {
+        "count": 1469,
+        "p10": 19.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 1469,
+        "p10": 19.0,
+        "median": 19.0,
+        "p90": 20.0
+      }
+    },
+    "Datasheet|crystal_4pin": {
+      "width": {
+        "count": 1,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "ALL|crystal_4pin": {
+      "width": {
+        "count": 5,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "Datasheet|box": {
+      "width": {
+        "count": 165,
+        "p10": 30.400000000000002,
+        "median": 128.0,
+        "p90": 337.0
+      },
+      "height": {
+        "count": 165,
+        "p10": 33.400000000000006,
+        "median": 173.0,
+        "p90": 469.6
+      }
+    },
+    "Datasheet|c": {
+      "width": {
+        "count": 401,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 401,
+        "p10": 16.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Datasheet|gnd": {
+      "width": {
+        "count": 463,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 463,
+        "p10": 19.0,
+        "median": 19.0,
+        "p90": 19.0
+      }
+    },
+    "Altium Designer|box": {
+      "width": {
+        "count": 84,
+        "p10": 23.800000000000004,
+        "median": 78.5,
+        "p90": 363.80000000000007
+      },
+      "height": {
+        "count": 84,
+        "p10": 44.0,
+        "median": 150.0,
+        "p90": 512.6
+      }
+    },
+    "Altium Designer|gnd": {
+      "width": {
+        "count": 194,
+        "p10": 19.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 194,
+        "p10": 19.0,
+        "median": 19.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|c": {
+      "width": {
+        "count": 158,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 158,
+        "p10": 16.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|r": {
+      "width": {
+        "count": 106,
+        "p10": 8.0,
+        "median": 8.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 106,
+        "p10": 8.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|v": {
+      "width": {
+        "count": 114,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 114,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "other|box": {
+      "width": {
+        "count": 34,
+        "p10": 33.0,
+        "median": 34.0,
+        "p90": 140.5
+      },
+      "height": {
+        "count": 34,
+        "p10": 32.0,
+        "median": 42.0,
+        "p90": 183.7
+      }
+    },
+    "other|crystal_2pin": {
+      "width": {
+        "count": 5,
+        "p10": 15.0,
+        "median": 15.0,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "ALL|crystal_2pin": {
+      "width": {
+        "count": 35,
+        "p10": 10.0,
+        "median": 15.0,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 35,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 15.0
+      }
+    },
+    "other|r": {
+      "width": {
+        "count": 49,
+        "p10": 8.0,
+        "median": 8.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 49,
+        "p10": 8.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "other|gnd": {
+      "width": {
+        "count": 51,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 51,
+        "p10": 19.0,
+        "median": 19.0,
+        "p90": 19.0
+      }
+    },
+    "other|fuse": {
+      "width": {
+        "count": 5,
+        "p10": 22.0,
+        "median": 22.0,
+        "p90": 22.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "ALL|fuse": {
+      "width": {
+        "count": 16,
+        "p10": 22.0,
+        "median": 22.0,
+        "p90": 22.0
+      },
+      "height": {
+        "count": 16,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "other|c": {
+      "width": {
+        "count": 42,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 42,
+        "p10": 16.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "other|bjt_pnp": {
+      "width": {
+        "count": 1,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|bjt_pnp": {
+      "width": {
+        "count": 1,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "other|buzzer": {
+      "width": {
+        "count": 2,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 33.0,
+        "median": 33.0,
+        "p90": 33.0
+      }
+    },
+    "ALL|buzzer": {
+      "width": {
+        "count": 19,
+        "p10": 24.8,
+        "median": 33.0,
+        "p90": 66.39999999999998
+      },
+      "height": {
+        "count": 19,
+        "p10": 26.0,
+        "median": 42.0,
+        "p90": 83.8
+      }
+    },
+    "other|bjt": {
+      "width": {
+        "count": 5,
+        "p10": 23.6,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 25.400000000000002
+      }
+    },
+    "ALL|bjt": {
+      "width": {
+        "count": 38,
+        "p10": 20.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 38,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 29.0
+      }
+    },
+    "other|v": {
+      "width": {
+        "count": 16,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 16,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "other|l": {
+      "width": {
+        "count": 5,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 22.800000000000004
+      },
+      "height": {
+        "count": 5,
+        "p10": 17.200000000000003,
+        "median": 34.0,
+        "p90": 34.0
+      }
+    },
+    "KiCad|crystal_2pin": {
+      "width": {
+        "count": 5,
+        "p10": 10.0,
+        "median": 15.0,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 15.0
+      }
+    },
+    "jlc|motor": {
+      "width": {
+        "count": 4,
+        "p10": 59.0,
+        "median": 59.0,
+        "p90": 59.0
+      },
+      "height": {
+        "count": 4,
+        "p10": 57.0,
+        "median": 57.0,
+        "p90": 57.0
+      }
+    },
+    "ALL|motor": {
+      "width": {
+        "count": 4,
+        "p10": 59.0,
+        "median": 59.0,
+        "p90": 59.0
+      },
+      "height": {
+        "count": 4,
+        "p10": 57.0,
+        "median": 57.0,
+        "p90": 57.0
+      }
+    },
+    "jlc|box": {
+      "width": {
+        "count": 325,
+        "p10": 20.0,
+        "median": 45.0,
+        "p90": 103.00000000000011
+      },
+      "height": {
+        "count": 325,
+        "p10": 30.0,
+        "median": 50.0,
+        "p90": 160.0
+      }
+    },
+    "jlc|gnd": {
+      "width": {
+        "count": 707,
+        "p10": 19.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 707,
+        "p10": 19.0,
+        "median": 19.0,
+        "p90": 20.0
+      }
+    },
+    "jlc|v": {
+      "width": {
+        "count": 468,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 468,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "jlc|r": {
+      "width": {
+        "count": 487,
+        "p10": 8.0,
+        "median": 8.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 487,
+        "p10": 8.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "jlc|c": {
+      "width": {
+        "count": 388,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 388,
+        "p10": 16.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "jlc|battary": {
+      "width": {
+        "count": 2,
+        "p10": 18.5,
+        "median": 20.5,
+        "p90": 22.5
+      },
+      "height": {
+        "count": 2,
+        "p10": 17.3,
+        "median": 18.5,
+        "p90": 19.7
+      }
+    },
+    "ALL|battary": {
+      "width": {
+        "count": 18,
+        "p10": 15.0,
+        "median": 36.5,
+        "p90": 53.0
+      },
+      "height": {
+        "count": 18,
+        "p10": 1.0,
+        "median": 18.5,
+        "p90": 43.900000000000006
+      }
+    },
+    "jlc|other": {
+      "width": {
+        "count": 16,
+        "p10": 36.0,
+        "median": 37.0,
+        "p90": 46.5
+      },
+      "height": {
+        "count": 16,
+        "p10": 36.0,
+        "median": 37.0,
+        "p90": 52.0
+      }
+    },
+    "ALL|other": {
+      "width": {
+        "count": 58,
+        "p10": 19.1,
+        "median": 46.5,
+        "p90": 78.0
+      },
+      "height": {
+        "count": 58,
+        "p10": 19.7,
+        "median": 36.0,
+        "p90": 68.20000000000002
+      }
+    },
+    "jlc|switch": {
+      "width": {
+        "count": 60,
+        "p10": 16.0,
+        "median": 34.0,
+        "p90": 51.0
+      },
+      "height": {
+        "count": 60,
+        "p10": 14.9,
+        "median": 27.0,
+        "p90": 47.0
+      }
+    },
+    "ALL|switch": {
+      "width": {
+        "count": 106,
+        "p10": 22.0,
+        "median": 33.0,
+        "p90": 64.0
+      },
+      "height": {
+        "count": 106,
+        "p10": 7.0,
+        "median": 25.0,
+        "p90": 46.0
+      }
+    },
+    "Datasheet|switch": {
+      "width": {
+        "count": 27,
+        "p10": 23.0,
+        "median": 26.0,
+        "p90": 54.20000000000008
+      },
+      "height": {
+        "count": 27,
+        "p10": 6.0,
+        "median": 7.0,
+        "p90": 25.400000000000023
+      }
+    },
+    "Datasheet|other": {
+      "width": {
+        "count": 20,
+        "p10": 19.7,
+        "median": 76.5,
+        "p90": 98.10000000000002
+      },
+      "height": {
+        "count": 20,
+        "p10": 30.9,
+        "median": 37.5,
+        "p90": 87.70000000000002
+      }
+    },
+    "Datasheet|crystal_2pin": {
+      "width": {
+        "count": 8,
+        "p10": 10.0,
+        "median": 12.5,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 8,
+        "p10": 10.0,
+        "median": 12.5,
+        "p90": 15.0
+      }
+    },
+    "Datasheet|r": {
+      "width": {
+        "count": 400,
+        "p10": 8.0,
+        "median": 8.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 400,
+        "p10": 8.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Datasheet|v": {
+      "width": {
+        "count": 77,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      },
+      "height": {
+        "count": 77,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "Altium Designer|crystal_2pin": {
+      "width": {
+        "count": 9,
+        "p10": 10.0,
+        "median": 15.0,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 15.0
+      }
+    },
+    "Altium Designer|bjt": {
+      "width": {
+        "count": 2,
+        "p10": 20.9,
+        "median": 24.5,
+        "p90": 28.1
+      },
+      "height": {
+        "count": 2,
+        "p10": 20.9,
+        "median": 24.5,
+        "p90": 28.1
+      }
+    },
+    "Altium Designer|d": {
+      "width": {
+        "count": 9,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|d": {
+      "width": {
+        "count": 127,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 127,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|transfomer": {
+      "width": {
+        "count": 1,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 6.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      }
+    },
+    "ALL|transfomer": {
+      "width": {
+        "count": 3,
+        "p10": 16.4,
+        "median": 58.0,
+        "p90": 66.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 43.4,
+        "median": 97.0,
+        "p90": 101.8
+      }
+    },
+    "Altium Designer|jumper": {
+      "width": {
+        "count": 9,
+        "p10": 27.4,
+        "median": 58.0,
+        "p90": 58.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 26.400000000000002,
+        "median": 87.0,
+        "p90": 90.8
+      }
+    },
+    "ALL|jumper": {
+      "width": {
+        "count": 9,
+        "p10": 27.4,
+        "median": 58.0,
+        "p90": 58.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 26.400000000000002,
+        "median": 87.0,
+        "p90": 90.8
+      }
+    },
+    "Datasheet|d": {
+      "width": {
+        "count": 51,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 51,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Datasheet|fuse": {
+      "width": {
+        "count": 4,
+        "p10": 22.0,
+        "median": 22.0,
+        "p90": 22.0
+      },
+      "height": {
+        "count": 4,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "Altium Designer|other": {
+      "width": {
+        "count": 14,
+        "p10": 17.8,
+        "median": 45.5,
+        "p90": 76.4
+      },
+      "height": {
+        "count": 14,
+        "p10": 19.0,
+        "median": 30.0,
+        "p90": 49.70000000000001
+      }
+    },
+    "Altium Designer|testpoint": {
+      "width": {
+        "count": 34,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 34,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|testpoint": {
+      "width": {
+        "count": 43,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 43,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|block": {
+      "width": {
+        "count": 6,
+        "p10": 8.5,
+        "median": 66.0,
+        "p90": 126.0
+      },
+      "height": {
+        "count": 6,
+        "p10": 12.0,
+        "median": 29.0,
+        "p90": 140.0
+      }
+    },
+    "ALL|block": {
+      "width": {
+        "count": 11,
+        "p10": 8.0,
+        "median": 15.0,
+        "p90": 104.0
+      },
+      "height": {
+        "count": 11,
+        "p10": 11.0,
+        "median": 13.0,
+        "p90": 138.0
+      }
+    },
+    "Altium Designer|net_bidirection": {
+      "width": {
+        "count": 9,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "ALL|net_bidirection": {
+      "width": {
+        "count": 12,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 12,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "Altium Designer|net_input": {
+      "width": {
+        "count": 6,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 6,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "ALL|net_input": {
+      "width": {
+        "count": 175,
+        "p10": 10.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 175,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 30.0
+      }
+    },
+    "KiCad|led": {
+      "width": {
+        "count": 4,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 18.200000000000003
+      },
+      "height": {
+        "count": 4,
+        "p10": 15.8,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "ALL|led": {
+      "width": {
+        "count": 115,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 115,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|net_output": {
+      "width": {
+        "count": 5,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "ALL|net_output": {
+      "width": {
+        "count": 18,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 18,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "Datasheet|battary": {
+      "width": {
+        "count": 16,
+        "p10": 15.0,
+        "median": 43.0,
+        "p90": 53.0
+      },
+      "height": {
+        "count": 16,
+        "p10": 1.0,
+        "median": 18.5,
+        "p90": 44.5
+      }
+    },
+    "Datasheet|led": {
+      "width": {
+        "count": 22,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 22,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Datasheet|l": {
+      "width": {
+        "count": 35,
+        "p10": 6.0,
+        "median": 34.0,
+        "p90": 34.0
+      },
+      "height": {
+        "count": 35,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 34.0
+      }
+    },
+    "Datasheet|pin": {
+      "width": {
+        "count": 62,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 62,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Altium Designer|fuse": {
+      "width": {
+        "count": 1,
+        "p10": 22.0,
+        "median": 22.0,
+        "p90": 22.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "Altium Designer|crystal_4pin": {
+      "width": {
+        "count": 2,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "Altium Designer|led": {
+      "width": {
+        "count": 4,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 18.200000000000003
+      },
+      "height": {
+        "count": 4,
+        "p10": 15.8,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "other|mosfet": {
+      "width": {
+        "count": 11,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 11,
+        "p10": 20.0,
+        "median": 29.0,
+        "p90": 29.0
+      }
+    },
+    "other|other": {
+      "width": {
+        "count": 8,
+        "p10": 15.1,
+        "median": 37.5,
+        "p90": 63.9
+      },
+      "height": {
+        "count": 8,
+        "p10": 11.0,
+        "median": 27.0,
+        "p90": 51.39999999999999
+      }
+    },
+    "other|net_input": {
+      "width": {
+        "count": 14,
+        "p10": 10.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 14,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 30.0
+      }
+    },
+    "other|switch": {
+      "width": {
+        "count": 13,
+        "p10": 61.4,
+        "median": 63.0,
+        "p90": 64.0
+      },
+      "height": {
+        "count": 13,
+        "p10": 24.0,
+        "median": 25.0,
+        "p90": 27.0
+      }
+    },
+    "Altium Designer|switch": {
+      "width": {
+        "count": 6,
+        "p10": 32.5,
+        "median": 33.0,
+        "p90": 77.0
+      },
+      "height": {
+        "count": 6,
+        "p10": 12.0,
+        "median": 12.0,
+        "p90": 31.5
+      }
+    },
+    "Datasheet|buzzer": {
+      "width": {
+        "count": 8,
+        "p10": 25.0,
+        "median": 35.0,
+        "p90": 70.1
+      },
+      "height": {
+        "count": 8,
+        "p10": 41.7,
+        "median": 53.0,
+        "p90": 117.69999999999999
+      }
+    },
+    "Datasheet|net_input": {
+      "width": {
+        "count": 86,
+        "p10": 10.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 86,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 30.0
+      }
+    },
+    "Datasheet|bjt": {
+      "width": {
+        "count": 8,
+        "p10": 20.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 8,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 29.0
+      }
+    },
+    "Datasheet|seg": {
+      "width": {
+        "count": 1,
+        "p10": 903.0,
+        "median": 903.0,
+        "p90": 903.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 85.0,
+        "median": 85.0,
+        "p90": 85.0
+      }
+    },
+    "ALL|seg": {
+      "width": {
+        "count": 1,
+        "p10": 903.0,
+        "median": 903.0,
+        "p90": 903.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 85.0,
+        "median": 85.0,
+        "p90": 85.0
+      }
+    },
+    "Datasheet|mosfet": {
+      "width": {
+        "count": 10,
+        "p10": 20.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 10,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 29.0
+      }
+    },
+    "Datasheet|amp_5pin": {
+      "width": {
+        "count": 3,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "ALL|amp_5pin": {
+      "width": {
+        "count": 5,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "Altium Designer|mosfet": {
+      "width": {
+        "count": 2,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      }
+    },
+    "Altium Designer|l": {
+      "width": {
+        "count": 1,
+        "p10": 34.0,
+        "median": 34.0,
+        "p90": 34.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 6.0
+      }
+    },
+    "Datasheet|amp": {
+      "width": {
+        "count": 7,
+        "p10": 128.6,
+        "median": 131.0,
+        "p90": 169.0
+      },
+      "height": {
+        "count": 7,
+        "p10": 118.6,
+        "median": 119.0,
+        "p90": 177.6
+      }
+    },
+    "ALL|amp": {
+      "width": {
+        "count": 9,
+        "p10": 41.6,
+        "median": 129.0,
+        "p90": 168.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 40.8,
+        "median": 119.0,
+        "p90": 173.8
+      }
+    },
+    "jlc|d": {
+      "width": {
+        "count": 48,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 48,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "Datasheet|amp_3pin": {
+      "width": {
+        "count": 1,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      }
+    },
+    "ALL|amp_3pin": {
+      "width": {
+        "count": 7,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 7,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      }
+    },
+    "other|d": {
+      "width": {
+        "count": 19,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 19,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "other|circle_header": {
+      "width": {
+        "count": 3,
+        "p10": 40.2,
+        "median": 41.0,
+        "p90": 65.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 38.2,
+        "median": 43.0,
+        "p90": 71.0
+      }
+    },
+    "ALL|circle_header": {
+      "width": {
+        "count": 3,
+        "p10": 40.2,
+        "median": 41.0,
+        "p90": 65.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 38.2,
+        "median": 43.0,
+        "p90": 71.0
+      }
+    },
+    "Datasheet|ant": {
+      "width": {
+        "count": 3,
+        "p10": 43.2,
+        "median": 104.0,
+        "p90": 108.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 43.0,
+        "median": 115.0,
+        "p90": 123.8
+      }
+    },
+    "ALL|ant": {
+      "width": {
+        "count": 3,
+        "p10": 43.2,
+        "median": 104.0,
+        "p90": 108.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 43.0,
+        "median": 115.0,
+        "p90": 123.8
+      }
+    },
+    "Datasheet|transfomer": {
+      "width": {
+        "count": 1,
+        "p10": 68.0,
+        "median": 68.0,
+        "p90": 68.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 103.0,
+        "median": 103.0,
+        "p90": 103.0
+      }
+    },
+    "Datasheet|esd": {
+      "width": {
+        "count": 1,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 14.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 18.0,
+        "median": 18.0,
+        "p90": 18.0
+      }
+    },
+    "ALL|esd": {
+      "width": {
+        "count": 4,
+        "p10": 14.0,
+        "median": 22.0,
+        "p90": 32.1
+      },
+      "height": {
+        "count": 4,
+        "p10": 17.3,
+        "median": 19.5,
+        "p90": 30.1
+      }
+    },
+    "jlc|led": {
+      "width": {
+        "count": 85,
+        "p10": 14.0,
+        "median": 14.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 85,
+        "p10": 14.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "KiCad|net_input": {
+      "width": {
+        "count": 13,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 13,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "jlc|crystal_2pin": {
+      "width": {
+        "count": 8,
+        "p10": 10.0,
+        "median": 12.5,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 8,
+        "p10": 10.0,
+        "median": 12.5,
+        "p90": 15.0
+      }
+    },
+    "jlc|crystal_3pin": {
+      "width": {
+        "count": 4,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 13.5
+      },
+      "height": {
+        "count": 4,
+        "p10": 11.5,
+        "median": 15.0,
+        "p90": 15.0
+      }
+    },
+    "jlc|testpoint": {
+      "width": {
+        "count": 9,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 9,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "jlc|m3螺丝": {
+      "width": {
+        "count": 22,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 22,
+        "p10": 23.0,
+        "median": 23.0,
+        "p90": 23.0
+      }
+    },
+    "ALL|m3螺丝": {
+      "width": {
+        "count": 22,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 22,
+        "p10": 23.0,
+        "median": 23.0,
+        "p90": 23.0
+      }
+    },
+    "jlc|crystal_4pin": {
+      "width": {
+        "count": 2,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "jlc|net_short": {
+      "width": {
+        "count": 36,
+        "p10": 17.0,
+        "median": 17.0,
+        "p90": 19.0
+      },
+      "height": {
+        "count": 36,
+        "p10": 7.0,
+        "median": 8.0,
+        "p90": 9.0
+      }
+    },
+    "ALL|net_short": {
+      "width": {
+        "count": 36,
+        "p10": 17.0,
+        "median": 17.0,
+        "p90": 19.0
+      },
+      "height": {
+        "count": 36,
+        "p10": 7.0,
+        "median": 8.0,
+        "p90": 9.0
+      }
+    },
+    "jlc|fuse": {
+      "width": {
+        "count": 6,
+        "p10": 22.0,
+        "median": 22.0,
+        "p90": 22.0
+      },
+      "height": {
+        "count": 6,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "jlc|l": {
+      "width": {
+        "count": 27,
+        "p10": 6.0,
+        "median": 34.0,
+        "p90": 34.0
+      },
+      "height": {
+        "count": 27,
+        "p10": 6.0,
+        "median": 6.0,
+        "p90": 34.0
+      }
+    },
+    "jlc|buzzer": {
+      "width": {
+        "count": 9,
+        "p10": 24.0,
+        "median": 32.0,
+        "p90": 65.2
+      },
+      "height": {
+        "count": 9,
+        "p10": 25.8,
+        "median": 39.0,
+        "p90": 67.0
+      }
+    },
+    "jlc|mosfet": {
+      "width": {
+        "count": 12,
+        "p10": 20.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 12,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 29.0
+      }
+    },
+    "jlc|bjt": {
+      "width": {
+        "count": 23,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      },
+      "height": {
+        "count": 23,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    },
+    "jlc|crystal": {
+      "width": {
+        "count": 1,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 16.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 15.0,
+        "median": 15.0,
+        "p90": 15.0
+      }
+    },
+    "ALL|crystal": {
+      "width": {
+        "count": 1,
+        "p10": 16.0,
+        "median": 16.0,
+        "p90": 16.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 15.0,
+        "median": 15.0,
+        "p90": 15.0
+      }
+    },
+    "jlc|net_input": {
+      "width": {
+        "count": 56,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 56,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "jlc|amp_3pin": {
+      "width": {
+        "count": 6,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 6,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      }
+    },
+    "jlc|amp": {
+      "width": {
+        "count": 2,
+        "p10": 40.2,
+        "median": 41.0,
+        "p90": 41.8
+      },
+      "height": {
+        "count": 2,
+        "p10": 40.1,
+        "median": 40.5,
+        "p90": 40.9
+      }
+    },
+    "jlc|net_output": {
+      "width": {
+        "count": 13,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 13,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "jlc|net_bidirection": {
+      "width": {
+        "count": 3,
+        "p10": 30.0,
+        "median": 30.0,
+        "p90": 30.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 10.0,
+        "median": 10.0,
+        "p90": 10.0
+      }
+    },
+    "jlc|mosfet_pnp": {
+      "width": {
+        "count": 1,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      }
+    },
+    "ALL|mosfet_pnp": {
+      "width": {
+        "count": 1,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 29.0,
+        "median": 29.0,
+        "p90": 29.0
+      }
+    },
+    "jlc|esd": {
+      "width": {
+        "count": 3,
+        "p10": 17.2,
+        "median": 30.0,
+        "p90": 32.4
+      },
+      "height": {
+        "count": 3,
+        "p10": 17.8,
+        "median": 21.0,
+        "p90": 31.4
+      }
+    },
+    "jlc|amp_5pin": {
+      "width": {
+        "count": 2,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      },
+      "height": {
+        "count": 2,
+        "p10": 40.0,
+        "median": 40.0,
+        "p90": 40.0
+      }
+    },
+    "jlc|block": {
+      "width": {
+        "count": 5,
+        "p10": 5.4,
+        "median": 14.0,
+        "p90": 15.0
+      },
+      "height": {
+        "count": 5,
+        "p10": 8.0,
+        "median": 12.0,
+        "p90": 13.6
+      }
+    },
+    "jlc|transfomer": {
+      "width": {
+        "count": 1,
+        "p10": 58.0,
+        "median": 58.0,
+        "p90": 58.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 97.0,
+        "median": 97.0,
+        "p90": 97.0
+      }
+    },
+    "jlc|opt": {
+      "width": {
+        "count": 1,
+        "p10": 71.0,
+        "median": 71.0,
+        "p90": 71.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 35.0,
+        "median": 35.0,
+        "p90": 35.0
+      }
+    },
+    "ALL|opt": {
+      "width": {
+        "count": 1,
+        "p10": 71.0,
+        "median": 71.0,
+        "p90": 71.0
+      },
+      "height": {
+        "count": 1,
+        "p10": 35.0,
+        "median": 35.0,
+        "p90": 35.0
+      }
+    },
+    "jlc|pin": {
+      "width": {
+        "count": 3,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      },
+      "height": {
+        "count": 3,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0
+      }
+    }
+  },
+  "anchor_clusters": {
+    "KiCad|box": [
+      {
+        "count": 8,
+        "center": [
+          -0.2843,
+          4.0432,
+          9.0287,
+          24.68773
+        ]
+      }
+    ],
+    "ALL|box": [
+      {
+        "count": 151,
+        "center": [
+          2.76861,
+          3.66068,
+          6.23351,
+          6.71456
+        ]
+      },
+      {
+        "count": 30,
+        "center": [
+          4.73649,
+          9.00494,
+          16.34582,
+          26.42863
+        ]
+      },
+      {
+        "count": 6,
+        "center": [
+          -25.45193,
+          31.46905,
+          2.77961,
+          3.97771
+        ]
+      },
+      {
+        "count": 4,
+        "center": [
+          36.32587,
+          -36.61519,
+          3.35125,
+          4.88128
+        ]
+      },
+      {
+        "count": 3,
+        "center": [
+          -99.67443,
+          15.45963,
+          4.35923,
+          14.61564
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          38.48972,
+          20.52787,
+          78.16904,
+          39.77482
+        ]
+      }
+    ],
+    "KiCad|c": [
+      {
+        "count": 21,
+        "center": [
+          1.64489,
+          1.32953,
+          1.26198,
+          1.57747
+        ]
+      },
+      {
+        "count": 13,
+        "center": [
+          -1.53985,
+          0.88297,
+          1.52005,
+          1.90006
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          4.48923,
+          0.38039,
+          1.48121,
+          1.85152
+        ]
+      }
+    ],
+    "ALL|c": [
+      {
+        "count": 430,
+        "center": [
+          -1.70359,
+          0.32006,
+          1.17664,
+          1.43518
+        ]
+      },
+      {
+        "count": 155,
+        "center": [
+          1.19792,
+          1.05522,
+          1.35841,
+          1.38992
+        ]
+      },
+      {
+        "count": 6,
+        "center": [
+          28.94156,
+          15.11102,
+          1.7104,
+          1.85331
+        ]
+      },
+      {
+        "count": 4,
+        "center": [
+          -12.66045,
+          -33.31021,
+          1.86387,
+          2.15233
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          -50.09643,
+          31.27523,
+          1.46516,
+          1.33145
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          116.2271,
+          -6.42056,
+          0.87622,
+          1.09527
+        ]
+      }
+    ],
+    "KiCad|crystal_3pin": [
+      {
+        "count": 2,
+        "center": [
+          -0.06684,
+          2.55643,
+          0.85621,
+          1.28431
+        ]
+      }
+    ],
+    "ALL|crystal_3pin": [
+      {
+        "count": 4,
+        "center": [
+          -0.71561,
+          1.84042,
+          1.05369,
+          1.26467
+        ]
+      }
+    ],
+    "KiCad|r": [
+      {
+        "count": 11,
+        "center": [
+          -1.01068,
+          0.43078,
+          0.82268,
+          1.63897
+        ]
+      }
+    ],
+    "ALL|r": [
+      {
+        "count": 227,
+        "center": [
+          -1.7473,
+          -0.09178,
+          0.69578,
+          1.72232
+        ]
+      },
+      {
+        "count": 224,
+        "center": [
+          1.03092,
+          0.48873,
+          1.4747,
+          0.77354
+        ]
+      },
+      {
+        "count": 154,
+        "center": [
+          -0.69647,
+          0.91073,
+          0.55568,
+          0.73488
+        ]
+      },
+      {
+        "count": 3,
+        "center": [
+          -12.21943,
+          44.7247,
+          0.57658,
+          1.44144
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          -49.90341,
+          9.83889,
+          1.45621,
+          1.30719
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          50.2177,
+          -8.51801,
+          0.23953,
+          0.59883
+        ]
+      }
+    ],
+    "KiCad|mosfet": [
+      {
+        "count": 1,
+        "center": [
+          -0.1503,
+          4.98797,
+          1.53313,
+          2.22304
+        ]
+      }
+    ],
+    "ALL|mosfet": [
+      {
+        "count": 21,
+        "center": [
+          -1.33927,
+          1.71885,
+          1.73803,
+          1.66662
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -4.25676,
+          -25.36486,
+          1.08108,
+          1.56757
+        ]
+      }
+    ],
+    "KiCad|pin": [
+      {
+        "count": 3,
+        "center": [
+          -0.72687,
+          -0.26543,
+          1.45244,
+          1.45244
+        ]
+      }
+    ],
+    "ALL|pin": [
+      {
+        "count": 12,
+        "center": [
+          -1.40725,
+          -0.2001,
+          0.81027,
+          0.81027
+        ]
+      },
+      {
+        "count": 6,
+        "center": [
+          -0.05,
+          0.46521,
+          0.78825,
+          0.78825
+        ]
+      }
+    ],
+    "KiCad|l": [
+      {
+        "count": 1,
+        "center": [
+          -0.20319,
+          3.4632,
+          2.60632,
+          0.45994
+        ]
+      }
+    ],
+    "ALL|l": [
+      {
+        "count": 13,
+        "center": [
+          0.89209,
+          0.64933,
+          2.62949,
+          0.46403
+        ]
+      },
+      {
+        "count": 8,
+        "center": [
+          -0.31191,
+          0.98151,
+          0.37135,
+          2.10432
+        ]
+      }
+    ],
+    "Datasheet|box": [
+      {
+        "count": 31,
+        "center": [
+          2.60617,
+          3.02764,
+          8.65357,
+          8.9029
+        ]
+      },
+      {
+        "count": 3,
+        "center": [
+          7.2022,
+          12.21512,
+          25.42869,
+          25.82692
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -21.22619,
+          8.35714,
+          1.0,
+          0.95238
+        ]
+      }
+    ],
+    "Datasheet|c": [
+      {
+        "count": 107,
+        "center": [
+          -1.50668,
+          0.42229,
+          0.64987,
+          0.77586
+        ]
+      },
+      {
+        "count": 41,
+        "center": [
+          1.81845,
+          0.78879,
+          1.05609,
+          1.21254
+        ]
+      },
+      {
+        "count": 30,
+        "center": [
+          -1.52769,
+          -0.58012,
+          1.3277,
+          1.53816
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          28.79539,
+          12.72369,
+          0.97779,
+          1.22223
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -12.5,
+          3.58889,
+          0.71111,
+          0.88889
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          116.2271,
+          -6.42056,
+          0.87622,
+          1.09527
+        ]
+      }
+    ],
+    "other|r": [
+      {
+        "count": 20,
+        "center": [
+          -0.53713,
+          0.84678,
+          0.7812,
+          1.19461
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          -21.36944,
+          27.41389,
+          1.51111,
+          1.44444
+        ]
+      }
+    ],
+    "other|c": [
+      {
+        "count": 17,
+        "center": [
+          -3.28115,
+          1.77628,
+          1.39328,
+          1.36731
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          42.73684,
+          -14.18421,
+          2.10526,
+          1.68421
+        ]
+      }
+    ],
+    "jlc|box": [
+      {
+        "count": 103,
+        "center": [
+          1.37645,
+          3.44767,
+          5.65122,
+          6.00517
+        ]
+      },
+      {
+        "count": 19,
+        "center": [
+          1.29071,
+          19.08029,
+          14.33936,
+          20.50612
+        ]
+      },
+      {
+        "count": 5,
+        "center": [
+          38.76203,
+          -18.53085,
+          3.72031,
+          3.12706
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          -94.73077,
+          50.11538,
+          4.61538,
+          20.0
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          51.98522,
+          15.39411,
+          105.32113,
+          29.58459
+        ]
+      }
+    ],
+    "jlc|r": [
+      {
+        "count": 195,
+        "center": [
+          -1.45777,
+          0.41184,
+          0.73034,
+          1.79104
+        ]
+      },
+      {
+        "count": 127,
+        "center": [
+          0.1782,
+          1.14429,
+          1.85286,
+          0.76913
+        ]
+      },
+      {
+        "count": 20,
+        "center": [
+          1.8525,
+          0.44099,
+          1.61689,
+          1.04811
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          -12.79201,
+          -24.5572,
+          0.82081,
+          2.05202
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -65.16793,
+          0.9,
+          0.6902,
+          1.72549
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -28.47616,
+          50.24608,
+          0.6902,
+          1.72549
+        ]
+      }
+    ],
+    "jlc|c": [
+      {
+        "count": 209,
+        "center": [
+          -1.64984,
+          0.4653,
+          1.49031,
+          1.82718
+        ]
+      },
+      {
+        "count": 57,
+        "center": [
+          1.09952,
+          1.03257,
+          1.66752,
+          1.59688
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -38.11364,
+          -20.95455,
+          1.45455,
+          1.81818
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -11.60007,
+          4.10454,
+          2.2217,
+          2.77712
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          14.53116,
+          -32.00561,
+          1.57785,
+          1.26228
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          37.89496,
+          31.69252,
+          1.69055,
+          1.35244
+        ]
+      }
+    ],
+    "jlc|switch": [
+      {
+        "count": 23,
+        "center": [
+          -0.06032,
+          1.27388,
+          2.65117,
+          2.56842
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -18.80536,
+          -16.45231,
+          2.83266,
+          2.16615
+        ]
+      }
+    ],
+    "ALL|switch": [
+      {
+        "count": 23,
+        "center": [
+          -0.06032,
+          1.27388,
+          2.65117,
+          2.56842
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -18.80536,
+          -16.45231,
+          2.83266,
+          2.16615
+        ]
+      }
+    ],
+    "Datasheet|crystal_2pin": [
+      {
+        "count": 7,
+        "center": [
+          -2.25522,
+          0.47173,
+          0.85596,
+          0.88508
+        ]
+      }
+    ],
+    "ALL|crystal_2pin": [
+      {
+        "count": 20,
+        "center": [
+          -1.04351,
+          0.80684,
+          1.07605,
+          1.02859
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -11.59518,
+          0.55492,
+          0.81175,
+          0.54117
+        ]
+      }
+    ],
+    "Altium Designer|bjt": [
+      {
+        "count": 1,
+        "center": [
+          1.34211,
+          2.18421,
+          2.10526,
+          3.05263
+        ]
+      }
+    ],
+    "ALL|bjt": [
+      {
+        "count": 25,
+        "center": [
+          -3.71247,
+          2.67618,
+          2.25548,
+          1.70571
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          105.31294,
+          -58.75742,
+          2.85984,
+          1.9723
+        ]
+      }
+    ],
+    "Altium Designer|d": [
+      {
+        "count": 5,
+        "center": [
+          -0.04027,
+          1.47159,
+          1.15863,
+          0.89025
+        ]
+      }
+    ],
+    "ALL|d": [
+      {
+        "count": 26,
+        "center": [
+          -1.44674,
+          -0.30189,
+          0.95641,
+          1.29084
+        ]
+      },
+      {
+        "count": 26,
+        "center": [
+          0.51249,
+          1.13731,
+          1.2727,
+          1.23825
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          28.05749,
+          66.92538,
+          1.20181,
+          1.71687
+        ]
+      }
+    ],
+    "Altium Designer|c": [
+      {
+        "count": 89,
+        "center": [
+          -1.04028,
+          0.27037,
+          0.97793,
+          1.10447
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          -13.52966,
+          -40.14034,
+          2.21154,
+          2.76443
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -58.72063,
+          46.38379,
+          0.70809,
+          0.88512
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          15.17068,
+          47.1033,
+          2.65386,
+          3.31732
+        ]
+      }
+    ],
+    "Datasheet|d": [
+      {
+        "count": 13,
+        "center": [
+          -2.01848,
+          0.68297,
+          0.6281,
+          0.89728
+        ]
+      },
+      {
+        "count": 7,
+        "center": [
+          1.11672,
+          0.50343,
+          0.98644,
+          0.84082
+        ]
+      }
+    ],
+    "Datasheet|r": [
+      {
+        "count": 60,
+        "center": [
+          -1.04859,
+          0.53745,
+          0.27812,
+          0.66286
+        ]
+      },
+      {
+        "count": 56,
+        "center": [
+          0.22788,
+          0.9293,
+          0.9425,
+          0.377
+        ]
+      },
+      {
+        "count": 34,
+        "center": [
+          1.78705,
+          0.40917,
+          0.64408,
+          0.82661
+        ]
+      },
+      {
+        "count": 26,
+        "center": [
+          -1.33294,
+          0.0354,
+          0.48466,
+          1.21164
+        ]
+      },
+      {
+        "count": 4,
+        "center": [
+          0.4034,
+          -1.59137,
+          1.17744,
+          0.47098
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          17.01667,
+          -9.5,
+          0.53333,
+          1.33333
+        ]
+      }
+    ],
+    "Altium Designer|box": [
+      {
+        "count": 21,
+        "center": [
+          5.67064,
+          4.70983,
+          10.40742,
+          15.31294
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -109.56177,
+          -53.85189,
+          3.84693,
+          3.84693
+        ]
+      }
+    ],
+    "Altium Designer|r": [
+      {
+        "count": 49,
+        "center": [
+          0.54744,
+          -0.28488,
+          0.57668,
+          0.81192
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -22.42502,
+          0.46444,
+          0.23953,
+          0.59883
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          50.2177,
+          -8.51801,
+          0.23953,
+          0.59883
+        ]
+      }
+    ],
+    "Datasheet|led": [
+      {
+        "count": 10,
+        "center": [
+          -1.28207,
+          2.41595,
+          0.91619,
+          0.91679
+        ]
+      }
+    ],
+    "ALL|led": [
+      {
+        "count": 30,
+        "center": [
+          -3.33799,
+          0.90469,
+          1.2296,
+          1.6896
+        ]
+      },
+      {
+        "count": 30,
+        "center": [
+          0.66299,
+          0.57025,
+          1.56033,
+          1.33981
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -48.56427,
+          36.52014,
+          2.69804,
+          3.85434
+        ]
+      }
+    ],
+    "Datasheet|l": [
+      {
+        "count": 8,
+        "center": [
+          0.43311,
+          0.00965,
+          1.01897,
+          1.10863
+        ]
+      }
+    ],
+    "Altium Designer|crystal_2pin": [
+      {
+        "count": 3,
+        "center": [
+          -0.47539,
+          1.55594,
+          0.98999,
+          1.13695
+        ]
+      }
+    ],
+    "Altium Designer|led": [
+      {
+        "count": 3,
+        "center": [
+          -0.67529,
+          0.70464,
+          1.0193,
+          1.45615
+        ]
+      }
+    ],
+    "other|bjt": [
+      {
+        "count": 3,
+        "center": [
+          -1.06468,
+          1.54947,
+          1.47631,
+          1.01815
+        ]
+      }
+    ],
+    "other|mosfet": [
+      {
+        "count": 10,
+        "center": [
+          -2.25099,
+          0.53114,
+          1.19715,
+          1.26051
+        ]
+      }
+    ],
+    "Datasheet|pin": [
+      {
+        "count": 10,
+        "center": [
+          -1.47445,
+          -0.23437,
+          0.68183,
+          0.68183
+        ]
+      },
+      {
+        "count": 5,
+        "center": [
+          -0.05239,
+          0.706,
+          0.65542,
+          0.65542
+        ]
+      }
+    ],
+    "Datasheet|bjt": [
+      {
+        "count": 4,
+        "center": [
+          -0.42179,
+          1.28064,
+          1.05371,
+          0.94394
+        ]
+      }
+    ],
+    "other|crystal_2pin": [
+      {
+        "count": 2,
+        "center": [
+          -2.43998,
+          0.91585,
+          0.94831,
+          0.63221
+        ]
+      }
+    ],
+    "other|l": [
+      {
+        "count": 3,
+        "center": [
+          -0.33367,
+          1.19747,
+          0.30109,
+          1.70619
+        ]
+      }
+    ],
+    "Altium Designer|crystal_4pin": [
+      {
+        "count": 1,
+        "center": [
+          -2.97222,
+          -4.22222,
+          4.44444,
+          4.44444
+        ]
+      }
+    ],
+    "ALL|crystal_4pin": [
+      {
+        "count": 2,
+        "center": [
+          -0.73382,
+          -0.83754,
+          4.37383,
+          4.37383
+        ]
+      }
+    ],
+    "Altium Designer|testpoint": [
+      {
+        "count": 16,
+        "center": [
+          -0.21247,
+          1.21478,
+          0.60461,
+          0.60461
+        ]
+      },
+      {
+        "count": 3,
+        "center": [
+          1.82937,
+          0.71992,
+          0.56734,
+          0.56734
+        ]
+      }
+    ],
+    "ALL|testpoint": [
+      {
+        "count": 19,
+        "center": [
+          0.10993,
+          1.13664,
+          0.59873,
+          0.59873
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -2.07752,
+          1.72051,
+          2.2217,
+          2.2217
+        ]
+      }
+    ],
+    "Altium Designer|mosfet": [
+      {
+        "count": 1,
+        "center": [
+          1.65852,
+          2.05522,
+          0.77663,
+          1.12611
+        ]
+      }
+    ],
+    "Datasheet|amp": [
+      {
+        "count": 1,
+        "center": [
+          -3.61676,
+          -1.85601,
+          6.35264,
+          7.18952
+        ]
+      }
+    ],
+    "ALL|amp": [
+      {
+        "count": 1,
+        "center": [
+          -3.61676,
+          -1.85601,
+          6.35264,
+          7.18952
+        ]
+      }
+    ],
+    "Datasheet|mosfet": [
+      {
+        "count": 1,
+        "center": [
+          -2.65303,
+          -0.01212,
+          1.10315,
+          0.76079
+        ]
+      }
+    ],
+    "jlc|d": [
+      {
+        "count": 27,
+        "center": [
+          -0.20985,
+          0.0726,
+          1.37383,
+          1.62055
+        ]
+      },
+      {
+        "count": 2,
+        "center": [
+          28.05749,
+          66.92538,
+          1.20181,
+          1.71687
+        ]
+      }
+    ],
+    "KiCad|crystal_2pin": [
+      {
+        "count": 3,
+        "center": [
+          -1.23404,
+          0.99546,
+          1.29046,
+          1.16422
+        ]
+      }
+    ],
+    "KiCad|led": [
+      {
+        "count": 1,
+        "center": [
+          -0.02669,
+          2.05654,
+          1.71927,
+          1.20349
+        ]
+      }
+    ],
+    "other|box": [
+      {
+        "count": 1,
+        "center": [
+          19.65278,
+          -4.16667,
+          3.27778,
+          2.83333
+        ]
+      }
+    ],
+    "jlc|led": [
+      {
+        "count": 26,
+        "center": [
+          -3.22805,
+          0.06499,
+          1.36382,
+          1.89917
+        ]
+      },
+      {
+        "count": 20,
+        "center": [
+          0.92762,
+          0.71141,
+          1.71497,
+          1.33819
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          -48.56427,
+          36.52014,
+          2.69804,
+          3.85434
+        ]
+      }
+    ],
+    "jlc|mosfet": [
+      {
+        "count": 9,
+        "center": [
+          -0.96964,
+          -0.17904,
+          2.46614,
+          2.20573
+        ]
+      }
+    ],
+    "jlc|bjt": [
+      {
+        "count": 17,
+        "center": [
+          -5.25133,
+          3.23231,
+          2.68459,
+          1.92705
+        ]
+      },
+      {
+        "count": 1,
+        "center": [
+          105.31294,
+          -58.75742,
+          2.85984,
+          1.9723
+        ]
+      }
+    ],
+    "jlc|crystal": [
+      {
+        "count": 1,
+        "center": [
+          0.36672,
+          2.01758,
+          1.35244,
+          1.26791
+        ]
+      }
+    ],
+    "ALL|crystal": [
+      {
+        "count": 1,
+        "center": [
+          0.36672,
+          2.01758,
+          1.35244,
+          1.26791
+        ]
+      }
+    ],
+    "jlc|crystal_3pin": [
+      {
+        "count": 2,
+        "center": [
+          -1.36438,
+          1.12442,
+          1.25118,
+          1.24502
+        ]
+      }
+    ],
+    "jlc|crystal_2pin": [
+      {
+        "count": 6,
+        "center": [
+          -1.11176,
+          0.65063,
+          1.26717,
+          1.12492
+        ]
+      }
+    ],
+    "jlc|l": [
+      {
+        "count": 9,
+        "center": [
+          0.76013,
+          1.01784,
+          2.83254,
+          0.93549
+        ]
+      }
+    ],
+    "jlc|testpoint": [
+      {
+        "count": 1,
+        "center": [
+          -2.07752,
+          1.72051,
+          2.2217,
+          2.2217
+        ]
+      }
+    ],
+    "jlc|crystal_4pin": [
+      {
+        "count": 1,
+        "center": [
+          1.50458,
+          2.54714,
+          4.30321,
+          4.30321
+        ]
+      }
+    ],
+    "jlc|fuse": [
+      {
+        "count": 1,
+        "center": [
+          0.32142,
+          3.39503,
+          2.15636,
+          0.98016
+        ]
+      }
+    ],
+    "ALL|fuse": [
+      {
+        "count": 1,
+        "center": [
+          0.32142,
+          3.39503,
+          2.15636,
+          0.98016
+        ]
+      }
+    ]
+  },
+  "exact_ocr_counts": {
+    "KiCad|box": 8,
+    "KiCad|c": 35,
+    "KiCad|crystal_3pin": 2,
+    "KiCad|r": 11,
+    "KiCad|mosfet": 1,
+    "KiCad|pin": 3,
+    "KiCad|l": 1,
+    "Datasheet|box": 35,
+    "Datasheet|c": 182,
+    "other|r": 22,
+    "other|c": 18,
+    "jlc|box": 130,
+    "jlc|r": 346,
+    "jlc|c": 270,
+    "jlc|switch": 24,
+    "Datasheet|crystal_2pin": 7,
+    "Altium Designer|bjt": 1,
+    "Altium Designer|d": 5,
+    "Altium Designer|c": 93,
+    "Datasheet|d": 20,
+    "Datasheet|r": 181,
+    "Altium Designer|box": 22,
+    "Altium Designer|r": 51,
+    "Datasheet|led": 10,
+    "Datasheet|l": 8,
+    "Altium Designer|crystal_2pin": 3,
+    "Altium Designer|led": 3,
+    "other|bjt": 3,
+    "other|mosfet": 10,
+    "Datasheet|pin": 15,
+    "Datasheet|bjt": 4,
+    "other|crystal_2pin": 2,
+    "other|l": 3,
+    "Altium Designer|crystal_4pin": 1,
+    "Altium Designer|testpoint": 19,
+    "Altium Designer|mosfet": 1,
+    "Datasheet|amp": 1,
+    "Datasheet|mosfet": 1,
+    "jlc|d": 29,
+    "KiCad|crystal_2pin": 3,
+    "KiCad|led": 1,
+    "other|box": 1,
+    "jlc|led": 47,
+    "jlc|mosfet": 9,
+    "jlc|bjt": 18,
+    "jlc|crystal": 1,
+    "jlc|crystal_3pin": 2,
+    "jlc|crystal_2pin": 6,
+    "jlc|l": 9,
+    "jlc|testpoint": 1,
+    "jlc|crystal_4pin": 1,
+    "jlc|fuse": 1
+  },
+  "observable_key_counts": {
+    "KiCad|box": 22,
+    "KiCad|c": 47,
+    "KiCad|crystal_3pin": 2,
+    "KiCad|r": 33,
+    "KiCad|mosfet": 1,
+    "KiCad|pin": 82,
+    "KiCad|l": 2,
+    "Datasheet|crystal_4pin": 1,
+    "Datasheet|box": 161,
+    "Datasheet|c": 392,
+    "Altium Designer|box": 76,
+    "Altium Designer|c": 158,
+    "Altium Designer|r": 105,
+    "other|box": 32,
+    "other|r": 47,
+    "other|fuse": 5,
+    "other|c": 41,
+    "other|bjt_pnp": 1,
+    "other|bjt": 5,
+    "other|l": 5,
+    "KiCad|crystal_2pin": 5,
+    "jlc|box": 316,
+    "jlc|r": 486,
+    "jlc|c": 387,
+    "jlc|switch": 60,
+    "Datasheet|switch": 27,
+    "Datasheet|crystal_2pin": 8,
+    "Datasheet|r": 396,
+    "Altium Designer|crystal_2pin": 9,
+    "Altium Designer|bjt": 1,
+    "Altium Designer|d": 9,
+    "Datasheet|d": 51,
+    "Datasheet|fuse": 4,
+    "Altium Designer|testpoint": 33,
+    "KiCad|led": 4,
+    "Datasheet|led": 22,
+    "Datasheet|l": 35,
+    "Datasheet|pin": 62,
+    "Altium Designer|fuse": 1,
+    "Altium Designer|crystal_4pin": 2,
+    "Altium Designer|led": 4,
+    "other|mosfet": 11,
+    "Altium Designer|switch": 2,
+    "Datasheet|bjt": 8,
+    "other|crystal_2pin": 4,
+    "Datasheet|mosfet": 10,
+    "Altium Designer|mosfet": 2,
+    "Altium Designer|l": 1,
+    "Datasheet|amp": 1,
+    "jlc|d": 48,
+    "other|d": 19,
+    "jlc|led": 85,
+    "jlc|crystal_2pin": 8,
+    "jlc|crystal_3pin": 3,
+    "jlc|testpoint": 9,
+    "jlc|crystal_4pin": 2,
+    "jlc|fuse": 6,
+    "jlc|l": 27,
+    "jlc|mosfet": 11,
+    "jlc|bjt": 23,
+    "jlc|crystal": 1,
+    "jlc|pin": 3
+  },
+  "simple_pin_layouts": {
+    "c": {
+      "clusters": [
+        {
+          "count": 820,
+          "center": [
+            0.5,
+            -0.5
+          ]
+        },
+        {
+          "count": 816,
+          "center": [
+            0.5,
+            1.5
+          ]
+        },
+        {
+          "count": 214,
+          "center": [
+            -0.5,
+            0.5
+          ]
+        },
+        {
+          "count": 214,
+          "center": [
+            1.5,
+            0.5
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "1": 1014,
+        "2": 1014,
+        "P_144": 1,
+        "P_54": 1,
+        "P_77": 1,
+        "P_11": 1,
+        "P_43": 1,
+        "P_57": 1,
+        "P_134": 1,
+        "P_139": 1,
+        "P_143": 2,
+        "P_129": 1,
+        "P_75": 1,
+        "P_76": 2,
+        "P_125": 1,
+        "P_141": 1,
+        "P_25": 1,
+        "P_65": 1,
+        "P_104": 2,
+        "P_14": 1,
+        "P_97": 1,
+        "P_18": 1,
+        "P_150": 1,
+        "P_118": 2,
+        "P_142": 1,
+        "P_36": 1,
+        "P_37": 1,
+        "P_52": 1,
+        "P_53": 1,
+        "P_173": 1,
+        "P_258": 1,
+        "P_87": 1,
+        "P_90": 1,
+        "P_93": 1
+      }
+    },
+    "crystal_3pin": {
+      "clusters": [
+        {
+          "count": 9,
+          "center": [
+            1.52963,
+            1.14815
+          ]
+        },
+        {
+          "count": 8,
+          "center": [
+            -0.75417,
+            -0.07917
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "INPUT": 6,
+        "GND": 6,
+        "OUTPUT": 5
+      }
+    },
+    "r": {
+      "clusters": [
+        {
+          "count": 655,
+          "center": [
+            0.5,
+            1.5
+          ]
+        },
+        {
+          "count": 641,
+          "center": [
+            0.5,
+            -0.5
+          ]
+        },
+        {
+          "count": 476,
+          "center": [
+            -0.5,
+            0.5
+          ]
+        },
+        {
+          "count": 464,
+          "center": [
+            1.5,
+            0.5
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "1": 1039,
+        "2": 1039,
+        "P_106": 1,
+        "P_129": 1,
+        "P_15": 2,
+        "P_16": 2,
+        "P_37": 1,
+        "P_77": 2,
+        "P_43": 1,
+        "P_60": 2,
+        "P_68": 2,
+        "P_69": 2,
+        "P_70": 2,
+        "P_98": 4,
+        "P_24": 1,
+        "P_25": 1,
+        "P_5": 1,
+        "P_141": 1,
+        "P_53": 2,
+        "P_97": 4,
+        "P_107": 3,
+        "P_162": 1,
+        "P_39": 1,
+        "P_79": 3,
+        "P_80": 1,
+        "P_89": 1,
+        "P_91": 1,
+        "P_92": 2,
+        "P_93": 2,
+        "P_94": 3,
+        "P_95": 2,
+        "P_96": 2,
+        "P_102": 2,
+        "P_103": 2,
+        "P_105": 2,
+        "P_108": 1,
+        "P_109": 2,
+        "P_12": 1,
+        "P_13": 1,
+        "P_32": 1,
+        "P_4": 1,
+        "P_10": 1,
+        "P_31": 1,
+        "P_9": 1,
+        "P_7": 1,
+        "P_315": 1,
+        "P_316": 1,
+        "P_317": 1,
+        "P_319": 1,
+        "P_321": 1,
+        "P_322": 1,
+        "P_132": 1,
+        "P_134": 1,
+        "P_137": 1,
+        "P_180": 1,
+        "P_181": 1,
+        "P_182": 1,
+        "P_183": 1,
+        "P_184": 1,
+        "P_186": 1,
+        "P_187": 1,
+        "P_188": 1,
+        "P_189": 1,
+        "P_190": 1,
+        "P_191": 1,
+        "P_193": 1,
+        "P_194": 1,
+        "P_198": 1,
+        "P_199": 1,
+        "P_200": 1,
+        "P_201": 1,
+        "P_202": 1,
+        "P_206": 2,
+        "P_72": 4,
+        "P_73": 3,
+        "P_76": 3,
+        "P_218": 1,
+        "P_220": 1,
+        "P_224": 1,
+        "P_225": 1,
+        "P_64": 2,
+        "P_65": 2,
+        "P_67": 1,
+        "P_100": 2,
+        "P_101": 1,
+        "P_99": 2,
+        "P_74": 2,
+        "P_81": 1,
+        "P_82": 1,
+        "P_83": 1,
+        "P_85": 1,
+        "P_75": 2,
+        "P_88": 1,
+        "P_90": 1,
+        "P_104": 1,
+        "P_115": 1,
+        "P_36": 1,
+        "P_46": 1,
+        "P_111": 1,
+        "P_205": 1,
+        "P_207": 1,
+        "P_208": 1,
+        "P_210": 1,
+        "P_212": 1,
+        "P_213": 1,
+        "P_215": 1,
+        "P_216": 1,
+        "P_217": 1,
+        "P_221": 1,
+        "P_51": 1,
+        "P_52": 1,
+        "P_57": 1,
+        "P_58": 1,
+        "P_61": 1,
+        "P_62": 1,
+        "P_63": 1,
+        "P_71": 1,
+        "P_78": 1
+      }
+    },
+    "l": {
+      "clusters": [
+        {
+          "count": 50,
+          "center": [
+            -0.08824,
+            0.5
+          ]
+        },
+        {
+          "count": 50,
+          "center": [
+            1.08824,
+            0.5
+          ]
+        },
+        {
+          "count": 20,
+          "center": [
+            0.5,
+            -0.08824
+          ]
+        },
+        {
+          "count": 20,
+          "center": [
+            0.5,
+            1.08824
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "1": 70,
+        "2": 70
+      }
+    },
+    "crystal_4pin": {
+      "clusters": [
+        {
+          "count": 10,
+          "center": [
+            0.2,
+            0.05
+          ]
+        },
+        {
+          "count": 10,
+          "center": [
+            0.8,
+            0.95
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "OSC1": 5,
+        "OSC2": 5,
+        "GND": 10
+      }
+    },
+    "crystal_2pin": {
+      "clusters": [
+        {
+          "count": 22,
+          "center": [
+            0.46667,
+            -1.5
+          ]
+        },
+        {
+          "count": 22,
+          "center": [
+            0.46667,
+            2.5
+          ]
+        },
+        {
+          "count": 13,
+          "center": [
+            -1.5,
+            0.46667
+          ]
+        },
+        {
+          "count": 13,
+          "center": [
+            2.5,
+            0.46667
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "X1": 35,
+        "X2": 35
+      }
+    },
+    "switch": {
+      "clusters": [
+        {
+          "count": 71,
+          "center": [
+            1.08326,
+            0.77773
+          ]
+        },
+        {
+          "count": 41,
+          "center": [
+            -0.0618,
+            0.81856
+          ]
+        },
+        {
+          "count": 33,
+          "center": [
+            -0.10142,
+            0.61232
+          ]
+        },
+        {
+          "count": 25,
+          "center": [
+            0.24486,
+            0.01965
+          ]
+        },
+        {
+          "count": 21,
+          "center": [
+            1.07751,
+            0.18882
+          ]
+        },
+        {
+          "count": 14,
+          "center": [
+            0.57327,
+            1.07477
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "P_164": 1,
+        "P_30": 2,
+        "P_122": 3,
+        "P_8": 4,
+        "P_35": 3,
+        "P_15": 4,
+        "P_24": 4,
+        "P_1": 1,
+        "P_28": 3,
+        "P_113": 4,
+        "P_33": 1,
+        "P_17": 2,
+        "P_34": 2,
+        "P_25": 2,
+        "P_18": 3,
+        "P_21": 3,
+        "P_22": 3,
+        "P_26": 5,
+        "P_7": 2,
+        "P_23": 2,
+        "P_9": 1,
+        "P_11": 2,
+        "P_29": 2,
+        "P_10": 3,
+        "P_3": 1,
+        "P_12": 2,
+        "P_16": 2,
+        "P_13": 1,
+        "P_14": 3,
+        "P_4": 1,
+        "P_5": 1,
+        "P_98": 3,
+        "P_155": 1,
+        "P_125": 2,
+        "P_126": 1,
+        "P_140": 1,
+        "P_63": 1,
+        "P_38": 1,
+        "P_97": 1,
+        "P_143": 1,
+        "P_55": 2,
+        "P_85": 2,
+        "P_93": 2,
+        "P_110": 1,
+        "P_45": 1,
+        "P_128": 1,
+        "P_73": 2,
+        "P_134": 1,
+        "P_31": 2,
+        "P_105": 1,
+        "P_49": 1,
+        "P_131": 1,
+        "P_52": 3,
+        "P_90": 1,
+        "P_137": 2,
+        "P_102": 1,
+        "P_57": 1,
+        "P_119": 2,
+        "P_79": 1,
+        "P_42": 2,
+        "P_95": 2,
+        "P_66": 2,
+        "P_67": 5,
+        "P_116": 1,
+        "P_68": 4,
+        "P_69": 3,
+        "P_91": 1,
+        "P_47": 2,
+        "P_70": 2,
+        "P_71": 3,
+        "P_62": 2,
+        "P_123": 1,
+        "P_88": 2,
+        "P_92": 1,
+        "P_48": 2,
+        "P_50": 1,
+        "P_86": 2,
+        "P_89": 2,
+        "P_46": 1,
+        "P_58": 1,
+        "P_2": 1,
+        "P_96": 1,
+        "P_74": 1,
+        "P_75": 2,
+        "P_76": 1,
+        "P_77": 1,
+        "P_82": 2,
+        "P_51": 1,
+        "P_27": 1,
+        "P_54": 2,
+        "P_80": 1,
+        "P_243": 1,
+        "P_275": 1,
+        "P_221": 1,
+        "P_223": 1,
+        "P_206": 1,
+        "P_258": 1,
+        "P_169": 1,
+        "P_171": 1,
+        "P_172": 1,
+        "P_191": 1,
+        "P_147": 1,
+        "P_183": 1,
+        "P_181": 1,
+        "P_278": 1,
+        "P_280": 1,
+        "P_166": 1,
+        "P_161": 1,
+        "P_163": 1,
+        "P_115": 1,
+        "P_158": 1,
+        "P_160": 1,
+        "P_87": 1,
+        "P_41": 3,
+        "P_20": 3,
+        "P_39": 2,
+        "P_59": 1,
+        "P_37": 2,
+        "P_40": 1,
+        "P_56": 1,
+        "P_112": 1
+      }
+    },
+    "d": {
+      "clusters": [
+        {
+          "count": 83,
+          "center": [
+            0.5,
+            -0.5
+          ]
+        },
+        {
+          "count": 83,
+          "center": [
+            0.5,
+            1.5
+          ]
+        },
+        {
+          "count": 44,
+          "center": [
+            -0.5,
+            0.5
+          ]
+        },
+        {
+          "count": 44,
+          "center": [
+            1.5,
+            0.5
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "K": 127,
+        "A": 127
+      }
+    },
+    "led": {
+      "clusters": [
+        {
+          "count": 75,
+          "center": [
+            0.5,
+            -0.5
+          ]
+        },
+        {
+          "count": 75,
+          "center": [
+            0.5,
+            1.5
+          ]
+        },
+        {
+          "count": 43,
+          "center": [
+            -0.5,
+            0.5
+          ]
+        },
+        {
+          "count": 41,
+          "center": [
+            1.5,
+            0.5
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "K": 112,
+        "A": 112,
+        "P_12": 1,
+        "P_83": 1,
+        "P_86": 1,
+        "P_90": 1,
+        "P_104": 1,
+        "P_118": 1,
+        "P_22": 1,
+        "P_23": 1,
+        "P_47": 1,
+        "P_281": 1
+      }
+    },
+    "crystal": {
+      "clusters": [
+        {
+          "count": 1,
+          "center": [
+            1.1875,
+            0.53333
+          ]
+        }
+      ],
+      "pinname_counts": {
+        "P_229": 1
+      }
+    }
+  }
+}

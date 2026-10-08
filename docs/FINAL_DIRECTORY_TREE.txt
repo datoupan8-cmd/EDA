@@ -1,0 +1,58 @@
+PCB_Competition_Solution_V4_1_ModularRefactor/
+├── main.py                         # Legacy + explicit Modular entry
+├── configs/
+│   ├── baseline.json
+│   ├── current.json
+│   └── examples/component_v3_pin_v3.json
+├── pcb/
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── context.py
+│   │   ├── interfaces.py
+│   │   ├── pipeline.py
+│   │   └── registry.py
+│   ├── text/
+│   │   ├── stage.py
+│   │   ├── ocr.py
+│   │   └── roles.py
+│   ├── component/
+│   │   ├── stage.py
+│   │   ├── v3.py
+│   │   ├── v4.py
+│   │   ├── detector_yolo.py
+│   │   ├── text_assignment.py
+│   │   ├── geometry.py
+│   │   └── postprocess.py
+│   ├── pin/
+│   │   ├── localization/{stage.py,v3.py}
+│   │   └── semantics/{stage.py,v3.py}
+│   ├── wire_stage/{stage.py,versions.py}
+│   ├── topology_stage/{stage.py,versions.py}
+│   ├── output/{stage.py,submission.py,coordinates.py,validation.py}
+│   ├── schema.py                   # unchanged domain schema
+│   └── [all original algorithm modules retained]
+├── tests/
+│   ├── contracts/test_modular_stage_contracts.py
+│   ├── parity/test_full_pipeline_parity.py
+│   └── [all original tests retained]
+├── tools/
+│   ├── capture_refactor_baseline.py
+│   ├── compare_refactor_parity.py
+│   └── verify_refactor_integrity.py
+├── docs/
+│   ├── REFACTOR_AUDIT.md
+│   ├── ARCHITECTURE.md
+│   ├── MODULE_CONTRACTS.md
+│   ├── MIGRATION_MAP.md
+│   ├── REFACTOR_REPORT.md
+│   ├── REFACTOR_FUTURE_ISSUES.md
+│   └── FINAL_DIRECTORY_TREE.txt
+├── reports/
+│   ├── refactor_baseline_manifest.json
+│   ├── refactor_parity_report.json
+│   ├── refactor_modular_metrics.json
+│   ├── refactor_validation_summary.json
+│   └── refactor_test_results.txt
+└── runs/
+    ├── v4_1_hybrid_rapid144_best_150/  # pre-refactor baseline
+    └── refactor_modular_150/           # new modular predictions

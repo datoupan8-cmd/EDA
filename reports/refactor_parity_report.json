@@ -1,0 +1,1370 @@
+{
+  "case_start": 1,
+  "case_end": 150,
+  "sealed_holdout_used": false,
+  "comparison": "strict parsed JSON including dictionary insertion order",
+  "equal_count": 150,
+  "different_count": 0,
+  "all_equal": true,
+  "diagnostics_semantic_equal_count": 150,
+  "diagnostics_semantic_different_count": 0,
+  "diagnostics_semantic_all_equal": true,
+  "diagnostics_ignored_runtime_keys": [
+    "cache_hit",
+    "cached_tile_count",
+    "seconds",
+    "weights"
+  ],
+  "cases": [
+    {
+      "case_id": "0001",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "eacb1eb773aba4ceab22245cee8e6c84ced9eb3b1d07040ac5e957cb2813a255",
+      "candidate_sha256": "eacb1eb773aba4ceab22245cee8e6c84ced9eb3b1d07040ac5e957cb2813a255",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0002",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "80b9d7b8748431a5604b8c6445aa7492d0f12df0ada7c0b9e39ff87c02d71c26",
+      "candidate_sha256": "80b9d7b8748431a5604b8c6445aa7492d0f12df0ada7c0b9e39ff87c02d71c26",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0003",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "c8d81e9a24b4eaa8232d001c70454279294f9d7824c04bd0f54759b3a5b64acc",
+      "candidate_sha256": "c8d81e9a24b4eaa8232d001c70454279294f9d7824c04bd0f54759b3a5b64acc",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0004",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "90cbd635d43c5e26112cee7108bc13de4c7e9a94be5715e9171d35212cb50af0",
+      "candidate_sha256": "90cbd635d43c5e26112cee7108bc13de4c7e9a94be5715e9171d35212cb50af0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0005",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "fe013f6dbb44d72b222b229475b76cceece2e8fb4927be5853625cede24ffabd",
+      "candidate_sha256": "fe013f6dbb44d72b222b229475b76cceece2e8fb4927be5853625cede24ffabd",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0006",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "951f230fa6f8a8faa4ce765c613ea911cec7e813340857483fd7d5aa2d375196",
+      "candidate_sha256": "951f230fa6f8a8faa4ce765c613ea911cec7e813340857483fd7d5aa2d375196",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0007",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "85b1c00d547427be8d672cfdc261974eafc634b5db77b11096f29b171a9cb037",
+      "candidate_sha256": "85b1c00d547427be8d672cfdc261974eafc634b5db77b11096f29b171a9cb037",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0008",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7df918a748aacf6b8bf867b5031257c6d6e163e04cab6e5bbeeb544edf9368ce",
+      "candidate_sha256": "7df918a748aacf6b8bf867b5031257c6d6e163e04cab6e5bbeeb544edf9368ce",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0009",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "e31819bc9206ff4ced602a78414737b23d91334a89718f45d1e88cc3e6677967",
+      "candidate_sha256": "e31819bc9206ff4ced602a78414737b23d91334a89718f45d1e88cc3e6677967",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0010",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "459b5092837cca4de8c3f034b3f074ab83e2fa67055eb5323b6fa91699a936b1",
+      "candidate_sha256": "459b5092837cca4de8c3f034b3f074ab83e2fa67055eb5323b6fa91699a936b1",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0011",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "419c752f014c0819c8de264853ade61557c3777d9433fbb984f3586813be5cab",
+      "candidate_sha256": "419c752f014c0819c8de264853ade61557c3777d9433fbb984f3586813be5cab",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0012",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "18a061a132a9d6472c93dad4cbcad86ecd13e2f8eedac62c1f7864633ed71f52",
+      "candidate_sha256": "18a061a132a9d6472c93dad4cbcad86ecd13e2f8eedac62c1f7864633ed71f52",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0013",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7a91238627594eae2c5e15f7e78221314a73fcce72af3355b1098e28ab2bedc9",
+      "candidate_sha256": "7a91238627594eae2c5e15f7e78221314a73fcce72af3355b1098e28ab2bedc9",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0014",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "44d4033eb0183e38a81ed946bd0b504fce6bcb9996d5ee3a0cff2937525c9c17",
+      "candidate_sha256": "44d4033eb0183e38a81ed946bd0b504fce6bcb9996d5ee3a0cff2937525c9c17",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0015",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "b8dc6901068f93959566bd36667f5aab3c4e82f6e6e627acd7aff483ab3d8541",
+      "candidate_sha256": "b8dc6901068f93959566bd36667f5aab3c4e82f6e6e627acd7aff483ab3d8541",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0016",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "352cbe1fd731b058a8b68244ff16a9266c60cb892b452ef17bbf901e473f5708",
+      "candidate_sha256": "352cbe1fd731b058a8b68244ff16a9266c60cb892b452ef17bbf901e473f5708",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0017",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "d4ee3d63fa74947760127931042a5abc36f31234faa7afa14e20eec4a451850c",
+      "candidate_sha256": "d4ee3d63fa74947760127931042a5abc36f31234faa7afa14e20eec4a451850c",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0018",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "0bd9d5cf9442fa0fccfc74ef95242f845eea1ee1665e815f1224846053487436",
+      "candidate_sha256": "0bd9d5cf9442fa0fccfc74ef95242f845eea1ee1665e815f1224846053487436",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0019",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "226eaf27f71cc1d8a9c030447e811e41d5a783bcc072198eaf224ff259fad39f",
+      "candidate_sha256": "226eaf27f71cc1d8a9c030447e811e41d5a783bcc072198eaf224ff259fad39f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0020",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "9ed54a1b41d8e0397b6c173a86dc602d99e53ab363b627ed0d9884a8ffedf269",
+      "candidate_sha256": "9ed54a1b41d8e0397b6c173a86dc602d99e53ab363b627ed0d9884a8ffedf269",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0021",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "9773261f7af7884623e2a09c523964c639cb1822891b019fa9fc060e52dab928",
+      "candidate_sha256": "9773261f7af7884623e2a09c523964c639cb1822891b019fa9fc060e52dab928",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0022",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7039384e94fde8d071105459f84cf2ff6b09a52756fbb7b1ad6f75939d9bffb2",
+      "candidate_sha256": "7039384e94fde8d071105459f84cf2ff6b09a52756fbb7b1ad6f75939d9bffb2",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0023",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "5584a6a8cf784b17fbaa9eb9eca29261492adffae269f302f9720b43cbf50f6b",
+      "candidate_sha256": "5584a6a8cf784b17fbaa9eb9eca29261492adffae269f302f9720b43cbf50f6b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0024",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "3cd7d6052bf6a0ab297eb1e4422f52b7578d593178ecf60ced3501e4d3fec7d3",
+      "candidate_sha256": "3cd7d6052bf6a0ab297eb1e4422f52b7578d593178ecf60ced3501e4d3fec7d3",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0025",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "fb4a95b8c0bf5220a397f7a272a9d18ecaa673adfeb19c8c5c5a10a7cbd04d59",
+      "candidate_sha256": "fb4a95b8c0bf5220a397f7a272a9d18ecaa673adfeb19c8c5c5a10a7cbd04d59",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0026",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "538e42bc2c2cad2966e1e1f797edbc0562f30d777c98188fa6e2f31ec379eda8",
+      "candidate_sha256": "538e42bc2c2cad2966e1e1f797edbc0562f30d777c98188fa6e2f31ec379eda8",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0027",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "50de917c6708b14c5f312b5601be7b8bca0020d0b236f2d504b9a64e12a6c5b7",
+      "candidate_sha256": "50de917c6708b14c5f312b5601be7b8bca0020d0b236f2d504b9a64e12a6c5b7",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0028",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "2d07de8094d17160821857e2ffe41d0a7c4e35b52fb56c4c251569a8f53f7718",
+      "candidate_sha256": "2d07de8094d17160821857e2ffe41d0a7c4e35b52fb56c4c251569a8f53f7718",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0029",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "16f756783713a9b4530c2c3ce344e4618a30d31bc3467d626117ccdc13c589d2",
+      "candidate_sha256": "16f756783713a9b4530c2c3ce344e4618a30d31bc3467d626117ccdc13c589d2",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0030",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "4a2fd55d1406b9484e17cdeaf63db4c82cccc3a0d514cdf1f3ceee0098fb17d3",
+      "candidate_sha256": "4a2fd55d1406b9484e17cdeaf63db4c82cccc3a0d514cdf1f3ceee0098fb17d3",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0031",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "27c00d9860be786817715ea7e320326dacfccb791293fe40c93b88da590b7793",
+      "candidate_sha256": "27c00d9860be786817715ea7e320326dacfccb791293fe40c93b88da590b7793",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0032",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "77f636f2ddf6562dd20dd400d877e15f07e8e7293ca1e18b62a5fe19d7ff629e",
+      "candidate_sha256": "77f636f2ddf6562dd20dd400d877e15f07e8e7293ca1e18b62a5fe19d7ff629e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0033",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "cb1e5df7faf6198c43dcb5cf898da54c1c9800bfb6960b46d4d3f5a54b8a7db2",
+      "candidate_sha256": "cb1e5df7faf6198c43dcb5cf898da54c1c9800bfb6960b46d4d3f5a54b8a7db2",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0034",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7cae83894ff1d4030fc7678150e92aa8d804e23d22d953b95044ef32eeff3e0b",
+      "candidate_sha256": "7cae83894ff1d4030fc7678150e92aa8d804e23d22d953b95044ef32eeff3e0b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0035",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "96e889719abf842e8fd9a737b74278f4bc71f60fcde1694b8e1d67979c7623be",
+      "candidate_sha256": "96e889719abf842e8fd9a737b74278f4bc71f60fcde1694b8e1d67979c7623be",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0036",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "a3ce5cc9632bdc56b9d0c010f0644455c04e0d20e2316dd2d09930e407c7d129",
+      "candidate_sha256": "a3ce5cc9632bdc56b9d0c010f0644455c04e0d20e2316dd2d09930e407c7d129",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0037",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "9b586ae6ce4407094d1199ee10415b1f3930146bfe75fbbb6a4a8369a8c3521e",
+      "candidate_sha256": "9b586ae6ce4407094d1199ee10415b1f3930146bfe75fbbb6a4a8369a8c3521e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0038",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "3446f1fabdd94a654d18e0cf32e1a80d04b81bcc35d6e889e5ac15fc4ecaf141",
+      "candidate_sha256": "3446f1fabdd94a654d18e0cf32e1a80d04b81bcc35d6e889e5ac15fc4ecaf141",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0039",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "4f915f9c92ea32a7f96b6645b5c5f19091928b2da9aa1f838894e7cac67190ca",
+      "candidate_sha256": "4f915f9c92ea32a7f96b6645b5c5f19091928b2da9aa1f838894e7cac67190ca",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0040",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "10849a77939eefcb8740a7db74fe993826283ede92f043debc501ef92a5476e0",
+      "candidate_sha256": "10849a77939eefcb8740a7db74fe993826283ede92f043debc501ef92a5476e0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0041",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "a507a7626fd596bc27094186a292f125779f836ac69728af6e9b02599910c32b",
+      "candidate_sha256": "a507a7626fd596bc27094186a292f125779f836ac69728af6e9b02599910c32b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0042",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "5ba787456dd3ea2095052c486f0df6b7daf77a73ba5e4c7502436a7c81416326",
+      "candidate_sha256": "5ba787456dd3ea2095052c486f0df6b7daf77a73ba5e4c7502436a7c81416326",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0043",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "394aeec0d054b2366b2a7e11e8733b95d6324f1b6f848bb9ee679b4b5e590ebd",
+      "candidate_sha256": "394aeec0d054b2366b2a7e11e8733b95d6324f1b6f848bb9ee679b4b5e590ebd",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0044",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "98a67e6896b6885b77ac112b6c6d44f616fc9063df6a4d0df548a2ced45e4386",
+      "candidate_sha256": "98a67e6896b6885b77ac112b6c6d44f616fc9063df6a4d0df548a2ced45e4386",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0045",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "1528318aed58bb17535ddc853eeb719d802769ef78e65104183f6b5b2feef4da",
+      "candidate_sha256": "1528318aed58bb17535ddc853eeb719d802769ef78e65104183f6b5b2feef4da",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0046",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "334b22881807a08083c64aa8e526596304715eb7c12af5e55298872936089d69",
+      "candidate_sha256": "334b22881807a08083c64aa8e526596304715eb7c12af5e55298872936089d69",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0047",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ac2209612af1ded284d0cc5e4b03a960db40569caa49bc0d7d691cdd32a949fe",
+      "candidate_sha256": "ac2209612af1ded284d0cc5e4b03a960db40569caa49bc0d7d691cdd32a949fe",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0048",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f810e99cfb3c179819d2af566576d5c435fbfba3e7a167700b913e63399a56df",
+      "candidate_sha256": "f810e99cfb3c179819d2af566576d5c435fbfba3e7a167700b913e63399a56df",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0049",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7f1bc0ec0b6889eb6e22d4e8be6528f144dfaaaf25499593d2b4d15d65b276b9",
+      "candidate_sha256": "7f1bc0ec0b6889eb6e22d4e8be6528f144dfaaaf25499593d2b4d15d65b276b9",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0050",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "0dc0e4d8faaf22438453029564d8a823841ad011ebed4074c516addb8135cd8f",
+      "candidate_sha256": "0dc0e4d8faaf22438453029564d8a823841ad011ebed4074c516addb8135cd8f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0051",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "d4a576bc38b3ba812d7483a63147103232ec9920686eaaa0b766f22091b81fc2",
+      "candidate_sha256": "d4a576bc38b3ba812d7483a63147103232ec9920686eaaa0b766f22091b81fc2",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0052",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "0f147bb286d1f98febec7cbf28625ab64c6448a75ae672284878051b437f297e",
+      "candidate_sha256": "0f147bb286d1f98febec7cbf28625ab64c6448a75ae672284878051b437f297e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0053",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "e230571fe45318ddbac4e7b5e95fb5999dccbca0512d801b403f43d2872764ce",
+      "candidate_sha256": "e230571fe45318ddbac4e7b5e95fb5999dccbca0512d801b403f43d2872764ce",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0054",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "b174f7ce3a0bdbb2282d2e9f59b8aa24814359492f49c9c79a413b626d60bbf6",
+      "candidate_sha256": "b174f7ce3a0bdbb2282d2e9f59b8aa24814359492f49c9c79a413b626d60bbf6",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0055",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "40eee1d29a20547c1acd55cc28689652ea5d5c74b032da167077bfa6a383cc7b",
+      "candidate_sha256": "40eee1d29a20547c1acd55cc28689652ea5d5c74b032da167077bfa6a383cc7b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0056",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "27fb4f9b830dcbb04f142dfcd56800f56cc725074e61a6a9de321a7984c60bf5",
+      "candidate_sha256": "27fb4f9b830dcbb04f142dfcd56800f56cc725074e61a6a9de321a7984c60bf5",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0057",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "9d9ce1d714393d5baf7a9a18fc2caa57abbf688032bb20c04af5c367eeeb8604",
+      "candidate_sha256": "9d9ce1d714393d5baf7a9a18fc2caa57abbf688032bb20c04af5c367eeeb8604",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0058",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f4c599d79cf929b1e14d7e858432754e97eb87f2ab81e129be2250805a28b1f9",
+      "candidate_sha256": "f4c599d79cf929b1e14d7e858432754e97eb87f2ab81e129be2250805a28b1f9",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0059",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "c80e609ffc951de0518af2b8906dbd822ab5bf91eae95bfd34e8205dfac71483",
+      "candidate_sha256": "c80e609ffc951de0518af2b8906dbd822ab5bf91eae95bfd34e8205dfac71483",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0060",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "5c0f4569bc9708ab7230bc23acaa1427f5b1a54718bf635b73d728d0df0f1a49",
+      "candidate_sha256": "5c0f4569bc9708ab7230bc23acaa1427f5b1a54718bf635b73d728d0df0f1a49",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0061",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "1d252224cabeae63132f25b6bcf6f585367671029869350ada57b20209df311b",
+      "candidate_sha256": "1d252224cabeae63132f25b6bcf6f585367671029869350ada57b20209df311b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0062",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "28f431c32f7db299432f6afe58e636bdc7f8624f409806434af83b2ce84d396c",
+      "candidate_sha256": "28f431c32f7db299432f6afe58e636bdc7f8624f409806434af83b2ce84d396c",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0063",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "32c09bdde84e038354e03db70fd80077572ae3b53ddbf34a25b938ff71b4e4b4",
+      "candidate_sha256": "32c09bdde84e038354e03db70fd80077572ae3b53ddbf34a25b938ff71b4e4b4",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0064",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7915b1a36fbc32078d9ba8eccf33d320268e7ebf5dc9988a13c296a341d1a6e0",
+      "candidate_sha256": "7915b1a36fbc32078d9ba8eccf33d320268e7ebf5dc9988a13c296a341d1a6e0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0065",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f9a29b94c014ee090902eaba5eecb7daee453a5233b0ed3abc5ca96f7c84e638",
+      "candidate_sha256": "f9a29b94c014ee090902eaba5eecb7daee453a5233b0ed3abc5ca96f7c84e638",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0066",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ce7d7a164af7b233a946e65c04a3415f4ea19241d1c1b5ef01ca1a9e2413892f",
+      "candidate_sha256": "ce7d7a164af7b233a946e65c04a3415f4ea19241d1c1b5ef01ca1a9e2413892f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0067",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "3500d614d5cf725e4a92c03bb3bd955b9d6150030e2d6d915a24c4880f0a443b",
+      "candidate_sha256": "3500d614d5cf725e4a92c03bb3bd955b9d6150030e2d6d915a24c4880f0a443b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0068",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "81b775637d77c5824a331ce01ab5870e3eb13053f4cd4f574719fc8c9b13aba8",
+      "candidate_sha256": "81b775637d77c5824a331ce01ab5870e3eb13053f4cd4f574719fc8c9b13aba8",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0069",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "698f5fc82f76bb691a0c6573235185c05d72e5f3349740e610212b9a74577bb6",
+      "candidate_sha256": "698f5fc82f76bb691a0c6573235185c05d72e5f3349740e610212b9a74577bb6",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0070",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "930f26aca0b5d3024694c7e164303dc2f630d6a3061f544717a327f833a17d32",
+      "candidate_sha256": "930f26aca0b5d3024694c7e164303dc2f630d6a3061f544717a327f833a17d32",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0071",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "c4536a644dd45471bb3bd012cdd5e3c1918b80919a55c111ad8edc82cb1ce93f",
+      "candidate_sha256": "c4536a644dd45471bb3bd012cdd5e3c1918b80919a55c111ad8edc82cb1ce93f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0072",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "eed09d23d6fb4d4c4a09572402bd566338e4f0adeb50cc1ffb736bd5746c0f1b",
+      "candidate_sha256": "eed09d23d6fb4d4c4a09572402bd566338e4f0adeb50cc1ffb736bd5746c0f1b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0073",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "20e95b26f0b0202a60ddc8cec2cc01c69b05a14e8c66963d8f516e2c4a557c0b",
+      "candidate_sha256": "20e95b26f0b0202a60ddc8cec2cc01c69b05a14e8c66963d8f516e2c4a557c0b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0074",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "e4e693c01167f81ba5611bd60d3491746b9382e61208c2a21d64987fe89cdefb",
+      "candidate_sha256": "e4e693c01167f81ba5611bd60d3491746b9382e61208c2a21d64987fe89cdefb",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0075",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "c9204fc6b9d3b8e4fb8151417c5cf1d328ff82f865259b07f67d55cfac3680e3",
+      "candidate_sha256": "c9204fc6b9d3b8e4fb8151417c5cf1d328ff82f865259b07f67d55cfac3680e3",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0076",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "e00b9a5ccfa205d7bc20f67dbe2a8c417b22dcbcd13da04e31748b03e8211ae0",
+      "candidate_sha256": "e00b9a5ccfa205d7bc20f67dbe2a8c417b22dcbcd13da04e31748b03e8211ae0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0077",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "2bdb5aeac44590f1e44d7b572fbe58e79d52c5406ef6210d00d1d90f66d717f5",
+      "candidate_sha256": "2bdb5aeac44590f1e44d7b572fbe58e79d52c5406ef6210d00d1d90f66d717f5",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0078",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "a0064615870b496020b7d0977e98c3176b6622d3b3d13048383c13db86966b7e",
+      "candidate_sha256": "a0064615870b496020b7d0977e98c3176b6622d3b3d13048383c13db86966b7e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0079",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f225b5a572610da308fa475049dc5f10f9c301db1b1d9197d3ac826b1b1a7a64",
+      "candidate_sha256": "f225b5a572610da308fa475049dc5f10f9c301db1b1d9197d3ac826b1b1a7a64",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0080",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "b510fee8f32b74dd5f15e8de93d5ec8e9794175193b46b629ffb67acdc81298f",
+      "candidate_sha256": "b510fee8f32b74dd5f15e8de93d5ec8e9794175193b46b629ffb67acdc81298f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0081",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "378dfcbfeb1ce58995a47a2d0c5649af46484f4a100c704ff35b7f366429914c",
+      "candidate_sha256": "378dfcbfeb1ce58995a47a2d0c5649af46484f4a100c704ff35b7f366429914c",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0082",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "acce713522b2c53ac46f834e2bed1c58a59666e3ac26dec6973bbeeaa438e22f",
+      "candidate_sha256": "acce713522b2c53ac46f834e2bed1c58a59666e3ac26dec6973bbeeaa438e22f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0083",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "06abd54fccb4cf7daeb25304f64f7c1b6bb0f65c8250f83ec369597b2c5d4b6c",
+      "candidate_sha256": "06abd54fccb4cf7daeb25304f64f7c1b6bb0f65c8250f83ec369597b2c5d4b6c",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0084",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "11f87a2a4926f550cc3a38052f82e850d3cee534c650e8b6aa9743df126f7ec7",
+      "candidate_sha256": "11f87a2a4926f550cc3a38052f82e850d3cee534c650e8b6aa9743df126f7ec7",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0085",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "22321fefdab4f039dadc1996a2079a84bcedce9597a4744fc1b11e5a5be0c98b",
+      "candidate_sha256": "22321fefdab4f039dadc1996a2079a84bcedce9597a4744fc1b11e5a5be0c98b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0086",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "44d3257820536e19b983a161d6f1bdcf1abf40fb8fabdc2c276e4dadaac64006",
+      "candidate_sha256": "44d3257820536e19b983a161d6f1bdcf1abf40fb8fabdc2c276e4dadaac64006",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0087",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "7db3f8441ba510b3a6194f5d812294354bfe9dcae4a4cafb8c0229f8ed3b8db5",
+      "candidate_sha256": "7db3f8441ba510b3a6194f5d812294354bfe9dcae4a4cafb8c0229f8ed3b8db5",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0088",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "86a1f648dde384c449b35af041259e9c2ae29463dceaf06c343a01f3d764795b",
+      "candidate_sha256": "86a1f648dde384c449b35af041259e9c2ae29463dceaf06c343a01f3d764795b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0089",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "8a395454620f08a7182d52fbc36a6d9129ee1a3bdcc8a85e71a380b4e9bdff09",
+      "candidate_sha256": "8a395454620f08a7182d52fbc36a6d9129ee1a3bdcc8a85e71a380b4e9bdff09",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0090",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "6519885751af3a9aaebbeecf1fd6f036764e141a7f5ce6f8f797f777c9bc3210",
+      "candidate_sha256": "6519885751af3a9aaebbeecf1fd6f036764e141a7f5ce6f8f797f777c9bc3210",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0091",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "09e5435de247a7d54ec718cfde993c88ec7bfe128762d3b2a0c0f74bd86c976c",
+      "candidate_sha256": "09e5435de247a7d54ec718cfde993c88ec7bfe128762d3b2a0c0f74bd86c976c",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0092",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "86e3ae29d573075ed986b363495874428bc7c03fa7f4db5b1e67061293706806",
+      "candidate_sha256": "86e3ae29d573075ed986b363495874428bc7c03fa7f4db5b1e67061293706806",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0093",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "2ce47a718ec4ee83cfcb04002719a9ba10e8e534540fcb38f15796b9a9189fe8",
+      "candidate_sha256": "2ce47a718ec4ee83cfcb04002719a9ba10e8e534540fcb38f15796b9a9189fe8",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0094",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f5b3e4c6362ad27a3e3d20119b9adbd39a46b27e60053dd4cd01376d455de83e",
+      "candidate_sha256": "f5b3e4c6362ad27a3e3d20119b9adbd39a46b27e60053dd4cd01376d455de83e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0095",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f6422baabe65feb2e3b1277fea3749286a1dfd1283c98ca223ecde17c836960b",
+      "candidate_sha256": "f6422baabe65feb2e3b1277fea3749286a1dfd1283c98ca223ecde17c836960b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0096",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "b178af0010848de0579a4b7d61500ed7f8288f95cbac68d7f2bc82756c44a12a",
+      "candidate_sha256": "b178af0010848de0579a4b7d61500ed7f8288f95cbac68d7f2bc82756c44a12a",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0097",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "4f7784cb7402b17bc9d264d22ecd90d5233ed100490fcd8ed44abfb562e6751a",
+      "candidate_sha256": "4f7784cb7402b17bc9d264d22ecd90d5233ed100490fcd8ed44abfb562e6751a",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0098",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "1316359f83e3f324733415cdd6e0d214c49707188d30110b464ea77cc58d82bf",
+      "candidate_sha256": "1316359f83e3f324733415cdd6e0d214c49707188d30110b464ea77cc58d82bf",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0099",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "69459f6d2678f40ca9000a710f8b22deda055b3c55d8cbbccae79cfed7fcfabd",
+      "candidate_sha256": "69459f6d2678f40ca9000a710f8b22deda055b3c55d8cbbccae79cfed7fcfabd",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0100",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "236b1490efd73eccbb088c7ced414da4a352e6c2c8c553ea6f7aaca4c84a000e",
+      "candidate_sha256": "236b1490efd73eccbb088c7ced414da4a352e6c2c8c553ea6f7aaca4c84a000e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0101",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "3c0f69806e1f2381a3fc45f265b052e9283ba27135774b1c81b553a8fc0ecee2",
+      "candidate_sha256": "3c0f69806e1f2381a3fc45f265b052e9283ba27135774b1c81b553a8fc0ecee2",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0102",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "6747567ce784aa33070c89c95a64478c1faf7abce8f8e2e239d77ff7dd5f8e93",
+      "candidate_sha256": "6747567ce784aa33070c89c95a64478c1faf7abce8f8e2e239d77ff7dd5f8e93",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0103",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "4cfb4cc4c897a4694459f5d16de0e3587bb6874bf2bb1832155891c70bb2f9b3",
+      "candidate_sha256": "4cfb4cc4c897a4694459f5d16de0e3587bb6874bf2bb1832155891c70bb2f9b3",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0104",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "31a10091e91147931994e3b77e63cd9687b3a7b64d7dbf48d6725178fc718dbb",
+      "candidate_sha256": "31a10091e91147931994e3b77e63cd9687b3a7b64d7dbf48d6725178fc718dbb",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0105",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "2fa68aad5c92b2247e7cbfa6ddd3b71f4ff0ab8fa05673ec6d72d9b60d46d724",
+      "candidate_sha256": "2fa68aad5c92b2247e7cbfa6ddd3b71f4ff0ab8fa05673ec6d72d9b60d46d724",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0106",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "43402e33eaf44ef7f345807f38f7d2c591ea88e15c18d0a7a521458b8e9544aa",
+      "candidate_sha256": "43402e33eaf44ef7f345807f38f7d2c591ea88e15c18d0a7a521458b8e9544aa",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0107",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ab2d062931e7a36cb5138446a919841c4167e31ff59f46ca3ea0f66ffebc34f1",
+      "candidate_sha256": "ab2d062931e7a36cb5138446a919841c4167e31ff59f46ca3ea0f66ffebc34f1",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0108",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "5ed2e0d6228c34c1adf9d61cdbe1910b204f5851248348dc5ee2c7d1ad837929",
+      "candidate_sha256": "5ed2e0d6228c34c1adf9d61cdbe1910b204f5851248348dc5ee2c7d1ad837929",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0109",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "181f858ab3588c1d60c0dcf19fb75ca32bdf47cad6bac937e4dedb37c941db0d",
+      "candidate_sha256": "181f858ab3588c1d60c0dcf19fb75ca32bdf47cad6bac937e4dedb37c941db0d",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0110",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "72ea168efad233fd6dd9edeeb1adb87994782b269d4d2ff237d2cbe67430aa8f",
+      "candidate_sha256": "72ea168efad233fd6dd9edeeb1adb87994782b269d4d2ff237d2cbe67430aa8f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0111",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "aba3cfe6b52b9ff0f94c41f1f4fc0295ac57e9331d86c28240e248e44281bfba",
+      "candidate_sha256": "aba3cfe6b52b9ff0f94c41f1f4fc0295ac57e9331d86c28240e248e44281bfba",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0112",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "9b13be3bfb2f6166bdb01da1939a7dc0e3aee07e9080290e2a94930cfd387344",
+      "candidate_sha256": "9b13be3bfb2f6166bdb01da1939a7dc0e3aee07e9080290e2a94930cfd387344",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0113",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ea64c2ec4824d5dc4e8f5c4d3c94746fc45c91019c9d7cff40c4f6db330342a8",
+      "candidate_sha256": "ea64c2ec4824d5dc4e8f5c4d3c94746fc45c91019c9d7cff40c4f6db330342a8",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0114",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f45ef8171fb9d9d8639bf3d53d66f84e26977212e7dcb9e8c441b6293e4938b0",
+      "candidate_sha256": "f45ef8171fb9d9d8639bf3d53d66f84e26977212e7dcb9e8c441b6293e4938b0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0115",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "18973e878efb1bc43eed3cb1d0429414aa92e7800de1f5fd9bf49592307f5712",
+      "candidate_sha256": "18973e878efb1bc43eed3cb1d0429414aa92e7800de1f5fd9bf49592307f5712",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0116",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ddc6e021613b0597c1bd6ef1c3d68ceb493bccb475114ceb4b495e1729c9891f",
+      "candidate_sha256": "ddc6e021613b0597c1bd6ef1c3d68ceb493bccb475114ceb4b495e1729c9891f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0117",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "50b6695743c19fea700860f05c7d5554c48fb9230a052e56e83416dc299fe5be",
+      "candidate_sha256": "50b6695743c19fea700860f05c7d5554c48fb9230a052e56e83416dc299fe5be",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0118",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "817027c575ce97bb4408ac02045ed8ea4224ac301c945f5af8358219965e2a46",
+      "candidate_sha256": "817027c575ce97bb4408ac02045ed8ea4224ac301c945f5af8358219965e2a46",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0119",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "9a919508876d1fd26caf621419121ff5b0b39221bd65a908062ff1e3dd5b8088",
+      "candidate_sha256": "9a919508876d1fd26caf621419121ff5b0b39221bd65a908062ff1e3dd5b8088",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0120",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "73f5996eee28fbd9c1036db3672aa1966e68e66f9f9a150093c5fe9660161ac6",
+      "candidate_sha256": "73f5996eee28fbd9c1036db3672aa1966e68e66f9f9a150093c5fe9660161ac6",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0121",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "d2a22368dff7045f7de738aaa170873c3871ae12949c3249474d9b393a2603fe",
+      "candidate_sha256": "d2a22368dff7045f7de738aaa170873c3871ae12949c3249474d9b393a2603fe",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0122",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "8abdb488cd52e9f0757c8fd8e37fe70174c1e1cff4246322e2df6a8092526dfa",
+      "candidate_sha256": "8abdb488cd52e9f0757c8fd8e37fe70174c1e1cff4246322e2df6a8092526dfa",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0123",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "d9935b6625a52627afae1f0b65f5e5e8f6440bd7aa95ab09a960e31e0d817666",
+      "candidate_sha256": "d9935b6625a52627afae1f0b65f5e5e8f6440bd7aa95ab09a960e31e0d817666",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0124",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "fc095a2224ab9c4b2a14d307fa9086c22c1e9751018c6cb650c827e2c0fc8078",
+      "candidate_sha256": "fc095a2224ab9c4b2a14d307fa9086c22c1e9751018c6cb650c827e2c0fc8078",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0125",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f0c39ce71af192921eba4c0532c11f2abf95c7e1b849281b537c6995aabb85d6",
+      "candidate_sha256": "f0c39ce71af192921eba4c0532c11f2abf95c7e1b849281b537c6995aabb85d6",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0126",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "8ccf4d994ec6badf72fe6008df77d655703ab9d6cc1938e604a388ae2f34dfab",
+      "candidate_sha256": "8ccf4d994ec6badf72fe6008df77d655703ab9d6cc1938e604a388ae2f34dfab",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0127",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "bb7dc8a9e5690d62860a5305d76142c426fa2a108faa6d5988700c075617f616",
+      "candidate_sha256": "bb7dc8a9e5690d62860a5305d76142c426fa2a108faa6d5988700c075617f616",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0128",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "2285b114a18ed9ff5887fba4070c13cf96beb76f6ba157ada8c8164349351e55",
+      "candidate_sha256": "2285b114a18ed9ff5887fba4070c13cf96beb76f6ba157ada8c8164349351e55",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0129",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "12299baec6cf1a58e47c63857794737b4cd12ebb582de405aca1c7cd5edffac0",
+      "candidate_sha256": "12299baec6cf1a58e47c63857794737b4cd12ebb582de405aca1c7cd5edffac0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0130",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "b610bae9a12823dd04c2af8e2639ed21706053eb75b9ceb167e32cc7a017b0d6",
+      "candidate_sha256": "b610bae9a12823dd04c2af8e2639ed21706053eb75b9ceb167e32cc7a017b0d6",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0131",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "6606150f53a7b0b846488565d997496c069647ad9511ec715bc3b1de255c8187",
+      "candidate_sha256": "6606150f53a7b0b846488565d997496c069647ad9511ec715bc3b1de255c8187",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0132",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "f5ccb095a7cacc02a5ec8b8afa57fb40b9006cc88297be0df38e8576ca1e0024",
+      "candidate_sha256": "f5ccb095a7cacc02a5ec8b8afa57fb40b9006cc88297be0df38e8576ca1e0024",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0133",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "e834d51668a300a34a20d3208fd3cb535ab974956ebeb29b59d17c0a6aab487d",
+      "candidate_sha256": "e834d51668a300a34a20d3208fd3cb535ab974956ebeb29b59d17c0a6aab487d",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0134",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "b86570a5b4b407f70ff2120631a5c2c1bf2d5e6928f1aade953341828bfe6137",
+      "candidate_sha256": "b86570a5b4b407f70ff2120631a5c2c1bf2d5e6928f1aade953341828bfe6137",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0135",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ae3fce8e669b56b37eb129205d5a0c0d0e9206c238acfd7815521d0d5c2a6b93",
+      "candidate_sha256": "ae3fce8e669b56b37eb129205d5a0c0d0e9206c238acfd7815521d0d5c2a6b93",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0136",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "a7140ba42d0c55906184e773e9633b24e9fec0ed00e6849173b665663ae59cf0",
+      "candidate_sha256": "a7140ba42d0c55906184e773e9633b24e9fec0ed00e6849173b665663ae59cf0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0137",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "dd457c5242e5a859a492f7e94fa3e1e81e0da9a5573d99f1718656a9996f9667",
+      "candidate_sha256": "dd457c5242e5a859a492f7e94fa3e1e81e0da9a5573d99f1718656a9996f9667",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0138",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "03a81426acb60566106f81585d59c070ebfba2eaeb6a8b6f3004b6dd9e2183e6",
+      "candidate_sha256": "03a81426acb60566106f81585d59c070ebfba2eaeb6a8b6f3004b6dd9e2183e6",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0139",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "d8a475089d53284f39ecc5ec5bda443e0e349ab1b210edddb1fcbab3185a09cd",
+      "candidate_sha256": "d8a475089d53284f39ecc5ec5bda443e0e349ab1b210edddb1fcbab3185a09cd",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0140",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "70293c462d26faaa7271e5f6054453e7bf293d99011108dfaf7a8dabf4ce8d7b",
+      "candidate_sha256": "70293c462d26faaa7271e5f6054453e7bf293d99011108dfaf7a8dabf4ce8d7b",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0141",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "acfdc290b460d76d8f6edd067879273dacc80a843eb58ddb0b92cc867f64fb3f",
+      "candidate_sha256": "acfdc290b460d76d8f6edd067879273dacc80a843eb58ddb0b92cc867f64fb3f",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0142",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "817027c575ce97bb4408ac02045ed8ea4224ac301c945f5af8358219965e2a46",
+      "candidate_sha256": "817027c575ce97bb4408ac02045ed8ea4224ac301c945f5af8358219965e2a46",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0143",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "e4979502de93a6d4632003e8bc34bab4bcabeb89627730d40c4f4da8b08fac64",
+      "candidate_sha256": "e4979502de93a6d4632003e8bc34bab4bcabeb89627730d40c4f4da8b08fac64",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0144",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "ce779ca0385cbb8cf1ef641c07b2cfd25fd77b5c10d6a576e860f7e4ff4c6801",
+      "candidate_sha256": "ce779ca0385cbb8cf1ef641c07b2cfd25fd77b5c10d6a576e860f7e4ff4c6801",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0145",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "80b2d9decd38388f22df05f103eb5d4408d311795af55399887527f9d50fa4a1",
+      "candidate_sha256": "80b2d9decd38388f22df05f103eb5d4408d311795af55399887527f9d50fa4a1",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0146",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "4dc76f9f6b551755c4fbf216cc8f9ecdbd26207b5a5931a0eecb683dcef5d90d",
+      "candidate_sha256": "4dc76f9f6b551755c4fbf216cc8f9ecdbd26207b5a5931a0eecb683dcef5d90d",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0147",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "a671fc2e7d89678629dd2c6b9c1ee1dbd01e669fa38d4f259f2dec14a172722e",
+      "candidate_sha256": "a671fc2e7d89678629dd2c6b9c1ee1dbd01e669fa38d4f259f2dec14a172722e",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0148",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "c24b76053100523e6330207f46015fda42fbba868751b8b70fb8d3dc004a29ab",
+      "candidate_sha256": "c24b76053100523e6330207f46015fda42fbba868751b8b70fb8d3dc004a29ab",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0149",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "d9e87ade2fa6b24e465d118a27e9885ae4281c11a226c27be9c85c5f91631ef0",
+      "candidate_sha256": "d9e87ade2fa6b24e465d118a27e9885ae4281c11a226c27be9c85c5f91631ef0",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    },
+    {
+      "case_id": "0150",
+      "equal": true,
+      "diagnostics_semantic_equal": true,
+      "baseline_sha256": "0ef6f663c8a018d0a1ff6376ee6d3b031e325e36d2e3b36fc94dc0c96d427d53",
+      "candidate_sha256": "0ef6f663c8a018d0a1ff6376ee6d3b031e325e36d2e3b36fc94dc0c96d427d53",
+      "first_difference": null,
+      "diagnostics_first_difference": null
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "project": "PCB_Competition_Solution_V4_1_ComponentFusion",
+  "policy": "source+reports+debug+V4.1 BEST 150+single smoke; transient caches and repeated ablation runs excluded",
+  "sealed_holdout_used": false,
+  "model_sha256": "51b4735d19315ba3ada49143e6f912aa414589f7961e140faab177dc6db7e776",
+  "file_count_before_manifest": 503,
+  "uncompressed_bytes_before_manifest": 193653376
+}

@@ -1,0 +1,53 @@
+{
+  "all_identical": true,
+  "files": [
+    {
+      "file": "pcb/pin_detection.py",
+      "v3_sha256": "c1ffcfea29149f98819029d10ae9ec5177df94f45bfa81ea94df1eb02d249e4c",
+      "v4_sha256": "c1ffcfea29149f98819029d10ae9ec5177df94f45bfa81ea94df1eb02d249e4c",
+      "identical": true
+    },
+    {
+      "file": "pcb/pin_semantics.py",
+      "v3_sha256": "cd21ae2217df02496ec0784c5cc13eb5f7bb1be21bcb54c56c1f13599b9e86d2",
+      "v4_sha256": "cd21ae2217df02496ec0784c5cc13eb5f7bb1be21bcb54c56c1f13599b9e86d2",
+      "identical": true
+    },
+    {
+      "file": "pcb/wire.py",
+      "v3_sha256": "239da514d68439b0b3c2ee0ec2c137c0a0c0583604c034480d9ee689962cc064",
+      "v4_sha256": "239da514d68439b0b3c2ee0ec2c137c0a0c0583604c034480d9ee689962cc064",
+      "identical": true
+    },
+    {
+      "file": "pcb/wire_v2.py",
+      "v3_sha256": "e0c2c36adcfe18113a01be7288287b51dd0d719e7315a394615fd12df3f089b2",
+      "v4_sha256": "e0c2c36adcfe18113a01be7288287b51dd0d719e7315a394615fd12df3f089b2",
+      "identical": true
+    },
+    {
+      "file": "pcb/wire_v3.py",
+      "v3_sha256": "4dfde16de4966a2abdfcfff5f6aa373eebbbf3ceecaabc21608dbbf30967e27a",
+      "v4_sha256": "4dfde16de4966a2abdfcfff5f6aa373eebbbf3ceecaabc21608dbbf30967e27a",
+      "identical": true
+    },
+    {
+      "file": "pcb/topology.py",
+      "v3_sha256": "36765f92dd79e6aa6f6458946b39e6d5e9e352e0494bf3d84be5d3d5be0e1ee3",
+      "v4_sha256": "36765f92dd79e6aa6f6458946b39e6d5e9e352e0494bf3d84be5d3d5be0e1ee3",
+      "identical": true
+    },
+    {
+      "file": "pcb/topology_v2.py",
+      "v3_sha256": "b5044ae7556764eb5e70b98cae4b58ef3c82ed9985bd1be2a8eb90230677eee6",
+      "v4_sha256": "b5044ae7556764eb5e70b98cae4b58ef3c82ed9985bd1be2a8eb90230677eee6",
+      "identical": true
+    },
+    {
+      "file": "pcb/topology_v3.py",
+      "v3_sha256": "a14d08270c364fc27b617f88cdc4fab7023ed1cee9e6334151ffab5a8246b717",
+      "v4_sha256": "a14d08270c364fc27b617f88cdc4fab7023ed1cee9e6334151ffab5a8246b717",
+      "identical": true
+    }
+  ]
+}

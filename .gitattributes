@@ -1,0 +1,24 @@
+* text=auto
+
+*.py text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.ps1 text eol=crlf
+
+# Model and binary runtime artifacts must use Git LFS.
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.pyd filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+vendor/ocr_runtime/easyocr/character/kn.txt filter=lfs diff=lfs merge=lfs -text
+vendor/ocr_runtime/easyocr/character/te.txt filter=lfs diff=lfs merge=lfs -text
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.docx binary

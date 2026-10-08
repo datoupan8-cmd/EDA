@@ -1,0 +1,11 @@
+name: pcb-v4-1
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  # Python 3.14 is the environment used for the recorded parity baseline.
+  - python=3.14
+  - pip
+  - pip:
+      - -r requirements.txt
