@@ -36,7 +36,7 @@ class ModularContractTests(unittest.TestCase):
     def test_registry_contains_only_real_stage_versions(self):
         registry = build_default_registry()
         self.assertEqual(registry.versions("component"), ("v3", "v4"))
-        self.assertEqual(registry.versions("pin_localization"), ("v3",))
+        self.assertEqual(registry.versions("pin_localization"), ("v3", "v4"))
         self.assertEqual(registry.versions("pin_semantics"), ("v3", "v4"))
         self.assertEqual(registry.versions("wire"), ("v1", "v2", "v3"))
         self.assertEqual(registry.versions("topology"), ("v1", "v2", "v3"))

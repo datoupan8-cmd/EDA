@@ -35,7 +35,9 @@ def build_default_registry() -> StageRegistry:
     from ..component.v4 import ComponentStageV4
     from ..output.stage import OfficialSubmissionStage
     from ..pin.localization.v3 import PinLocalizationStageV3
+    from ..pin.localization.v4 import PinLocalizationStageV4
     from ..pin.semantics.v3 import PinSemanticsStageV3
+    from ..pin.semantics.v4 import PinSemanticsStageV4
     from ..text.stage import CurrentTextStage
     from ..topology_stage.versions import TopologyStageV1, TopologyStageV2, TopologyStageV3
     from ..wire_stage.versions import WireStageV1, WireStageV2, WireStageV3
@@ -45,7 +47,9 @@ def build_default_registry() -> StageRegistry:
     registry.register("component", "v3", ComponentStageV3)
     registry.register("component", "v4", ComponentStageV4)
     registry.register("pin_localization", "v3", PinLocalizationStageV3)
+    registry.register("pin_localization", "v4", PinLocalizationStageV4)
     registry.register("pin_semantics", "v3", PinSemanticsStageV3)
+    registry.register("pin_semantics", "v4", PinSemanticsStageV4)
     registry.register("wire", "v1", WireStageV1)
     registry.register("wire", "v2", WireStageV2)
     registry.register("wire", "v3", WireStageV3)
