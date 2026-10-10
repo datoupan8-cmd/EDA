@@ -22,10 +22,7 @@ def main():
         suite.addTests(loader.discover(str(ROOT / "tests"), pattern=pattern))
     suite.addTests(loader.discover(str(ROOT / "tests/contracts")))
     suite.addTests(loader.discover(str(ROOT / "tests/parity")))
-    for pattern in ("test_pin_combined_l38.py", "test_pin_combined_l39.py", "test_pin_learned_locator_l1.py",
-                    "test_pin_library_semantics_l37.py", "test_pin_side_joint_l36.py",
-                    "test_pin_learned_l1_serialization.py", "test_pin_word_decoder_l3.py"):
-        suite.addTests(loader.discover(str(ROOT / "tests/pin"), pattern=pattern))
+    suite.addTests(loader.discover(str(ROOT / "tests/pin")))
     for directory in ("component", "wire", "topology"):
         path = ROOT / "tests" / directory
         if path.is_dir():

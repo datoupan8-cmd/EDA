@@ -409,5 +409,14 @@
     "assets_ready": true,
     "copied_runtime_cache": false,
     "copied_original_uncommitted_files": false
+  },
+  "github_ci": {
+    "passed": true,
+    "tests": 204,
+    "os": "ubuntu-latest",
+    "python": "3.12",
+    "image_inference_tested": false,
+    "run_url": "https://github.com/datoupan8-cmd/EDA/actions/runs/38034494636",
+    "commit": "6d20cfce607beeeac78e87e8ebf5922cb0d643bb"
   }
 }
