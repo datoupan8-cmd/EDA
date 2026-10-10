@@ -12,6 +12,7 @@ from pcb.component_text_assignment import (
     assign_names,
     assign_values,
     build_components,
+    recover_near_box_designators,
     type_designator_compatible,
 )
 from pcb.schema import Scene, Text
@@ -44,6 +45,36 @@ class ComponentV4Tests(unittest.TestCase):
         roles = classify_tokens([Text("R12", (0, 0, 10, 8), .9), Text("C2", (20, 0, 30, 8), .9)])
         self.assertTrue(type_designator_compatible("r", roles[0]))
         self.assertFalse(type_designator_compatible("c", roles[0]))
+
+    def test_near_chip_passive_designator_requires_nearby_symbol(self):
+        token = Text("R12", (104, 40, 124, 52), .95)
+        roles = classify_tokens([token], large_boxes=[(0, 0, 100, 100)])
+        self.assertEqual(roles[0].role, "PIN_NUMBER")
+        missing, _ = recover_near_box_designators([], roles)
+        self.assertEqual(missing[0].role, "PIN_NUMBER")
+        proposals = [ComponentProposal((127, 39, 143, 53), "r", .9, "yolo")]
+        recovered, diagnostics = recover_near_box_designators(proposals, roles)
+        self.assertEqual(recovered[0].role, "DESIGNATOR")
+        self.assertEqual(recovered[0].designator, "R12")
+        self.assertEqual(diagnostics["count"], 1)
+
+    def test_glued_designator_value_is_bound_to_same_component(self):
+        for text, key, value, component_type in (
+            ("C3 0.1uF", "C3", "0.1uF", "c"),
+            ("C184.7uF", "C18", "4.7uF", "c"),
+            ("R105.1kΩ", "R10", "5.1kΩ", "r"),
+        ):
+            with self.subTest(text=text):
+                role = classify_tokens([Text(text, (0, 0, 65, 12), .95)])[0]
+                self.assertEqual((role.role, role.designator, role.tail),
+                                 ("DESIGNATOR", key, value))
+                proposals = [ComponentProposal((10, 20, 30, 32), component_type, .9, "yolo")]
+                components, provenance = build_components(proposals, {0: role})
+                diagnostics = assign_values(components, [role], provenance,
+                                            designators={0: role})
+                self.assertEqual(components[0].value, value)
+                self.assertEqual(provenance[0]["value_source"], "ocr_designator_tail")
+                self.assertEqual(diagnostics["bound_count"], 1)
 
     def test_audited_resistor_aliases_are_supported(self):
         for value in ("RC1", "RES2", "RP3", "RT4", "RV5", "RVC6"):

@@ -1,0 +1,413 @@
+{
+  "cases": [
+    "0001",
+    "0014",
+    "0087"
+  ],
+  "OFFICIAL_SCORE": false,
+  "sealed_holdout_used": false,
+  "original_l39_parity": [
+    {
+      "case_id": "0001",
+      "all_fields_equal": true,
+      "component_equal": true,
+      "pins_equal": true,
+      "nets_equal": true,
+      "prediction_sha256": "b1afa9cbf2aef28b7fc9aeb85161d1243bec12bdbc1f3623bd6eef8f8ffe86dc",
+      "latest_combination_schema_valid": true,
+      "latest_vs_reference_equal": true
+    },
+    {
+      "case_id": "0014",
+      "all_fields_equal": true,
+      "component_equal": true,
+      "pins_equal": true,
+      "nets_equal": true,
+      "prediction_sha256": "5fa6b926107892829cf5b4f8f7d8fd1abcabf823b445559df659c7d51c73c587",
+      "latest_combination_schema_valid": true,
+      "latest_vs_reference_equal": true
+    },
+    {
+      "case_id": "0087",
+      "all_fields_equal": true,
+      "component_equal": true,
+      "pins_equal": true,
+      "nets_equal": true,
+      "prediction_sha256": "fdbd94022a6f9007c1f79c6dd2bf9283a120280ffb56a2b749041eaa99335cf3",
+      "latest_combination_schema_valid": true,
+      "latest_vs_reference_equal": true
+    }
+  ],
+  "migration_verification": {
+    "method": "exact AST of every migrated function/class, excluding import statements",
+    "scope_note": "Resource paths/import plumbing are checked by runtime parity separately",
+    "pass": true,
+    "files": [
+      {
+        "source": "pcb/text_detection.py",
+        "destination": "pcb/component/latest/text_roles.py",
+        "compared_definitions": 6,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_text_assignment.py",
+        "destination": "pcb/component/latest/text_assignment.py",
+        "compared_definitions": 11,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_detection_v4.py",
+        "destination": "pcb/component/latest/detection.py",
+        "compared_definitions": 2,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component/v4.py",
+        "destination": "pcb/component/latest/stage.py",
+        "compared_definitions": 1,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/text_detection.py",
+        "destination": "pcb/component/baseline_v41/text_roles.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_text_assignment.py",
+        "destination": "pcb/component/baseline_v41/text_assignment.py",
+        "compared_definitions": 10,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_detection_v4.py",
+        "destination": "pcb/component/baseline_v41/detection.py",
+        "compared_definitions": 2,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component/v4.py",
+        "destination": "pcb/component/baseline_v41/stage.py",
+        "compared_definitions": 1,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin_detection_v4.py",
+        "destination": "pcb/pin/peer_v4/detection.py",
+        "compared_definitions": 3,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin_semantics_v4.py",
+        "destination": "pcb/pin/peer_v4/semantics.py",
+        "compared_definitions": 7,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin/localization/v4.py",
+        "destination": "pcb/pin/peer_v4/localization_stage.py",
+        "compared_definitions": 1,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin/semantics/v4.py",
+        "destination": "pcb/pin/peer_v4/semantics_stage.py",
+        "compared_definitions": 1,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin_detection.py",
+        "destination": "pcb/pin/frozen_l39/detection_v3.py",
+        "compared_definitions": 7,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin_semantics.py",
+        "destination": "pcb/pin/frozen_l39/semantics_v3.py",
+        "compared_definitions": 2,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin_semantics_v5.py",
+        "destination": "pcb/pin/frozen_l39/scores_v5.py",
+        "compared_definitions": 8,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/pin_semantics_v6.py",
+        "destination": "pcb/pin/frozen_l39/ordered_v6.py",
+        "compared_definitions": 10,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/text_detection.py",
+        "destination": "pcb/pin/frozen_l39/text_roles.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_learned_locator_l1.py",
+        "destination": "pcb/pin/frozen_l39/locator.py",
+        "compared_definitions": 14,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_terminal_reader_l2.py",
+        "destination": "pcb/pin/frozen_l39/terminal_reader.py",
+        "compared_definitions": 10,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_contextual_roles_e6.py",
+        "destination": "pcb/pin/frozen_l39/contextual_roles.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_word_reader_l3.py",
+        "destination": "pcb/pin/frozen_l39/word_reader.py",
+        "compared_definitions": 12,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_side_joint_l36.py",
+        "destination": "pcb/pin/frozen_l39/joint_alignment.py",
+        "compared_definitions": 4,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_library_semantics_l37.py",
+        "destination": "pcb/pin/frozen_l39/library_semantics.py",
+        "compared_definitions": 7,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/pin_skeleton_followup.py",
+        "destination": "pcb/pin/frozen_l39/bbox_semantics.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "experiments/wire_frame_guard.py",
+        "destination": "pcb/wire_stage/frame_guard.py",
+        "compared_definitions": 3,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_detector_yolo.py",
+        "destination": "pcb/component/detector_yolo.py",
+        "compared_definitions": 6,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_proposal_fusion.py",
+        "destination": "pcb/component/proposal_fusion.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/component_detection.py",
+        "destination": "pcb/component/geometry.py",
+        "compared_definitions": 12,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/ocr_backends.py",
+        "destination": "pcb/text/ocr_backends.py",
+        "compared_definitions": 7,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/wire.py",
+        "destination": "pcb/wire_stage/v1.py",
+        "compared_definitions": 4,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/wire_v2.py",
+        "destination": "pcb/wire_stage/v2.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/wire_v3.py",
+        "destination": "pcb/wire_stage/v3.py",
+        "compared_definitions": 2,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/topology.py",
+        "destination": "pcb/topology_stage/v1.py",
+        "compared_definitions": 1,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/topology_v2.py",
+        "destination": "pcb/topology_stage/v2.py",
+        "compared_definitions": 5,
+        "changed": [],
+        "pass": true
+      },
+      {
+        "source": "pcb/topology_v3.py",
+        "destination": "pcb/topology_stage/v3.py",
+        "compared_definitions": 1,
+        "changed": [],
+        "pass": true
+      }
+    ]
+  },
+  "current_combination": {
+    "case_count": 3,
+    "metrics": {
+      "Component": {
+        "tp": 80,
+        "pred": 172,
+        "gt": 236,
+        "precision": 0.46511627906976744,
+        "recall": 0.3389830508474576,
+        "f1": 0.3921568627450981,
+        "macro_f1": 0.41216750477165953
+      },
+      "Pin": {
+        "tp": 243,
+        "pred": 431,
+        "gt": 688,
+        "precision": 0.5638051044083526,
+        "recall": 0.35319767441860467,
+        "f1": 0.4343163538873995,
+        "macro_f1": 0.39794536345540604
+      },
+      "NetHypergraph": {
+        "tp": 253,
+        "pred": 431,
+        "gt": 675,
+        "precision": 0.5870069605568445,
+        "recall": 0.3748148148148148,
+        "f1": 0.45750452079566006,
+        "macro_f1": 0.42473249335994434
+      },
+      "NetLine": {
+        "tp": 113,
+        "pred": 2242,
+        "gt": 1099,
+        "precision": 0.0504014272970562,
+        "recall": 0.10282074613284804,
+        "f1": 0.06764441783897036,
+        "macro_f1": 0.06759782953780162
+      },
+      "PinPair": {
+        "tp": 76,
+        "pred": 129,
+        "gt": 661,
+        "precision": 0.5891472868217055,
+        "recall": 0.11497730711043873,
+        "f1": 0.19240506329113927,
+        "macro_f1": 0.17473692094521218
+      }
+    },
+    "observable_only": {
+      "Component": {
+        "tp": 80,
+        "pred": 172,
+        "gt": 200,
+        "precision": 0.46511627906976744,
+        "recall": 0.4,
+        "f1": 0.4301075268817204,
+        "macro_f1": 0.4839867038098698
+      },
+      "Pin": {
+        "tp": 108,
+        "pred": 265,
+        "gt": 338,
+        "precision": 0.4075471698113208,
+        "recall": 0.31952662721893493,
+        "f1": 0.3582089552238807,
+        "macro_f1": 0.443905437098944
+      },
+      "NetHypergraph": {
+        "tp": 131,
+        "pred": 144,
+        "gt": 338,
+        "precision": 0.9097222222222222,
+        "recall": 0.3875739644970414,
+        "f1": 0.5435684647302904,
+        "macro_f1": 0.6375796021521728
+      },
+      "PinPair": {
+        "tp": 76,
+        "pred": 76,
+        "gt": 281,
+        "precision": 1.0,
+        "recall": 0.2704626334519573,
+        "f1": 0.42577030812324934,
+        "macro_f1": 0.48456554338907276
+      }
+    },
+    "counts": {
+      "pred_component_count": 172,
+      "gt_component_count": 236,
+      "pred_pin_count": 431,
+      "gt_pin_count": 688,
+      "pred_net_count": 381,
+      "gt_net_count": 364,
+      "pred_edge_count": 2242,
+      "gt_edge_count": 1099,
+      "singleton_net_count": 353,
+      "empty_edge_net_count": 0,
+      "unattached_pin_count": 3,
+      "runtime": 25.929431000000477
+    },
+    "FinalScore": 37.855274792511004
+  },
+  "automatic_tests": {
+    "count": 204,
+    "passed": true,
+    "dataset_free": true
+  },
+  "syntax_check_passed": true,
+  "entry_from_outside_project_passed": true,
+  "original_workspace_preserved": true,
+  "full_150_run_this_task": false,
+  "official_environment_uploaded": false,
+  "git_only_download_verification": {
+    "passed": true,
+    "tests": 204,
+    "assets_ready": true,
+    "copied_runtime_cache": false,
+    "copied_original_uncommitted_files": false
+  }
+}

@@ -97,12 +97,40 @@ def value_compatible(component_type: str, value: str, expanded: bool = True) -> 
     return True
 
 
+def _split_designator_value(raw: str, expanded_rules: bool) -> tuple[str, str] | None:
+    """Accept only unambiguous value-bearing OCR tokens, not bare R12/C6 keys."""
+    pattern = DESIGNATOR_RE if expanded_rules else V4_DESIGNATOR_RE
+    parts = raw.strip().split(None, 1)
+    candidates = []
+    if len(parts) == 2:
+        candidates.append((parts[0], parts[1].strip()))
+    compact = re.sub(r"\s+", "", raw)
+    dot = compact.find(".")
+    if dot > 1 and any(char.isalpha() or char == "Ω" for char in compact[dot + 1:]):
+        # In C184.7uF, the last digit before the decimal belongs to 4.7uF.
+        candidates.extend((compact[:cut], compact[cut:]) for cut in (dot - 1, dot))
+    for key, value in candidates:
+        match = pattern.fullmatch(key)
+        if not match or match.group(2):
+            continue
+        component_type = prefix_type(key)
+        if component_type in {"r", "c", "l"} and value_compatible(component_type, value, expanded_rules):
+            return key.upper(), value
+    return None
+
+
 def classify_tokens(texts: list[Text], large_boxes=(), expanded_rules: bool = True) -> list[TokenRole]:
     roles = []
     for index, token in enumerate(texts):
         raw = token.text.strip()
         normalized = re.sub(r"\s+", "", raw)
         upper = normalized.upper()
+        pair = _split_designator_value(raw, expanded_rules)
+        if pair is not None:
+            key, tail = pair
+            roles.append(TokenRole(index, token, "DESIGNATOR", upper, key, prefix_type(key), tail,
+                                   token.score, "designator_value_pair"))
+            continue
         match = (DESIGNATOR_RE if expanded_rules else V4_DESIGNATOR_RE).fullmatch(normalized)
         if match:
             key, tail = match.group(1).upper(), match.group(2).strip()

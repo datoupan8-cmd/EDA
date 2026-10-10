@@ -1,0 +1,8 @@
+{
+  "base": "configs/current.json",
+  "modules": {
+    "component": "configs/component/current.json",
+    "pin": "configs/pin/current.json",
+    "wire_topology": "configs/wire_topology/current.json"
+  }
+}

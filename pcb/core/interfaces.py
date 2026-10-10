@@ -78,6 +78,20 @@ class PinSemanticsStage(Protocol):
     def run(self, component: ComponentStageOutput, localization: PinLocalizationOutput, context: Any) -> PinSemanticsOutput: ...
 
 
+class ImagePinSemanticsStage(Protocol):
+    """Optional image-aware interface for local OCR; legacy run stays valid."""
+    def run_image(self, image: Any, component: ComponentStageOutput, localization: PinLocalizationOutput, context: Any) -> PinSemanticsOutput: ...
+
+
+def run_pin_semantics(stage: Any, image: Any, component: ComponentStageOutput,
+                      localization: PinLocalizationOutput, context: Any) -> PinSemanticsOutput:
+    """Bridge the two explicit interfaces without knowing any algorithm name."""
+    image_runner = getattr(stage, "run_image", None)
+    if callable(image_runner):
+        return image_runner(image, component, localization, context)
+    return stage.run(component, localization, context)
+
+
 class WireStage(Protocol):
     def run(self, image: Any, scene: Scene, context: Any) -> WireStageOutput: ...
 

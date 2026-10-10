@@ -1,41 +1,21 @@
-## 修改内容
+## 修改模块
 
-- Stage：
-- 新版本名：
-- 解决的问题：
+- [ ] Component / Text
+- [ ] Pin
+- [ ] Wire / Topology
+- [ ] 经协商的公共接口变更
 
-## 边界
+## 改动与选择的版本
 
-- [ ] 没有读取或使用 0151～0200
-- [ ] 没有读取或使用 10_GTcase
-- [ ] 没有提交官方数据、runs、cache 或个人绝对路径
-- [ ] 未修改无关 Stage
-- [ ] schema/坐标/输出契约未改变；若改变，已明确说明并提供兼容测试
-
-`SEALED HOLDOUT USED FOR DEVELOPMENT = FALSE`
-
-## 配置与环境
-
-- 配置文件：
-- 模型 SHA256：
-- Python / PyTorch / Ultralytics / device：
+说明改了什么，以及自己模块的 config / registry 是否更新。
 
 ## 验证
 
-- [ ] `python tools/repository_doctor.py`
-- [ ] `python -m unittest discover -s tests -v`
-- [ ] strict validator 通过
+- 模块范围检查：
+- 自动测试：
+- 本地开发案例与综合指标：
+- 是否仅使用 0001～0150：
 
-| 本地非官方指标 | main 基线 | 本 PR | Delta |
-|---|---:|---:|---:|
-| ComponentF1 | | | |
-| PinF1 | | | |
-| NetHypergraphF1 | | | |
-| NetLineF1 | | | |
-| PinPairF1 | | | |
-| FinalScore | | | |
+## 对其他模块的影响
 
-## 风险与回滚
-
-- 已知问题：
-- 回滚配置：`configs/current.json`
+是否修改了别人的文件或公共 schema？如有，请说明原因和协作安排。

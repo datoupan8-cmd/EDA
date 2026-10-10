@@ -1,7 +1,7 @@
 """Small runtime context shared by stages."""
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 from .config import PipelineConfig
@@ -16,6 +16,9 @@ class PipelineContext:
     ocr: Any
     detector: Any = None
     keypoint_provider: Any = None
+    # Runtime resources only: devices, model paths and cache paths. Stage data
+    # (components, terminals, pins, wires, nets) must remain explicit outputs.
+    resources: dict[str, Any] = field(default_factory=dict)
 
     @property
     def variant(self) -> str:

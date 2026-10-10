@@ -1,3 +1,24 @@
+# 团队模块整合版
+
+默认保留同学最新Component/Text + 我们已验证的L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。
+
+- [完整下载、运行、测试与各自上传说明](docs/TEAM_RUN_GUIDE.md)
+- [模块接口与维护边界](docs/TEAM_MODULE_CONTRACTS.md)
+- [整合与验证记录](docs/TEAM_INTEGRATION_REPORT.md)
+
+```powershell
+python tools/check_team_environment.py
+python tools/run_team_tests.py
+python tools/run_team_pipeline.py --image D:/EDA_Data/sample.png --output runs/single_01 --device cuda
+```
+
+团队配置是 `configs/team.json`，各负责人只改自己的 `configs/component/`、`configs/pin/`、`configs/wire_topology/` 片段和本模块注册。
+旧的 `main.py`、`configs/current.json` 和实验入口保留用于追溯，不是默认最新版组合的启动方式。
+
+---
+
+以下为原项目说明：
+
 # PCB Competition Solution V4.1 — Modular Baseline
 
 这是 PCB 原理图自动解析比赛的可运行、可替换模块基线。当前默认流程保持 V4.1 已验证算法不变：

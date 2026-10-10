@@ -1,0 +1,37 @@
+name: Team module contracts
+permissions:
+  contents: read
+on:
+  pull_request:
+  push:
+    branches: ['integration/component-pin', 'feature/component-*', 'feature/pin-*', 'feature/wire-*']
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install existing runtime dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Syntax check
+        run: python -m compileall -q pcb tools
+      - name: Dataset-free module and parity tests
+        run: python tools/run_team_tests.py
+      - name: Check module ownership for a module PR
+        if: github.event_name == 'pull_request'
+        env:
+          MODULE_BRANCH: ${{ github.head_ref }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          case "$MODULE_BRANCH" in
+            feature/component-*) owner=component ;;
+            feature/pin-*) owner=pin ;;
+            feature/wire-*) owner=wire_topology ;;
+            *) exit 0 ;;
+          esac
+          python tools/check_module_scope.py --owner "$owner" --base "$BASE_SHA" --branch

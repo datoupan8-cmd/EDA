@@ -1,0 +1,14 @@
+{
+  "text": "current",
+  "component": "v4",
+  "pin_localization": "peer_v4",
+  "pin_semantics": "peer_v4",
+  "wire": "v3",
+  "topology": "v3",
+  "submission": "official",
+  "component_stage": "BEST",
+  "text_rules": "v4_1",
+  "variant": "baseline",
+  "enable_flying_labels": false,
+  "legacy_pipeline_name": "v4_component"
+}

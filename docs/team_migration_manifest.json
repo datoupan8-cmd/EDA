@@ -1,0 +1,278 @@
+{
+  "pin_source": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+  "peer_source": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+  "migrations": [
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/text_detection.py",
+      "destination": "pcb/component/latest/text_roles.py",
+      "source_sha256": "28b43092c6e8886e2a50377118f4a3b3ff9a6d4c9b5133c39ec5a2f5cf856327",
+      "destination_sha256": "e5e1e7934789aa1d4ecee17fc52308063fcacf8ef0aa9d63f5ef634f82c72e4d",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/component_text_assignment.py",
+      "destination": "pcb/component/latest/text_assignment.py",
+      "source_sha256": "83a87a61e4c1007dc249977b50f534b58ba48a28f09b871ecbb24eb16e0114b0",
+      "destination_sha256": "bea970436f48bf9ae51078ad81fae8dd5598a93a0a453703b3015c320a54f55b",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/component_detection_v4.py",
+      "destination": "pcb/component/latest/detection.py",
+      "source_sha256": "ead074de169823c3237d886aced933ea1a20b1379b50b30aa3aa5b284438ac7c",
+      "destination_sha256": "70e4ba530c554647311f8c1aba6a3f0bc3acbdc04395358ed83d16c93c5e2c75",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/component/v4.py",
+      "destination": "pcb/component/latest/stage.py",
+      "source_sha256": "07f8a4f801beffc006e800aefba602f25dd63e8bfa1f85fe11dc5a4e9d6b063a",
+      "destination_sha256": "ce05b6bed2e87c4b29395117d26335746a12d70920f0907e21881a1e96949fc1",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/text_detection.py",
+      "destination": "pcb/component/baseline_v41/text_roles.py",
+      "source_sha256": "fad2673ad57c13292451c450621726022030fd7bcbf27bfd2bf2a831ab387cd7",
+      "destination_sha256": "c0c451e07e91a89166484f09ed08d3180f01c50ac929ba4f5684efea4a2caa14",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/component_text_assignment.py",
+      "destination": "pcb/component/baseline_v41/text_assignment.py",
+      "source_sha256": "a75d90e73a6af4d90a616f0ed0eed948fb7801b532d900c4a08d91503d5eb201",
+      "destination_sha256": "e90a58acb5a531cb646f489b83a7bc8872b03bb348efda21277b8ce316645993",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/component_detection_v4.py",
+      "destination": "pcb/component/baseline_v41/detection.py",
+      "source_sha256": "13ef7c86eb1bc622af4208576b9f4375ab96195f58da2b20f9e23b76475e45d5",
+      "destination_sha256": "eaa61fd54e129c1eb81841918fbeee7256e615a5e31ff47aa35984aa3b6cfd97",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/component/v4.py",
+      "destination": "pcb/component/baseline_v41/stage.py",
+      "source_sha256": "07f8a4f801beffc006e800aefba602f25dd63e8bfa1f85fe11dc5a4e9d6b063a",
+      "destination_sha256": "ce05b6bed2e87c4b29395117d26335746a12d70920f0907e21881a1e96949fc1",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/pin_detection_v4.py",
+      "destination": "pcb/pin/peer_v4/detection.py",
+      "source_sha256": "bbfb35c3b6961cf18324f0107ecc91f4a4724a2a50629377cf55dfe5b8d69ea4",
+      "destination_sha256": "c04d5a856da2ac79aac42fd84e7aad654662d93d501b7014e8b1fdf54a7e4c8e",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/pin_semantics_v4.py",
+      "destination": "pcb/pin/peer_v4/semantics.py",
+      "source_sha256": "5f4977ede5c270cc7b87cb134f496937ed0f259d953b9d0b5b1ef260276c8b31",
+      "destination_sha256": "5ca4905f6d25881fd945af42b959fc167cba6e3f3a7cf3a82091458d90231f35",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/pin/localization/v4.py",
+      "destination": "pcb/pin/peer_v4/localization_stage.py",
+      "source_sha256": "7757bcb640280b77a1008e48dde84a5653926886c070ac2b2def967311618783",
+      "destination_sha256": "ce82e681390d10128fe264240409a82269d2217a5f54c5d455b4a17b590b7a0b",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/pin/semantics/v4.py",
+      "destination": "pcb/pin/peer_v4/semantics_stage.py",
+      "source_sha256": "29d8d7702bec47ccf6ec74102c92ed52dcb221b8058ac8e9bb29f901b6052250",
+      "destination_sha256": "fa6b6dbeef4caa2d6fcad1cd223a4710a756003d1ee9f9c92f0d8994847439ab",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/pin_detection.py",
+      "destination": "pcb/pin/frozen_l39/detection_v3.py",
+      "source_sha256": "c1ffcfea29149f98819029d10ae9ec5177df94f45bfa81ea94df1eb02d249e4c",
+      "destination_sha256": "c1ffcfea29149f98819029d10ae9ec5177df94f45bfa81ea94df1eb02d249e4c",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/pin_semantics.py",
+      "destination": "pcb/pin/frozen_l39/semantics_v3.py",
+      "source_sha256": "cd21ae2217df02496ec0784c5cc13eb5f7bb1be21bcb54c56c1f13599b9e86d2",
+      "destination_sha256": "2827131f3a87e53b60fb85cd209a11116955ad163ef4ad54d47be53145abec33",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/pin_semantics_v5.py",
+      "destination": "pcb/pin/frozen_l39/scores_v5.py",
+      "source_sha256": "8584069bce35403aed2eeb6755d81de8d9a8b17384eb8da0c0fc9b44367804ae",
+      "destination_sha256": "cc5dc6b41065499bbceb98c4c41b35c4bb089a3eee548fa81dc84fcbc687d6fc",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/pin_semantics_v6.py",
+      "destination": "pcb/pin/frozen_l39/ordered_v6.py",
+      "source_sha256": "70f63e5a6588be3ba1548d7024c38b84c73055764afac56010840a47107ef0c6",
+      "destination_sha256": "46e824374b094e65d1533dbea55aa3cc45b99c9aad60727403cd9debe560a407",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "pcb/text_detection.py",
+      "destination": "pcb/pin/frozen_l39/text_roles.py",
+      "source_sha256": "fad2673ad57c13292451c450621726022030fd7bcbf27bfd2bf2a831ab387cd7",
+      "destination_sha256": "c0c451e07e91a89166484f09ed08d3180f01c50ac929ba4f5684efea4a2caa14",
+      "changes": "import paths only"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_learned_locator_l1.py",
+      "destination": "pcb/pin/frozen_l39/locator.py",
+      "changes": "imports and experiment sys.path plumbing only",
+      "destination_sha256": "2460bdeb58497aa0095bdc638f80e505623349ec55f8d20f35e9d9e71f5994ce"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_terminal_reader_l2.py",
+      "destination": "pcb/pin/frozen_l39/terminal_reader.py",
+      "changes": "imports and experiment sys.path plumbing only",
+      "destination_sha256": "d5492a1b93772e6ac3c6eab4ed2dc3e005b8a04c85033cdcbdc6fccc2fdbe820"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_contextual_roles_e6.py",
+      "destination": "pcb/pin/frozen_l39/contextual_roles.py",
+      "changes": "imports and experiment sys.path plumbing only",
+      "destination_sha256": "781079180cd959d45cec169ee424a167170438e2a5f2c51d69f9f06453d3293d"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_word_reader_l3.py",
+      "destination": "pcb/pin/frozen_l39/word_reader.py",
+      "changes": "imports and experiment sys.path plumbing only",
+      "destination_sha256": "0c18b808b40afda1a146053bd3b4b6229e589b9afa7833f5a4869db27b730869"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_side_joint_l36.py",
+      "destination": "pcb/pin/frozen_l39/joint_alignment.py",
+      "changes": "imports and experiment sys.path plumbing only",
+      "destination_sha256": "4f13807928dda7f9fe5d697474ee0c98e2ad58b0cb67ac423eb81a38791140ec"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_library_semantics_l37.py",
+      "destination": "pcb/pin/frozen_l39/library_semantics.py",
+      "changes": "imports and experiment sys.path plumbing only",
+      "destination_sha256": "fe4cb7a65829c21c8ae95f6a1e5dd9b84dd7f7c61dfb9c351467d8ed7f6e2ad0"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/pin_skeleton_followup.py",
+      "destination": "pcb/pin/frozen_l39/bbox_semantics.py",
+      "symbols": [
+        "BoxBBoxSemantics",
+        "BoxOrderedSemantics",
+        "event_lookup",
+        "interval_distance",
+        "number_bbox_score"
+      ],
+      "changes": "exact runtime definitions; redirected imports",
+      "destination_sha256": "d10d4865afd6bd21ba23037722d8e2bd5fc03b820b96f41690d8b740ec64ed4a"
+    },
+    {
+      "source_ref": "af8bed7ed48562a137efb1ed2c38faeac3aef14b",
+      "source": "experiments/wire_frame_guard.py",
+      "destination": "pcb/wire_stage/frame_guard.py",
+      "source_sha256": "391e866643b3214f347d0f29d878e964199bd028f0a3c2e44d388bcbae546ae6",
+      "destination_sha256": "391e866643b3214f347d0f29d878e964199bd028f0a3c2e44d388bcbae546ae6",
+      "changes": "verbatim"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/component_detector_yolo.py",
+      "destination": "pcb/component/detector_yolo.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "2772a1bd4436bc848bf6fd36ff6dece35371faea0967ac189c78c9ae06858184"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/component_proposal_fusion.py",
+      "destination": "pcb/component/proposal_fusion.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "7a546b6146595796fe9dee1b1ee5e2b35c8c2abd41e18c635ae78f4b42cd4ad0"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/component_detection.py",
+      "destination": "pcb/component/geometry.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "f2442605455d38e36a9f80402352f36b4a91a4af1f6516b09f5169f36fdca80b"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/ocr_backends.py",
+      "destination": "pcb/text/ocr_backends.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "df9e7b106a6b4248306fa23000fd91a0eb240f157fdc87d6e3b7d56c9c261a48"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/wire.py",
+      "destination": "pcb/wire_stage/v1.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "239da514d68439b0b3c2ee0ec2c137c0a0c0583604c034480d9ee689962cc064"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/wire_v2.py",
+      "destination": "pcb/wire_stage/v2.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "e0c2c36adcfe18113a01be7288287b51dd0d719e7315a394615fd12df3f089b2"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/wire_v3.py",
+      "destination": "pcb/wire_stage/v3.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "23c173749b463f67d1c3c56569d956207bf617a1026259654f7562a5931b9243"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/topology.py",
+      "destination": "pcb/topology_stage/v1.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "ccba5ebd8f7ecdec65997a96e598eceff168baaa47d91288389faae7f48a5c56"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/topology_v2.py",
+      "destination": "pcb/topology_stage/v2.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "5a95f66e4f02957f56e9871d8bcd31515890327e3a6e6ded9de50aae3d97a843"
+    },
+    {
+      "source_ref": "d648403438bb54811176f6bf1f340e09df1ce1e6",
+      "source": "pcb/topology_v3.py",
+      "destination": "pcb/topology_stage/v3.py",
+      "changes": "imports and repository-relative resource location only",
+      "destination_sha256": "567de84dcb4e3ebc3970299b9e6554673df66025fae22c4ffd79e1d62275f39d"
+    }
+  ],
+  "hydrated_asset_count": 11,
+  "text_hash_policy": "SHA256 of UTF-8 LF-normalized source text (Git blob), independent of Windows checkout CRLF"
+}

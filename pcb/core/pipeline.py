@@ -7,7 +7,7 @@ from typing import Any
 from ..schema import Scene
 from .config import PipelineConfig
 from .context import PipelineContext
-from .interfaces import SubmissionStageOutput, TopologyStageOutput, WireStageOutput
+from .interfaces import SubmissionStageOutput, TopologyStageOutput, WireStageOutput, run_pin_semantics
 from .registry import StageRegistry
 
 
@@ -38,7 +38,7 @@ class ModularPipeline:
         text = self.text.run(image, context)
         component = self.component.run(image, text, context)
         localization = self.pin_localization.run(image, component, context)
-        semantics = self.pin_semantics.run(component, localization, context)
+        semantics = run_pin_semantics(self.pin_semantics, image, component, localization, context)
         scene = Scene(
             context.width,
             context.height,
