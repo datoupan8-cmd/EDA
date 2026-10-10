@@ -1,0 +1,13 @@
+{
+  "base_config": "configs/current.json",
+  "frontend": "unchanged_hybrid_tiled_easyocr_rapidocr_and_component_v4_BEST",
+  "component_weights": "models/component_yolo11n_continue_v2_best.pt",
+  "pin_weights": "reports/pin_learned_locator_l1/best.pt",
+  "library_sha256": "9c2bec334d41119f29a62cd6ff3fb36ae28fa28cbb7aeb3155875a355b38d322",
+  "candidate": ["L1_box_points", "L3_whole_word_OCR", "L36_side_joint", "L37_library_number", "F_box_frames"],
+  "nonbox_semantics": "v3",
+  "L13_enabled": false,
+  "L25_nonbox_export_enabled": false,
+  "L28_enabled": false,
+  "OFFICIAL_SCORE": false
+}
