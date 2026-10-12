@@ -172,11 +172,11 @@ registry.register("component", "component_v5", ComponentStageV5)
 
 新定位仍返回PinLocalizationOutput；新语义需要局部OCR时使用 `run_image(...)`，不在Context里隐藏图片或全部算法状态。字段/坐标语义见MODULE契约文档。
 
-## 10. Wire/Topology负责人怎么改
+## 10. Wire/网络负责人怎么改
 
-创建 `feature/wire-yourname-01`，主要修改 `pcb/wire_stage/`、`pcb/topology_stage/`。新增版本只注册在这两个目录各自的registry，选择写入 `configs/wire_topology/current.json`。
+网络现已拆成Wire掩膜、NetHypergraph成员归属、NetLine线段表达。分别修改 `pcb/wire_stage/`、`pcb/net_hypergraph/`、`pcb/net_lines/`及各自注册/配置/测试。Topology与network_shared是公共集成层，普通实验不修改。
 
-F框线隔离现在是标准Wire版本 `v3_frame_guard` 的一部分。若未来新Wire已经包含同等处理，明确选择对应Wire版本，避免重复隔离；不要顺手改Pin的位置来补网络错误。
+F框线隔离仍是Wire版本 `v3_frame_guard`的一部分；两个新子模块默认legacy_v2，不是新算法。详见 [独立网络开发说明](network/README.md)，给同学Agent转发 [交接说明](network/AGENT_HANDOFF.md)。先用 `python tools/show_network_versions.py` 确认实际选择。
 
 ## 11. 改完怎么检查、上传
 
@@ -188,7 +188,7 @@ git status --short
 & $Python tools/run_team_tests.py
 ```
 
-Component改 `--owner component`，导线网络改 `--owner wire_topology`。范围检查会指出是否动到了别人的模块或公共文件；公共变更需要单独协商，不能悄悄夹在算法更新中。
+Component改 `--owner component`。网络使用新的 `tools/check_network_change_scope.py --owner net_hypergraph|net_lines|wire|network --base origin/integration/component-pin`（四个owner中选一个，不原样输入竖线）。范围检查会指出是否动到了别人的模块或公共文件；公共变更需要单独协商，不能悄悄夹在算法更新中。
 
 准备创建PR时，再检查本分支相对整合分支的已提交改动：`& $Python tools/check_module_scope.py --owner pin --base origin/integration/component-pin --branch`。它从两分支共同起点比较，避免把同学随后上传的更新误算成自己的跨模块改动。GitHub的自动检查也使用这个口径。
 

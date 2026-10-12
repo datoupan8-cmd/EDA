@@ -4,7 +4,7 @@ permissions:
 on:
   pull_request:
   push:
-    branches: ['integration/component-pin', 'feature/component-*', 'feature/pin-*', 'feature/wire-*']
+    branches: ['integration/component-pin', 'feature/component-*', 'feature/pin-*', 'feature/wire-*', 'feature/hypergraph-*', 'feature/net-lines-*', 'feature/network-*']
 jobs:
   contracts:
     runs-on: ubuntu-latest
@@ -29,9 +29,17 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           case "$MODULE_BRANCH" in
+            feature/network-metrics-split) owner=integration; network=1 ;;
+            feature/hypergraph-*) owner=net_hypergraph; network=1 ;;
+            feature/net-lines-*) owner=net_lines; network=1 ;;
+            feature/wire-*) owner=wire; network=1 ;;
+            feature/network-*) owner=network; network=1 ;;
             feature/component-*) owner=component ;;
             feature/pin-*) owner=pin ;;
-            feature/wire-*) owner=wire_topology ;;
             *) exit 0 ;;
           esac
-          python tools/check_module_scope.py --owner "$owner" --base "$BASE_SHA" --branch
+          if [ "${network:-0}" = 1 ]; then
+            python tools/check_network_change_scope.py --owner "$owner" --base "$BASE_SHA"
+          else
+            python tools/check_module_scope.py --owner "$owner" --base "$BASE_SHA" --branch
+          fi

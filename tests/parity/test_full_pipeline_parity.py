@@ -9,6 +9,7 @@ from pcb.core import ModularPipeline, PipelineConfig, PipelineContext, build_def
 from pcb.schema import Text
 from pcb.submission import export
 from pcb.topology_v3 import build_topology_v3
+from pcb.topology_stage.versions import TopologyStageV3
 from pcb.vision_v4 import detect_scene_v4
 from pcb.wire_v3 import extract_wire_v3
 
@@ -40,7 +41,12 @@ class FullPipelineParity(unittest.TestCase):
 
         config = PipelineConfig.current()
         context = PipelineContext("fixture.png", 100, 100, config, StaticOCR(), StaticDetector())
-        artifacts = ModularPipeline(config, build_default_registry()).run(image, context)
+        pipeline = ModularPipeline(config, build_default_registry())
+        # This regression checks the frozen legacy combination, not a teammate's
+        # later selection of a deliberately different network algorithm.
+        pipeline.topology = TopologyStageV3(network_versions={
+            'net_hypergraph': 'legacy_v2', 'net_lines': 'legacy_v2'})
+        artifacts = pipeline.run(image, context)
         self.assertEqual(artifacts.result, expected)
         self.assertEqual(artifacts.scene.diagnostics, legacy.diagnostics)
 

@@ -5,6 +5,8 @@
 - [完整下载、运行、测试与各自上传说明](docs/TEAM_RUN_GUIDE.md)
 - [模块接口与维护边界](docs/TEAM_MODULE_CONTRACTS.md)
 - [整合与验证记录](docs/TEAM_INTEGRATION_REPORT.md)
+- [网络成员 / 线段的独立维护与运行](docs/network/README.md)
+- [给网络负责人 Agent 的交接说明](docs/network/AGENT_HANDOFF.md)
 
 ```powershell
 python tools/check_team_environment.py
@@ -13,6 +15,7 @@ python tools/run_team_pipeline.py --image D:/EDA_Data/sample.png --output runs/s
 ```
 
 团队配置是 `configs/team.json`，各负责人只改自己的 `configs/component/`、`configs/pin/`、`configs/wire_topology/` 片段和本模块注册。
+网络进一步分为 `configs/net_hypergraph/` 和 `configs/net_lines/` 两份独立选择，默认均为旧算法 `legacy_v2`。Wire、成员归属、线段表达的修改范围见上面的网络说明。
 旧的 `main.py`、`configs/current.json` 和实验入口保留用于追溯，不是默认最新版组合的启动方式。
 
 ---

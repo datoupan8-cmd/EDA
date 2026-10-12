@@ -18,15 +18,15 @@ def main():
     suite = unittest.TestSuite()
     for pattern in ("test_component_v4.py", "test_tiled_easyocr.py", "test_pin_detection_v4.py",
                     "test_pin_semantics_v4.py", "test_benchmark_pins_v4.py",
-                    "test_pin_frontend_cache.py", "test_evaluate_diagnostic.py"):
-        suite.addTests(loader.discover(str(ROOT / "tests"), pattern=pattern))
-    suite.addTests(loader.discover(str(ROOT / "tests/contracts")))
-    suite.addTests(loader.discover(str(ROOT / "tests/parity")))
-    suite.addTests(loader.discover(str(ROOT / "tests/pin")))
-    for directory in ("component", "wire", "topology"):
+                    "test_pin_frontend_cache.py", "test_evaluate_diagnostic.py", "test_contract_and_topology.py"):
+        suite.addTests(loader.discover(str(ROOT / "tests"), pattern=pattern, top_level_dir=str(ROOT)))
+    suite.addTests(loader.discover(str(ROOT / "tests/contracts"), top_level_dir=str(ROOT)))
+    suite.addTests(loader.discover(str(ROOT / "tests/parity"), top_level_dir=str(ROOT)))
+    suite.addTests(loader.discover(str(ROOT / "tests/pin"), top_level_dir=str(ROOT)))
+    for directory in ("component", "wire", "topology", "net_hypergraph", "net_lines"):
         path = ROOT / "tests" / directory
         if path.is_dir():
-            suite.addTests(loader.discover(str(path)))
+            suite.addTests(loader.discover(str(path), top_level_dir=str(ROOT)))
     return 0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful() else 1
 
 

@@ -8,7 +8,11 @@
 |---|---|---|---|---|
 | 元件 | `pcb/component/`、`pcb/text/` | 各目录 `registry.py` | `configs/component/current.json` | `tests/component/` |
 | 引脚 | `pcb/pin/` | `pcb/pin/registry.py` | `configs/pin/current.json` | `tests/pin/` |
-| 导线与网络 | `pcb/wire_stage/`、`pcb/topology_stage/` | 各目录 `registry.py` | `configs/wire_topology/current.json` | `tests/wire/`、`tests/topology/` |
+| 导线掩膜 | `pcb/wire_stage/` | 该目录 `registry.py` | `configs/wire_topology/current.json`仅wire字段 | `tests/wire/` |
+| 网络成员 | `pcb/net_hypergraph/` | 该目录 `registry.py` | `configs/net_hypergraph/current.json` | `tests/net_hypergraph/` |
+| 网络线段 | `pcb/net_lines/` | 该目录 `registry.py` | `configs/net_lines/current.json` | `tests/net_lines/` |
+
+Topology现在是集成兼容层，内部分两次调用；`pcb/network_shared/`负责只读接口、固定基础图、校验和组装。网络日常开发不改这两处共享目录。详见 [网络接口与使用](network/README.md) 和 [Agent交接](network/AGENT_HANDOFF.md)。
 
 `pcb/core/`、`pcb/schema.py`、Submission、坐标转换和原评测器属于公共契约；普通算法迭代不修改它们。历史根目录文件有兼容导入，看到旧名字时不要在兼容文件里另写一套算法。
 
@@ -48,7 +52,7 @@ Context.resources仅用于设备、模型路径和缓存路径。components、te
 - `l39`定位：V3非box分支＋原L1 box定位模型。
 - `l39`语义：原BoxBBox/E6/L3完整词读取/L36联合保序/L37公开元件库约束。
 - `v3_frame_guard`：原Wire V3＋已验证F框线隔离；不是本轮新增算法。
-- Topology V3、原Submission保持不变。
+- Topology V3的原默认逻辑拆为成员归属与线段表达两块，均选择legacy_v2，完整输出保持一致；原Submission保持不变。
 - 同学Pin V4独立命名为 `peer_v4`，原Pin V3/V4～V9保留，不抢占同名实现。
 
 L39内部已有临时评分函数替换并在finally恢复。本轮保持其串行行为；不可擅自并行执行同一进程中的多个L39语义调用。

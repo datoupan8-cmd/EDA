@@ -92,6 +92,12 @@ def select_inputs(image: Path | None, dataset: Path | None, cases: str | None):
     return rows
 
 
+def network_version_snapshot(pipeline):
+    """Capture selections already frozen by the Topology Stage constructor."""
+    versions = getattr(pipeline.topology, "network_versions", None)
+    return dict(versions) if versions is not None else None
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     inputs = parser.add_mutually_exclusive_group()
@@ -128,9 +134,11 @@ def main(argv=None):
     from tools.team_access_guard import Guard
     guard = Guard()
     pipeline, ocr, detector, device = build_runtime(config, args.device, args.ocr_device, cache)
+    network_versions = network_version_snapshot(pipeline)
     records = []
     start = time.perf_counter()
     print(json.dumps({"event": "start", "device": device, "config": config.as_dict(),
+                      "network_versions": network_versions,
                       "case_count": len(rows), "OFFICIAL_SCORE": False}, ensure_ascii=False), flush=True)
     for cid, image_path, _ in rows:
         t0 = time.perf_counter()
@@ -154,7 +162,8 @@ def main(argv=None):
                           "seconds": round(records[-1]["seconds"], 2)}, ensure_ascii=False), flush=True)
         write_json(output / "progress.json", {"cases": records, "sealed_holdout_used": False})
     report = {"OFFICIAL_SCORE": False, "sealed_holdout_used": False,
-              "config": config.as_dict(), "device": device, "success_count": len(records),
+              "config": config.as_dict(), "network_versions": network_versions,
+              "device": device, "success_count": len(records),
               "failure_count": 0, "seconds": time.perf_counter()-start, "cases": records}
     if args.evaluate:
         from evaluate_v2 import evaluate_case, aggregate, source_from_name

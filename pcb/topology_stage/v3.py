@@ -3,8 +3,13 @@ from __future__ import annotations
 from .v2 import build_topology_v2
 
 
-def build_topology_v3(scene, mask, merge_labels=True):
-    skeleton = build_topology_v2(scene, mask, mode="directional", merge_labels=merge_labels)
+def build_topology_v3(scene, mask, merge_labels=True, *, hypergraph=None, lines=None):
+    if hypergraph is None and lines is None:
+        skeleton = build_topology_v2(scene, mask, mode="directional", merge_labels=merge_labels)
+    else:
+        from ..network_shared.composite import build_networks
+        skeleton = build_networks(scene, mask, mode="directional", merge_labels=merge_labels,
+                                  hypergraph=hypergraph, lines=lines)
     scene.diagnostics.update({
         "topology": "v3_component_barrier_directional",
         "same_cc_union_all_pins": False,
