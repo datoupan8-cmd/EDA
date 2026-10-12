@@ -1,0 +1,41 @@
+{
+  "submission_id": 5981,
+  "date_displayed": "2026-10-12 23:41",
+  "status_displayed": "Finished",
+  "filename_displayed": "submission.zip",
+  "account_displayed": "eda260616",
+  "Score_Accuracy": 38.33,
+  "ComponentF1": 0.3457,
+  "PinF1": 0.5792,
+  "NetHypergraphF1": 0.374,
+  "NetLineF1": 0.0388,
+  "reported_tokens": 0.0,
+  "previous_submission_id": 5857,
+  "previous_Score_Accuracy": 37.66,
+  "previous_PinF1": 0.5526,
+  "PinF1_delta": 0.0266,
+  "PinF1_percentage_point_delta": 2.66,
+  "Score_Accuracy_delta": 0.67,
+  "other_metrics_same_at_displayed_precision": true,
+  "evidence": [
+    {
+      "name": "submission_detail.png",
+      "sha256": "189c92bbdb65b60f198bdb23f27f437a555c9fb467149ab728b51fb1eaef58bf",
+      "source": "user-provided screenshot"
+    },
+    {
+      "name": "score_row.png",
+      "sha256": "41a9cc57bc10f6ff0d04ca70423d675332de09641d8b51c49806e308e1e3719f",
+      "source": "user-provided screenshot"
+    },
+    {
+      "name": "score_headers.png",
+      "sha256": "98ff4fc932c97dddb7cc6315e57f0f07924c53f4742f3df9d81081675b37c912",
+      "source": "user-provided screenshot"
+    }
+  ],
+  "local_L45_submission_zip_sha256": "6bcb70896e4754b41680a7e2021553cacd7eff08bb115b4bfb915a55c562b2ed",
+  "package_association": "user submission sequence in this chat; server-side SHA receipt unavailable",
+  "source": "user-provided official result screenshots; no platform API query",
+  "assistant_performed_official_upload": false
+}

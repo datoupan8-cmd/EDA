@@ -1,0 +1,21 @@
+{
+  "baseline": "L39Localization + L42ControlSemantics",
+  "methods": ["calibration", "regression", "regression_projection"],
+  "height": 96,
+  "width": 192,
+  "minimum_long_half": 32.0,
+  "minimum_short_half": 16.0,
+  "box_extent_factor": 1.5,
+  "epochs": 40,
+  "batch": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "seed": 20261012,
+  "validation_images": 15,
+  "training_images": 100,
+  "excluded_design_and_check": true,
+  "confidence_peak_gate": false,
+  "no_opponent_pixel_constants": true,
+  "no_L43_weights_or_adoption_policy": true,
+  "all_outputs_on_D": true
+}

@@ -1,0 +1,126 @@
+{
+  "version": "L45 regression",
+  "model_sha256": "d8b1babd809f622ba4243becf135ae38e92effdc6fe9dd079526cf67e084fc71",
+  "model_bytes": 1151629,
+  "model_source": "independently trained known-two-endpoint residual regression; no L43 weights",
+  "training_images": 100,
+  "internal_validation_images": 15,
+  "new_model_excludes_design5_and_check30": true,
+  "best_epoch": 11,
+  "fixed_policy": {
+    "height": 96,
+    "width": 192,
+    "minimum_long_half": 32.0,
+    "minimum_short_half": 16.0,
+    "box_extent_factor": 1.5,
+    "epochs": 40,
+    "batch": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "seed": 20261012
+  },
+  "deployed_algorithm_sha256": "afc3b3845c0b2e298ee5df9f390ae7d9d262c785347848618da6ce61ee6109b7",
+  "windows_full150_delta": {
+    "Pin_TP": 260,
+    "Pin_macro_F1": 0.024403874804727416,
+    "Pin_micro_F1": 0.024049579132365134,
+    "local_score": 0.778172419566431
+  },
+  "windows_check30_delta": {
+    "Pin_TP": 101,
+    "Pin_macro_F1": 0.037101791928689315,
+    "Pin_micro_F1": 0.046003188339785867,
+    "local_score": 0.9906828636147083
+  },
+  "linux_full150_delta": {
+    "Pin_TP": 258,
+    "Pin_macro_F1": 0.024124193277509864,
+    "Pin_micro_F1": 0.023866790009250738,
+    "local_score": 0.7736566778541594,
+    "NetHypergraph_macro": 0.004440637542880571,
+    "NetLine_macro": 0.0015129531915596892
+  },
+  "linux_partition_deltas": {
+    "training100": {
+      "Pin_TP": 91,
+      "Pin_macro_F1": 0.01753749689356207,
+      "Pin_micro_F1": 0.01309258326739085,
+      "local_score": 0.6430791059945591,
+      "NetHypergraph_macro": 0.005640624404650074,
+      "NetLine_macro": 0.0007219829492753557
+    },
+    "internal_validation15": {
+      "Pin_TP": 31,
+      "Pin_macro_F1": 0.03575116980992796,
+      "Pin_micro_F1": 0.03174603174603177,
+      "local_score": 1.0880107504575491,
+      "NetHypergraph_macro": 0.004489942528735635,
+      "NetLine_macro": 0.0037083516703601133
+    },
+    "design5": {
+      "Pin_TP": 35,
+      "Pin_macro_F1": 0.042968636899099355,
+      "Pin_micro_F1": 0.05087209302325574,
+      "local_score": 1.3107107351843084,
+      "NetHypergraph_macro": 0.006080374561061308,
+      "NetLine_macro": 0.0023681703069682175
+    },
+    "check30": {
+      "Pin_TP": 101,
+      "Pin_macro_F1": 0.03712561902086173,
+      "Pin_micro_F1": 0.0460136674259681,
+      "local_score": 0.9622292048627941,
+      "NetHypergraph_macro": 0.00014273934102454477,
+      "NetLine_macro": 0.002909285240539173
+    }
+  },
+  "full150_contains_training_and_internal_validation_data": true,
+  "old_L1_training_includes_development_data": true,
+  "GT_reads_in_inference": 0,
+  "network_attempts": 0,
+  "official_result": {
+    "submission_id": 5981,
+    "date_displayed": "2026-10-12 23:41",
+    "status_displayed": "Finished",
+    "filename_displayed": "submission.zip",
+    "account_displayed": "eda260616",
+    "Score_Accuracy": 38.33,
+    "ComponentF1": 0.3457,
+    "PinF1": 0.5792,
+    "NetHypergraphF1": 0.374,
+    "NetLineF1": 0.0388,
+    "reported_tokens": 0.0,
+    "previous_submission_id": 5857,
+    "previous_Score_Accuracy": 37.66,
+    "previous_PinF1": 0.5526,
+    "PinF1_delta": 0.0266,
+    "PinF1_percentage_point_delta": 2.66,
+    "Score_Accuracy_delta": 0.67,
+    "other_metrics_same_at_displayed_precision": true,
+    "evidence": [
+      {
+        "name": "submission_detail.png",
+        "sha256": "189c92bbdb65b60f198bdb23f27f437a555c9fb467149ab728b51fb1eaef58bf",
+        "source": "user-provided screenshot"
+      },
+      {
+        "name": "score_row.png",
+        "sha256": "41a9cc57bc10f6ff0d04ca70423d675332de09641d8b51c49806e308e1e3719f",
+        "source": "user-provided screenshot"
+      },
+      {
+        "name": "score_headers.png",
+        "sha256": "98ff4fc932c97dddb7cc6315e57f0f07924c53f4742f3df9d81081675b37c912",
+        "source": "user-provided screenshot"
+      }
+    ],
+    "local_L45_submission_zip_sha256": "6bcb70896e4754b41680a7e2021553cacd7eff08bb115b4bfb915a55c562b2ed",
+    "package_association": "user submission sequence in this chat; server-side SHA receipt unavailable",
+    "source": "user-provided official result screenshots; no platform API query",
+    "assistant_performed_official_upload": false
+  },
+  "submission_image_id": "sha256:d7e74304feaa5300bce4ac6a39a5ca2edc1af15ec1619bc0dec409dd960e517b",
+  "submission_zip_sha256": "6bcb70896e4754b41680a7e2021553cacd7eff08bb115b4bfb915a55c562b2ed",
+  "repository_default": "L39 preserved; opt in with configs/pin/team_l45.json",
+  "scope": "Pin module only; shared Component/Text/Wire/network/entrypoint unchanged"
+}
