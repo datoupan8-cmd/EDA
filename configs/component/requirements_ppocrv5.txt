@@ -1,0 +1,2 @@
+-r ../../requirements.txt
+rapidocr==3.9.2

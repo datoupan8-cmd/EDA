@@ -9,3 +9,4 @@ Pillow>=11,<13
 torch>=2.1
 ultralytics>=8.3,<9
 easyocr>=1.7,<2
+rapidocr==3.9.2

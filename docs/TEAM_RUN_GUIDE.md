@@ -6,7 +6,7 @@
 
 统一整合分支：`integration/component-pin`。
 
-默认组合为：同学最新Component/Text（原分支d648403）＋我们最新已验证L39 Pin组合（原分支af8bed7的L1/L3/E6/L36/L37）＋原Wire V3/F框线隔离＋Topology V3＋原Submission。
+当前默认组合为：YOLO11n + PP-OCRv5 + contextual_values_v2＋已验证L39 Pin组合（原分支af8bed7的L1/L3/E6/L36/L37）＋原Wire V3/F框线隔离＋Topology V3＋原Submission。默认选择在前150例完整本地配对评测完成后更新，详见[PP-OCRv5完整评测](component/PPOCRV5_FULL_PIPELINE_AB_20261013.md)。旧HybridOCR组合可通过 `--config configs/component/team_contextual_values_v2.json` 运行。
 
 同学的Pin V4另外保留为 `peer_v4`；它不会覆盖我们的Pin V4，更不会替代默认L39。旧版本继续可以选择。原始两个分支、你原来的本地工程及未提交修改保持保留。
 
@@ -55,10 +55,11 @@ $Python = ".\.venv\Scripts\python.exe"
 | 元件YOLO | `models/component_yolo11n_continue_v2_best.pt` | 原有元件视觉检测 |
 | EasyOCR | `models/easyocr/` | 原有全图分块文字读取 |
 | RapidOCR | 原有vendor或安装包模型 | 混合OCR与局部完整词读取 |
+| PP-OCRv5移动版ONNX | `models/ocr_v5/` | 当前默认全图文字检测和识别 |
 | Pin L1权重 | `reports/pin_learned_locator_l1/best.pt` | 原有box引脚定位 |
 | 官方公开元件库 | `assets/cpntLibrary.json` | 原有L37语义约束 |
 
-本轮没有训练、更换模型或调整阈值。默认模型与库均从工程内读取，数据集由每个人在命令行指定。
+默认YOLO、Pin模型和公开元件库保持原版本；全图OCR已经替换为固定PP-OCRv5移动版，运行时依赖`rapidocr==3.9.2`，模型清单与哈希见`models/ocr_v5/manifest.json`。引脚局部OCR仍使用原模型。模型和库均从工程内读取，数据集由每个人在命令行指定。
 
 ## 4. 单张图片跑完整流程
 

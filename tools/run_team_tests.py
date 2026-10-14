@@ -25,7 +25,7 @@ def main():
     suite.addTests(loader.discover(str(ROOT / "tests/pin"), top_level_dir=str(ROOT)))
     for directory in ("component", "wire", "topology", "net_hypergraph", "net_lines"):
         path = ROOT / "tests" / directory
-        if path.is_dir():
+        if path.is_dir() and any(path.rglob("test_*.py")):
             suite.addTests(loader.discover(str(path), top_level_dir=str(ROOT)))
     return 0 if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful() else 1
 

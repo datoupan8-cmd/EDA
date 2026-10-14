@@ -1,6 +1,6 @@
 # 团队模块整合版
 
-默认保留同学最新Component/Text + 我们已验证的L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。
+默认使用YOLO11n + PP-OCRv5 + contextual_values_v2，以及已验证的L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。前150例完整本地对照见[YOLO + PP-OCRv5评测报告](docs/component/PPOCRV5_FULL_PIPELINE_AB_20261013.md)；旧HybridOCR组合可通过 `--config configs/component/team_contextual_values_v2.json` 选择。
 
 - [完整下载、运行、测试与各自上传说明](docs/TEAM_RUN_GUIDE.md)
 - [模块接口与维护边界](docs/TEAM_MODULE_CONTRACTS.md)

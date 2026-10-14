@@ -1,0 +1,8 @@
+{
+  "base": "configs/current.json",
+  "modules": {
+    "component": "configs/component/rcnn_ppocrv5_v1.json",
+    "pin": "configs/pin/current.json",
+    "wire_topology": "configs/wire_topology/current.json"
+  }
+}
