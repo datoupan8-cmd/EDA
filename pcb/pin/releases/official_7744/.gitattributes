@@ -1,0 +1,3 @@
+# Accepted runtime snapshots keep their original newline bytes.
+* -text
+** -text
