@@ -12,6 +12,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Fetch L45 test checkpoint
+        shell: bash
+        run: |
+          checkpoint=models/pin/l45_rc_pair/best.pt
+          if git ls-files --error-unmatch "$checkpoint" >/dev/null 2>&1; then
+            git lfs pull --include="$checkpoint" --exclude=""
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
