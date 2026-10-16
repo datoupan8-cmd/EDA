@@ -56,7 +56,9 @@ class PPOcrV5Backend:
         return self.engine
 
     def _read(self, image, *, left=0, top=0, scale=1.):
-        output = self._ensure_engine()(image, use_cls=False)
+        # RapidOCR retains per-call switches. A recognition-only local reread
+        # must not disable detection for the next full OCR call.
+        output = self._ensure_engine()(image, use_det=True, use_cls=False, use_rec=True)
         if output.txts is None or output.boxes is None:
             return []
         texts = []
@@ -96,8 +98,8 @@ class TextStagePPOcrV5:
         self.backend = None
 
     def run(self, image, context):
+        resources = context.resources.get("component", {})
         if self.backend is None:
-            resources = context.resources.get("component", {})
             cache = Path(resources.get("cache_dir", ROOT / "runs/component_alternative_cache")) / "ocr_v5"
             self.backend = PPOcrV5Backend(cache)
         texts = self.backend.recognize(image)
