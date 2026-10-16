@@ -11,6 +11,10 @@ def register_stages(registry):
     from .alternative_ocr import TextStagePPOcrV5
     registry.register("component", "contextual_values_v2", ComponentStageContextualValues)
     registry.register("text", "ppocrv5_mobile", TextStagePPOcrV5)
+    from .ocr_ablation import TextStagePPOcrV5Ablation, TextStagePPOcrV5Beam, TextStagePPOcrV5NormBeam
+    registry.register("text", "ppocrv5_v5norm", TextStagePPOcrV5Ablation)
+    registry.register("text", "ppocrv5_beam", TextStagePPOcrV5Beam)
+    registry.register("text", "ppocrv5_v5norm_beam", TextStagePPOcrV5NormBeam)
     from .local_joint import ComponentStageLocalOCR, ComponentStageLocalJoint, ComponentStagePrintedGroups, ComponentStageValueGroups
     registry.register("component", "local_ocr_v1", ComponentStageLocalOCR)
     registry.register("component", "local_joint_v1", ComponentStageLocalJoint)

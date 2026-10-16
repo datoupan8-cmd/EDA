@@ -17,7 +17,7 @@ class ComponentTextEnrichmentTests(unittest.TestCase):
         self.assertEqual(baseline.pop("component"), "peer_latest")
         self.assertEqual(current.pop("component"), "ordered_value_groups_v2")
         self.assertEqual(baseline.pop("text"), "current")
-        self.assertEqual(current.pop("text"), "ppocrv5_mobile")
+        self.assertEqual(current.pop("text"), "ppocrv5_beam")
         self.assertEqual(current, baseline)
         self.assertIn("peer_latest", build_default_registry().versions("component"))
         self.assertIn("contextual_values_v2", build_default_registry().versions("component"))
