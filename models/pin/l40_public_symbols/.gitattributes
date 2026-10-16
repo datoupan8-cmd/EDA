@@ -1,0 +1,2 @@
+# Preserve the exact independent source bytes required by manifest SHA256.
+*.json -text

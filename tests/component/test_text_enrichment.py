@@ -15,11 +15,12 @@ class ComponentTextEnrichmentTests(unittest.TestCase):
         baseline = load_team_config("configs/component/team_peer_latest.json").as_dict()
         current = load_team_config("configs/team.json").as_dict()
         self.assertEqual(baseline.pop("component"), "peer_latest")
-        self.assertEqual(current.pop("component"), "contextual_values_v2")
+        self.assertEqual(current.pop("component"), "ordered_value_groups_v2")
         self.assertEqual(baseline.pop("text"), "current")
         self.assertEqual(current.pop("text"), "ppocrv5_mobile")
         self.assertEqual(current, baseline)
         self.assertIn("peer_latest", build_default_registry().versions("component"))
+        self.assertIn("contextual_values_v2", build_default_registry().versions("component"))
 
     def apply(self, components, texts, **options):
         roles = classify_tokens(texts, [c.bbox for c in components if c.type == "box"])

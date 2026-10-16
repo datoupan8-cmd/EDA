@@ -33,3 +33,15 @@ def register_stages(registry):
         ("peer_v4", PeerSemantics), ("l39", L39Semantics),
     ]:
         registry.register("pin_semantics", name, implementation)
+
+
+def build_l45_registry():
+    """Private opt-in versions; the public default registry remains frozen."""
+    from ..core.registry import build_default_registry
+    from .model_control_l42 import L42ControlSemantics
+    from .l45_release import L45RegressionSemantics
+
+    registry = build_default_registry()
+    registry.register("pin_semantics", "l42_control", L42ControlSemantics)
+    registry.register("pin_semantics", "l45_regression", L45RegressionSemantics)
+    return registry

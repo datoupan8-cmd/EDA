@@ -1,0 +1,16 @@
+{
+  "frozen_policy_source_sha256": "8de38c7d9e7f275cdce8e5f539f18ad5e526dc58773cbf732d3533b1950155f2",
+  "algorithm_blocks_sha256": {
+    "segment_distance": "e39d00e25df68fa636b23ff2b6c261f6f3dd8095aa6e4d912de1d9958bacfa21",
+    "project": "d3c6c01b481f4aedcc6dc07c9ba3e776f155d19fdddc94ee1a207fde996bdb72",
+    "Submission": "bccbcb21114b70a8b4a86d67531a429bb5d70195a0040e4618a54a14a4502ebd"
+  },
+  "exact_algorithm_blocks": true,
+  "only_import_Path_IO_shim_changed": true,
+  "shared_files": {
+    "pcb/schema.py": "759e3f33094ea393f98935837c4ff7a5ce99fd2d26ba52f0fda811bfcfa2ced3",
+    "pcb/submission.py": "d4d83fb472e05ecae99c5669db95dfffb2e3d3b271a32495ad9d56f6b5d6ba5f",
+    "pcb/io.py": "6dc6ed78ceb445f44910d58c7da68e5da0b118129887ac3e9b372d3c61e4d843"
+  },
+  "no_GT_or_saved_predictions_in_bundle": true
+}

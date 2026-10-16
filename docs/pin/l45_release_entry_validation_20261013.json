@@ -1,0 +1,11 @@
+{
+  "status": "PASSED",
+  "case": "0017",
+  "prediction_equal_to_validated_Windows_L45": true,
+  "target_opens": 0,
+  "tests_passed": 278,
+  "default_registry_unchanged": true,
+  "other_modules_changed": false,
+  "native_command": "python pcb/pin/run_l45_release.py",
+  "checkpoint_sha256": "d8b1babd809f622ba4243becf135ae38e92effdc6fe9dd079526cf67e084fc71"
+}
