@@ -1,0 +1,22 @@
+{
+  "files": {
+    "algorithm.json": {
+      "bytes": 817,
+      "sha256": "4e0da9eaf029c9402ab075d6e130edaaff893d207dc4f3dcdffaac863b56a34e"
+    },
+    "ground_runtime.py": {
+      "bytes": 3058,
+      "sha256": "6816c15cd3d73eec9314d856da1aed84ea7f3399527808f2a902f919a5b277cf"
+    },
+    "linux_ground_T_runner.py": {
+      "bytes": 3484,
+      "sha256": "a685dbd1d376863d3e0903dd23d4082021e500da64378712384efd50d57fd6d5"
+    },
+    "release_entry.py": {
+      "bytes": 1869,
+      "sha256": "2171ff0271d6d6c94805eaf704fbce70a811f0173e40680db2b0725a88aacc81"
+    }
+  },
+  "immutable_L45_parent_image": "sha256:d7e74304feaa5300bce4ac6a39a5ca2edc1af15ec1619bc0dec409dd960e517b",
+  "T_release_version": "L46_T_20261015"
+}

@@ -41,8 +41,12 @@ class PPOcrV5Backend:
         if local.is_dir() and str(local) not in sys.path:
             sys.path.insert(0, str(local))
         from rapidocr import RapidOCR
+        self.engine = RapidOCR(params=self.engine_parameters())
+        return self.engine
+
+    def engine_parameters(self):
         from rapidocr.utils.typings import OCRVersion, ModelType
-        params = {"Global.use_cls": False, "Global.model_root_dir": str(self.models),
+        return {"Global.use_cls": False, "Global.model_root_dir": str(self.models),
                   "Global.log_level": "warning", "Global.max_side_len": 4000,
                   "Det.model_path": str(self.models / "ch_PP-OCRv5_det_mobile.onnx"),
                   "Det.ocr_version": OCRVersion.PPOCRV5, "Det.model_type": ModelType.MOBILE,
@@ -52,11 +56,11 @@ class PPOcrV5Backend:
                   "Cls.model_path": str(self.models / "ch_ppocr_mobile_v2.0_cls_mobile.onnx"),
                   "EngineConfig.onnxruntime.intra_op_num_threads": 4,
                   "EngineConfig.onnxruntime.inter_op_num_threads": 2}
-        self.engine = RapidOCR(params=params)
-        return self.engine
 
     def _read(self, image, *, left=0, top=0, scale=1.):
-        output = self._ensure_engine()(image, use_cls=False)
+        # RapidOCR retains per-call switches. A recognition-only local reread
+        # must not disable detection for the next full OCR call.
+        output = self._ensure_engine()(image, use_det=True, use_cls=False, use_rec=True)
         if output.txts is None or output.boxes is None:
             return []
         texts = []
@@ -96,8 +100,8 @@ class TextStagePPOcrV5:
         self.backend = None
 
     def run(self, image, context):
+        resources = context.resources.get("component", {})
         if self.backend is None:
-            resources = context.resources.get("component", {})
             cache = Path(resources.get("cache_dir", ROOT / "runs/component_alternative_cache")) / "ocr_v5"
             self.backend = PPOcrV5Backend(cache)
         texts = self.backend.recognize(image)

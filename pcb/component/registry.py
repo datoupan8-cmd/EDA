@@ -11,3 +11,21 @@ def register_stages(registry):
     from .alternative_ocr import TextStagePPOcrV5
     registry.register("component", "contextual_values_v2", ComponentStageContextualValues)
     registry.register("text", "ppocrv5_mobile", TextStagePPOcrV5)
+    from .ocr_ablation import TextStagePPOcrV5Ablation, TextStagePPOcrV5Beam, TextStagePPOcrV5NormBeam
+    registry.register("text", "ppocrv5_v5norm", TextStagePPOcrV5Ablation)
+    registry.register("text", "ppocrv5_beam", TextStagePPOcrV5Beam)
+    registry.register("text", "ppocrv5_v5norm_beam", TextStagePPOcrV5NormBeam)
+    from .local_joint import ComponentStageLocalOCR, ComponentStageLocalJoint, ComponentStagePrintedGroups, ComponentStageValueGroups
+    registry.register("component", "local_ocr_v1", ComponentStageLocalOCR)
+    registry.register("component", "local_joint_v1", ComponentStageLocalJoint)
+    registry.register("component", "printed_groups_v1", ComponentStagePrintedGroups)
+    registry.register("component", "printed_value_groups_v1", ComponentStageValueGroups)
+    from .value_groups_v2 import ComponentStageGuardedValues, ComponentStageOrderedValues
+    registry.register("component", "guarded_value_groups_v2", ComponentStageGuardedValues)
+    registry.register("component", "ordered_value_groups_v2", ComponentStageOrderedValues)
+    from .yolo_capacity import ComponentStageYolo11m
+    registry.register("component", "ordered_values_yolo11m_v1", ComponentStageYolo11m)
+    from .local_combination import ComponentStageYolo11mLocalPARSeq
+    registry.register("component", "ordered_yolo11m_local_parseq_v1", ComponentStageYolo11mLocalPARSeq)
+    from .selective_filter import ComponentStageSelectiveP01
+    registry.register("component", "ordered_yolo11m_local_parseq_p01_v1", ComponentStageSelectiveP01)

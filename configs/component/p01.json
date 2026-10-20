@@ -1,0 +1,6 @@
+{
+  "text": "ppocrv5_beam",
+  "component": "ordered_yolo11m_local_parseq_p01_v1",
+  "component_stage": "BEST",
+  "text_rules": "v4_1"
+}

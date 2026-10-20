@@ -51,11 +51,19 @@ def class_aware_nms(proposals: list[ComponentProposal], threshold: float) -> tup
 
 @dataclass(frozen=True)
 class YoloConfig:
-    tile_size: int = 1280
+    tile_size: int = 1536
     overlap: int = 192
     confidence: float = .10
     nms_iou: float = .50
     max_det: int = 500
+    # Crop extent in source pixels and model input size are independent.
+    # Keep this last to preserve existing positional construction of YoloConfig.
+    inference_size: int = 1280
+
+    def __post_init__(self):
+        tile_origins(1, self.tile_size, self.overlap)
+        if not isinstance(self.inference_size, int) or isinstance(self.inference_size, bool) or self.inference_size <= 0:
+            raise ValueError("inference_size must be a positive integer")
 
 
 class YoloComponentDetector:
@@ -98,7 +106,7 @@ class YoloComponentDetector:
                 tile = image[top:min(top + self.config.tile_size, height), left:min(left + self.config.tile_size, width)]
                 result = self.model.predict(
                     tile,
-                    imgsz=self.config.tile_size,
+                    imgsz=self.config.inference_size,
                     conf=self.config.confidence,
                     device=self.device,
                     verbose=False,
@@ -113,6 +121,7 @@ class YoloComponentDetector:
         diagnostics = {
             "weights": str(self.weights.resolve()), "weights_sha256": self.weight_sha256, "device": self.device,
             "tile_size": self.config.tile_size, "overlap": self.config.overlap,
+            "inference_size": self.config.inference_size,
             "tile_count": tile_count, "raw_count": len(raw), "kept_count": len(kept),
             "nms_rejected": rejected, "class_names": self.names, "cache_hit": False,
         }

@@ -1,8 +1,9 @@
 # 团队模块整合版
 
-默认保留同学最新Component/Text + 我们已验证的L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。
+默认使用P01 Component（YOLO11m、PP-OCRv5、局部PARSeq）和已验证的L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。
 
 - [完整下载、运行、测试与各自上传说明](docs/TEAM_RUN_GUIDE.md)
+- [P01器件筛选：运行方式与本地对照结果](docs/component/P01_GIT_RELEASE_20261020.md)
 - [模块接口与维护边界](docs/TEAM_MODULE_CONTRACTS.md)
 - [整合与验证记录](docs/TEAM_INTEGRATION_REPORT.md)
 - [网络成员 / 线段的独立维护与运行](docs/network/README.md)

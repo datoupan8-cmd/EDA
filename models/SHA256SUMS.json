@@ -6,5 +6,9 @@
   "vendor/ocr_runtime/bidi/bidi.cp314-win_amd64.pyd": "fd01c90e27d114887516989236104fff17c7456c22d653fe5c4073f243b8cf77",
   "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_PP-OCRv4_det_infer.onnx": "d2a7720d45a54257208b1e13e36a8479894cb74155a5efe29462512d42f49da9",
   "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_PP-OCRv4_rec_infer.onnx": "48fc40f24f6d2a207a2b1091d3437eb3cc3eb6b676dc3ef9c37384005483683b",
-  "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_ppocr_mobile_v2.0_cls_infer.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+  "vendor/rapidocr_runtime/rapidocr_onnxruntime/models/ch_ppocr_mobile_v2.0_cls_infer.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+  "models/component/yolo11m_finetune120/best.pt": "38555d3e6b4617429a51e1e5afdfd982e5c58a0c67ba334df12b23fbaec01685",
+  "models/component/parseq/parseq-bb5792a6.pt": "bb5792a68e367476abca029cbf8699abc805f3d3dc7e57aae45c8ec4f7b7cd00",
+  "models/component/parseq_schematic120/best.pt": "f42061a590476675269ec0ded0d4027261d6ff712ed58615f8c4ba5fc8d55417",
+  "models/component/component_selective120_candidate/model.json": "229feaad096c90bbab118bf822d513291e0dcf37274fb26e7b66c505be384164"
 }
