@@ -54,6 +54,11 @@ Race/
 200_train_cases/
 10_GTcase/
 
+# The vendored PARSeq Python package has a module named data.
+!pcb/component/_vendor/parseq/strhub/data/
+pcb/component/_vendor/parseq/strhub/data/*
+!pcb/component/_vendor/parseq/strhub/data/*.py
+
 # Local delivery archives are release artifacts, not source files.
 *.zip
 

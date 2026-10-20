@@ -23,3 +23,9 @@ def register_stages(registry):
     from .value_groups_v2 import ComponentStageGuardedValues, ComponentStageOrderedValues
     registry.register("component", "guarded_value_groups_v2", ComponentStageGuardedValues)
     registry.register("component", "ordered_value_groups_v2", ComponentStageOrderedValues)
+    from .yolo_capacity import ComponentStageYolo11m
+    registry.register("component", "ordered_values_yolo11m_v1", ComponentStageYolo11m)
+    from .local_combination import ComponentStageYolo11mLocalPARSeq
+    registry.register("component", "ordered_yolo11m_local_parseq_v1", ComponentStageYolo11mLocalPARSeq)
+    from .selective_filter import ComponentStageSelectiveP01
+    registry.register("component", "ordered_yolo11m_local_parseq_p01_v1", ComponentStageSelectiveP01)
