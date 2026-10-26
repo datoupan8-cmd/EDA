@@ -1,7 +1,8 @@
 # 团队模块整合版
 
-默认使用未启用P01筛选的Component（YOLO11m、PP-OCRv5 beam、局部PARSeq）和已验证的L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。
+默认使用 rotation_vertical＋N1＋N2 器件方案（YOLO11m、mobile/server OCR、竖排候选、局部PARSeq及电源恢复）和既有L39 Pin组合。统一入口为 `tools/run_team_pipeline.py`。
 
+- [最新器件方案与提交包一致性](docs/component/N1_N2_RELEASE_20261026.md)
 - [完整下载、运行、测试与各自上传说明](docs/TEAM_RUN_GUIDE.md)
 - [恢复P01前的器件方案：范围与覆盖情况](docs/component/ROLLBACK_PRE_P01_20261026.md)
 - [P01器件筛选候选：运行方式与历史本地对照结果](docs/component/P01_GIT_RELEASE_20261020.md)

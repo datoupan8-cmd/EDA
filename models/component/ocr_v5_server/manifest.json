@@ -1,0 +1,17 @@
+{
+  "upstream_manifest": "https://raw.githubusercontent.com/RapidAI/RapidOCR/v3.9.2/python/rapidocr/default_models.yaml",
+  "models": {
+    "ch_PP-OCRv5_det_server": {
+      "path": "E:\\EDA\\EDA\\models\\component\\ocr_v5_server\\ch_PP-OCRv5_det_server.onnx",
+      "source": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv5/det/ch_PP-OCRv5_det_server.onnx",
+      "sha256": "0f8846b1d4bba223a2a2f9d9b44022fbc22cc019051a602b41a7fda9667e4cad",
+      "bytes": 88118768
+    },
+    "ch_PP-OCRv5_rec_server": {
+      "path": "E:\\EDA\\EDA\\models\\component\\ocr_v5_server\\ch_PP-OCRv5_rec_server.onnx",
+      "source": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv5/rec/ch_PP-OCRv5_rec_server.onnx",
+      "sha256": "e09385400eaaaef34ceff54aeb7c4f0f1fe014c27fa8b9905d4709b65746562a",
+      "bytes": 84577022
+    }
+  }
+}

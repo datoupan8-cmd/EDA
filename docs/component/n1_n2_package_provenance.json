@@ -1,0 +1,20 @@
+{
+  "profile": "rotation_vertical_n1_n2_v1",
+  "source_package": "submission_UPDATED_N1N2_L45_T_20261026_v2.zip",
+  "source_package_sha256": "9bc9e6126b2da56c930b4fbac80581b6f9b26f465f798d168d501dc83e01c149",
+  "base_commit": "447581231250f3c14a874b810bae9452fd8aeb23",
+  "ported_without_rule_or_threshold_changes": true,
+  "module_relocation_and_default_cache_fallback_only": true,
+  "source_sha256": {
+    "updated_component_profile.py": "791a6ae7550c2c9d198ed6740d2876c653b0eefbb86d3880eaa09861a1deb2df",
+    "recovery_raw_candidates.py": "eed0103aff2c5482f07665b5fe96681489cf3246f9ba8bf95a6c119925be714e",
+    "pcb_parser/candidate_pool.py": "c89bd41855bcd368e07e1b2a8303794844881d5fe2ec67902c66a28236e6323d",
+    "pcb_parser/power_recovery.py": "931821bc86c2126f5979e17de4fb65a1463b5c691dd617428a2155a6040328a3",
+    "pcb_parser/text_candidate_views.py": "2733f4e3d9e1bdbf74a4569c976ce12f415b53bb3d2209fee09ce490cf173443",
+    "pcb_parser/components.py": "0d75ad72ce12c4631711dafea0b56ed8cff3f06d5f7385bbdbfc7a979688a2b5",
+    "pcb_parser/recognition.py": "73fdc4c617bd6c405f241bc4dcf9436e3f0146ddef798eadbb879ed3202f0315",
+    "pcb_parser/evaluation.py": "0df33448f0533085944a1b0d091cd4d87cf636e4b0a405c7aeb855ca7dad431f"
+  },
+  "reserved_data_accessed": false,
+  "GT_read_for_port": false
+}

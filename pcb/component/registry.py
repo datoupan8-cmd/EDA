@@ -29,3 +29,6 @@ def register_stages(registry):
     registry.register("component", "ordered_yolo11m_local_parseq_v1", ComponentStageYolo11mLocalPARSeq)
     from .selective_filter import ComponentStageSelectiveP01
     registry.register("component", "ordered_yolo11m_local_parseq_p01_v1", ComponentStageSelectiveP01)
+    from .recovery.profile import RecoveryTextStage, RecoveryComponentStage, PROFILE, TEXT_PROFILE
+    registry.register("text", TEXT_PROFILE, RecoveryTextStage)
+    registry.register("component", PROFILE, RecoveryComponentStage)

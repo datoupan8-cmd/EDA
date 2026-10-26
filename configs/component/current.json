@@ -1,6 +1,6 @@
 {
-  "text": "ppocrv5_beam",
-  "component": "ordered_yolo11m_local_parseq_v1",
+  "text": "recovery_rotation_vertical_v1",
+  "component": "rotation_vertical_n1_n2_v1",
   "component_stage": "BEST",
   "text_rules": "v4_1"
 }
