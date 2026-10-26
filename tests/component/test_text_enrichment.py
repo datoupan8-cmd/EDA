@@ -15,7 +15,7 @@ class ComponentTextEnrichmentTests(unittest.TestCase):
         baseline = load_team_config("configs/component/team_peer_latest.json").as_dict()
         current = load_team_config("configs/team.json").as_dict()
         self.assertEqual(baseline.pop("component"), "peer_latest")
-        self.assertEqual(current.pop("component"), "ordered_yolo11m_local_parseq_p01_v1")
+        self.assertEqual(current.pop("component"), "ordered_yolo11m_local_parseq_v1")
         self.assertEqual(baseline.pop("text"), "current")
         self.assertEqual(current.pop("text"), "ppocrv5_beam")
         self.assertEqual(current, baseline)
