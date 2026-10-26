@@ -36,6 +36,7 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           case "$MODULE_BRANCH" in
+            feature/pin-l45-validated-20261012) owner=component_pin_release ;;
             feature/network-metrics-split) owner=integration; network=1 ;;
             feature/hypergraph-*) owner=net_hypergraph; network=1 ;;
             feature/net-lines-*) owner=net_lines; network=1 ;;
