@@ -50,7 +50,32 @@ def _stroke(mask):
     sk=skeletonize(mask>0);dist=cv2.distanceTransform(mask,cv2.DIST_L2,3);vals=dist[sk]
     return float(max(1,np.median(vals)*2)) if vals.size else 1.0
 
-def extract_wire_v2(image,scene):
+def _select_palette_candidates(scored, *, minimum, score_ratio=.72, max_candidates=2):
+    """Select supported palettes, optionally without a candidate-count cap.
+
+    ``max_candidates=2`` preserves the historical V2 behavior. ``None`` keeps
+    every palette that passes the existing minimum-density and relative-score
+    gates. This only combines image-derived, line-supported masks; it does not
+    infer electrical connectivity.
+    """
+    if max_candidates is not None and max_candidates < 1:
+        raise ValueError("max_candidates must be positive or None")
+    if not 0.0 <= score_ratio <= 1.0:
+        raise ValueError("score_ratio must be between 0 and 1")
+    selected=[]
+    for item in scored:
+        if item[3] < minimum:
+            continue
+        if selected and item[0] < selected[0][0] * score_ratio:
+            continue
+        selected.append(item)
+        if max_candidates is not None and len(selected) >= max_candidates:
+            break
+    return selected
+
+
+def extract_wire_v2(image,scene,*,max_palette_candidates=2,palette_score_ratio=.72,_trace=None,
+                    _candidate_callback=None):
     h,w=image.shape[:2];scale=max(.6,min(2.,max(h,w)/1500));hsv=cv2.cvtColor(image,cv2.COLOR_BGR2HSV);gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     sat=hsv[:,:,1];val=hsv[:,:,2];candidates=[]
     # Dark/monochrome candidate plus overlapping hue sectors. Overlap retains
@@ -69,26 +94,59 @@ def extract_wire_v2(image,scene):
         x1,y1,x2,y2=map(int,c.body_bbox or c.bbox);margin=max(1,int(round(1.5*scale)))
         cv2.rectangle(suppression,(max(0,x1+margin),max(0,y1+margin)),(min(w-1,x2-margin),min(h-1,y2-margin)),255,-1)
     scored=[];debug=np.zeros_like(image);color_fraction=float((sat>=45).mean())
+    raw_union=np.zeros((h,w),np.uint8);clean_union=np.zeros((h,w),np.uint8);supported_union=np.zeros((h,w),np.uint8)
+    supported_candidates={}
     palette=[(0,150,0),(180,0,0),(0,0,190),(170,90,0),(120,0,170),(0,140,180)]
     for name,raw in candidates:
+        if _trace is not None:raw_union=cv2.bitwise_or(raw_union,raw)
         clean=raw.copy();clean[suppression>0]=0;clean,frame_removed=_drop_page_frame(clean)
+        if _trace is not None:clean_union=cv2.bitwise_or(clean_union,clean)
         keep,seeds,support=_line_supported(clean,scale)
+        if _trace is not None:
+            supported_union=cv2.bitwise_or(supported_union,keep)
+            supported_candidates[name]=keep.copy()
+        if _candidate_callback is not None:
+            _candidate_callback(name, keep)
         density=int((keep>0).sum());pin_hits=_outward_hits(keep,scene,scale)
         score=pin_hits*12.0+support/max(1,density)*np.sqrt(max(0,density))
         if name=='dark' and color_fraction>.02:score*=.35
         scored.append((score,name,keep,density,int((seeds>0).sum()),pin_hits,frame_removed))
-    scored.sort(reverse=True,key=lambda x:x[0]);selected=[]
-    for item in scored:
-        if item[3]<max(20,h*w*.000015):continue
-        if selected and item[0]<selected[0][0]*.72:continue
-        selected.append(item)
-        if len(selected)>=2:break
+    scored.sort(reverse=True,key=lambda x:x[0])
+    minimum=max(20,h*w*.000015)
+    eligible=_select_palette_candidates(
+        scored, minimum=minimum, score_ratio=palette_score_ratio,
+        max_candidates=None) if _trace is not None else []
+    selected=_select_palette_candidates(
+        scored, minimum=minimum, score_ratio=palette_score_ratio,
+        max_candidates=max_palette_candidates)
+    eligible_union=np.zeros((h,w),np.uint8)
+    if _trace is not None:
+        for item in eligible:eligible_union=cv2.bitwise_or(eligible_union,item[2])
     mask=np.zeros((h,w),np.uint8)
     for j,(_,name,m,_,_,_,_) in enumerate(selected):
         mask=cv2.bitwise_or(mask,m);debug[m>0]=palette[j%len(palette)]
     # Close only sub-stroke gaps; long bridge decisions belong in topology.
     mask=cv2.morphologyEx(mask,cv2.MORPH_CLOSE,np.ones((2,2),np.uint8))
     mask[:2,:]=0;mask[-2:,:]=0;mask[:,:2]=0;mask[:,-2:]=0
+    if _trace is not None:
+        _trace.update({
+            "raw_palette_union":raw_union,
+            "after_suppression_and_frame_union":clean_union,
+            "after_line_support_union":supported_union,
+            "line_supported_candidates":supported_candidates,
+            "after_score_gate_union":eligible_union,
+            "after_candidate_limit_union":np.bitwise_or.reduce(
+                np.stack([item[2] for item in selected]),axis=0
+            ) if selected else np.zeros((h,w),np.uint8),
+            "after_close_and_border":mask.copy(),
+            "candidate_scores":[{"name":item[1],"score":float(item[0]),"pixels":int(item[3]),
+                                 "selected_by_gate":item[1] in {entry[1] for entry in eligible},
+                                 "selected_by_limit":item[1] in {entry[1] for entry in selected}}
+                                for item in scored],
+            "score_ratio":float(palette_score_ratio),
+            "max_palette_candidates":max_palette_candidates,
+            "minimum_density":float(minimum),
+        })
     stroke=_stroke(mask)
     scene.diagnostics.update({'wire_extractor':'adaptive_v2','wire_palette_candidates':[{'name':n,'score':round(float(s),2),'pixels':d,'seed_pixels':sp,'outward_pin_hits':ph,'frame_pixels_removed':fr} for s,n,_,d,sp,ph,fr in scored],
         'wire_palette_selected':[x[1] for x in selected],'wire_stroke_width':round(stroke,3),'suppressed_pixels':int((suppression>0).sum())})

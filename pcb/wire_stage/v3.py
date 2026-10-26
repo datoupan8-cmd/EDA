@@ -25,8 +25,13 @@ def _terminal_corridors(scene, shape, stroke):
     return corridor
 
 
-def build_suppressed_wire_mask(image, scene):
-    mask, color_debug, suppression = extract_wire_v2(image, scene)
+def build_suppressed_wire_mask(image, scene, *, max_palette_candidates=2,
+                               palette_score_ratio=.72, _trace=None,
+                               _candidate_callback=None):
+    mask, color_debug, suppression = extract_wire_v2(
+        image, scene, max_palette_candidates=max_palette_candidates,
+        palette_score_ratio=palette_score_ratio, _trace=_trace,
+        _candidate_callback=_candidate_callback)
     stroke = float(scene.diagnostics.get("wire_stroke_width", 1.0))
     corridor = _terminal_corridors(scene, image.shape, stroke)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -34,6 +39,8 @@ def build_suppressed_wire_mask(image, scene):
     raw = ((gray < 205) | ((hsv[:, :, 1] >= 45) & (hsv[:, :, 2] < 248))).astype(np.uint8) * 255
     restore = cv2.bitwise_and(raw, corridor)
     mask = cv2.bitwise_or(mask, restore)
+    if _trace is not None:
+        _trace["after_terminal_corridor_restore"] = mask.copy()
     # A component body remains an electrical barrier. Corridors begin at its
     # boundary and therefore do not punch a path through the interior.
     barrier = np.zeros(mask.shape, np.uint8)
@@ -46,6 +53,8 @@ def build_suppressed_wire_mask(image, scene):
         decisions.append({"component": component.key, "bbox": (x1, y1, x2, y2), "action": "interior_removed"})
     removed = int(((mask > 0) & (barrier > 0)).sum())
     mask[barrier > 0] = 0
+    if _trace is not None:
+        _trace["after_component_body_barrier"] = mask.copy()
     suppression_with_barrier = cv2.bitwise_or(suppression, barrier)
     scene.diagnostics.update({
         "wire_extractor": "adaptive_v3_suppressed", "terminal_corridor_pixels": int((corridor > 0).sum()),
