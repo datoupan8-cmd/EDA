@@ -1,5 +1,8 @@
 import copy
+import contextlib
 from dataclasses import asdict
+import io
+import json
 from types import SimpleNamespace
 import unittest
 import numpy as np
@@ -67,6 +70,15 @@ class PowerV2(unittest.TestCase):
         crop = result.debug['power_symbol_crops']['P']['image']
         self.assertFalse(crop.flags.writeable)
         self.assertNotIn('power_symbol_crops', base.debug)
+
+    def test_cli_selects_adopted_v2_and_keeps_v1_and_no_power_modes(self):
+        from tools.run_team_pipeline import main
+        for options, expected in (([], 'v3'), (['--power-terminals'], 'v3_power_terminals_v2'),
+                                  (['--power-terminals', '--power-version', 'v1'], 'v3_power_terminals_v1')):
+            stream = io.StringIO()
+            with contextlib.redirect_stdout(stream):
+                self.assertEqual(main(options+['--list-stages']), 0)
+            self.assertEqual(json.loads(stream.getvalue())['config']['topology'], expected)
 
 
 if __name__ == '__main__':
