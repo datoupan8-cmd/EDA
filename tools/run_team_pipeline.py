@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import argparse
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from pathlib import Path
 import sys
@@ -46,6 +46,15 @@ def project_path(value: str | Path) -> Path:
     return p.resolve() if p.is_absolute() else (ROOT / p).resolve()
 
 
+def runtime_registry(config):
+    """Explicit integration selection leaves the frozen public registry intact."""
+    registry = build_default_registry()
+    if config.topology == "v3_power_terminals_v1":
+        from pcb.topology_stage.power_v1 import PowerTerminalTopology
+        registry.register("topology", config.topology, PowerTerminalTopology)
+    return registry
+
+
 def build_runtime(config, device, ocr_device, cache: Path):
     """Generic runtime setup. Models/algorithm decisions belong to stages."""
     import torch
@@ -62,7 +71,7 @@ def build_runtime(config, device, ocr_device, cache: Path):
     detector = YoloComponentDetector(ROOT / "models/component_yolo11n_continue_v2_best.pt",
                                     device="0" if device == "cuda" else device,
                                     cache_dir=cache / "yolo")
-    return ModularPipeline(config, build_default_registry()), ocr, detector, device
+    return ModularPipeline(config, runtime_registry(config)), ocr, detector, device
 
 
 def select_inputs(image: Path | None, dataset: Path | None, cases: str | None):
@@ -110,12 +119,19 @@ def main(argv=None):
     parser.add_argument("--ocr-device", choices=("auto", "cuda", "cpu"), default="auto")
     parser.add_argument("--cache-dir", default="runs/team_cache")
     parser.add_argument("--evaluate", action="store_true", help="Read development GT only AFTER inference")
+    parser.add_argument("--evaluator", choices=("pin_protocol2055", "clarified_202610_v1", "legacy_v2"),
+                        default="pin_protocol2055", help="Explicit local protocol; none is organizer code")
     parser.add_argument("--save-debug", action="store_true")
+    parser.add_argument("--power-terminals", action="store_true", help="Attach supported GND/supply terminals using frozen V3 networks")
     parser.add_argument("--list-stages", action="store_true")
     args = parser.parse_args(argv)
     config = load_team_config(args.config)
+    if args.power_terminals:
+        if config.topology != "v3":
+            parser.error("--power-terminals requires the frozen v3 topology")
+        config = replace(config, topology="v3_power_terminals_v1")
     if args.list_stages:
-        print(json.dumps({"config": config.as_dict(), "stages": build_default_registry().describe()}, indent=2))
+        print(json.dumps({"config": config.as_dict(), "stages": runtime_registry(config).describe()}, indent=2))
         return 0
     if args.image is None and args.dataset is None:
         parser.error("Provide --image or --dataset")
@@ -161,12 +177,18 @@ def main(argv=None):
         print(json.dumps({"event": "case_complete", "case_id": cid,
                           "seconds": round(records[-1]["seconds"], 2)}, ensure_ascii=False), flush=True)
         write_json(output / "progress.json", {"cases": records, "sealed_holdout_used": False})
-    report = {"OFFICIAL_SCORE": False, "sealed_holdout_used": False,
+    report = {"OFFICIAL_SCORE": False, "sealed_holdout_used": False, "evaluator": args.evaluator,
               "config": config.as_dict(), "network_versions": network_versions,
               "device": device, "success_count": len(records),
               "failure_count": 0, "seconds": time.perf_counter()-start, "cases": records}
     if args.evaluate:
-        from evaluate_v2 import evaluate_case, aggregate, source_from_name
+        from evaluate_v2 import source_from_name
+        if args.evaluator == "legacy_v2":
+            from evaluate_v2 import evaluate_case, aggregate
+        elif args.evaluator == "clarified_202610_v1":
+            from pcb.topology_stage.protocol_202610 import evaluate_case, aggregate
+        else:
+            from pcb.topology_stage.peer_adapter import evaluate_case, aggregate
         for record, (_, image_path, folder) in zip(records, rows):
             targets = sorted(folder.glob("*_target*.json"))
             if len(targets) != 1 or targets[0].resolve().parent != folder.resolve():
