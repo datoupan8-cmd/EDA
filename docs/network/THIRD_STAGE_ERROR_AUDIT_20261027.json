@@ -1,0 +1,605 @@
+{
+  "DIAGNOSTIC_ONLY": true,
+  "OFFICIAL_SCORE": false,
+  "ACTUAL_CASE_IDS": [
+    "0001",
+    "0002",
+    "0003",
+    "0004",
+    "0005",
+    "0006",
+    "0007",
+    "0008",
+    "0009",
+    "0010",
+    "0011",
+    "0012",
+    "0013",
+    "0014",
+    "0015",
+    "0016",
+    "0017",
+    "0018",
+    "0019",
+    "0020",
+    "0021",
+    "0022",
+    "0023",
+    "0024",
+    "0025",
+    "0026",
+    "0027",
+    "0028",
+    "0029",
+    "0030",
+    "0031",
+    "0032",
+    "0033",
+    "0034",
+    "0035",
+    "0036",
+    "0037",
+    "0038",
+    "0039",
+    "0040",
+    "0041",
+    "0042",
+    "0043",
+    "0044",
+    "0045",
+    "0046",
+    "0047",
+    "0048",
+    "0049",
+    "0050",
+    "0051",
+    "0052",
+    "0053",
+    "0054",
+    "0055",
+    "0056",
+    "0057",
+    "0058",
+    "0059",
+    "0060",
+    "0061",
+    "0062",
+    "0063",
+    "0064",
+    "0065",
+    "0066",
+    "0067",
+    "0068",
+    "0069",
+    "0070",
+    "0071",
+    "0072",
+    "0073",
+    "0074",
+    "0075",
+    "0076",
+    "0077",
+    "0078",
+    "0079",
+    "0080",
+    "0081",
+    "0082",
+    "0083",
+    "0084",
+    "0085",
+    "0086",
+    "0087",
+    "0088",
+    "0089",
+    "0090",
+    "0091",
+    "0092",
+    "0093",
+    "0094",
+    "0095",
+    "0096",
+    "0097",
+    "0098",
+    "0099",
+    "0100",
+    "0101",
+    "0102",
+    "0103",
+    "0104",
+    "0105",
+    "0106",
+    "0107",
+    "0108",
+    "0109",
+    "0110",
+    "0111",
+    "0112",
+    "0113",
+    "0114",
+    "0115",
+    "0116",
+    "0117",
+    "0118",
+    "0119",
+    "0120",
+    "0121",
+    "0122",
+    "0123",
+    "0124",
+    "0125",
+    "0126",
+    "0127",
+    "0128",
+    "0129",
+    "0130",
+    "0131",
+    "0132",
+    "0133",
+    "0134",
+    "0135",
+    "0136",
+    "0137",
+    "0138",
+    "0139",
+    "0140",
+    "0141",
+    "0142",
+    "0143",
+    "0144",
+    "0145",
+    "0146",
+    "0147",
+    "0148",
+    "0149",
+    "0150"
+  ],
+  "GT_opens": 150,
+  "reserved_used": false,
+  "baseline_commit": "2039a8cddcdab2a2b048b7b875d5bcb789c44c42",
+  "branch": "feature/pin-l45-validated-20261012",
+  "rollback_tag": "backup/20261027-204027-before-third-stage-audit",
+  "input_version_key": "1362ec34880e9faed2de7e9a25ac51ca92f6035d63f162d719be92aeec399ce9",
+  "audit_source_sha256": "2d144e9f4f2a3144724b3ce75c8fd1d270b4f5856ebb8326381dab874378865a",
+  "source_report": "E:\\EDA\\worktrees\\component-n1n2-feature-20261026\\runs\\third_stage_audit_detail_20261027\\report.json",
+  "primary_protocol": "pin_protocol2055 local peer; not website evaluation",
+  "selected_frozen_configuration": {
+    "text": "recovery_rotation_vertical_v1",
+    "component": "rotation_vertical_n1_n2_v1",
+    "pin_localization": "l39",
+    "pin_semantics": "l39",
+    "wire": "v3_frame_guard",
+    "topology": "v3_power_terminals_v2",
+    "submission": "official",
+    "component_stage": "BEST",
+    "text_rules": "v4_1",
+    "variant": "baseline",
+    "enable_flying_labels": false,
+    "legacy_pipeline_name": "v4_component"
+  },
+  "models_sha256_from_frozen_run": {
+    "models/component/ocr_v5_server/ch_PP-OCRv5_det_server.onnx": "0f8846b1d4bba223a2a2f9d9b44022fbc22cc019051a602b41a7fda9667e4cad",
+    "models/component/ocr_v5_server/ch_PP-OCRv5_rec_server.onnx": "e09385400eaaaef34ceff54aeb7c4f0f1fe014c27fa8b9905d4709b65746562a",
+    "models/component/parseq/parseq-bb5792a6.pt": "bb5792a68e367476abca029cbf8699abc805f3d3dc7e57aae45c8ec4f7b7cd00",
+    "models/component/parseq_schematic120/best.pt": "f42061a590476675269ec0ded0d4027261d6ff712ed58615f8c4ba5fc8d55417",
+    "models/component/yolo11m_finetune120/best.pt": "38555d3e6b4617429a51e1e5afdfd982e5c58a0c67ba334df12b23fbaec01685",
+    "models/component_yolo11n_baseline_best.pt": "42860935a0626a4445f2e30bf020c8e76ec01a87b816c6aacdf6288657bf1ac5",
+    "models/component_yolo11n_continue_v2_best.pt": "51b4735d19315ba3ada49143e6f912aa414589f7961e140faab177dc6db7e776",
+    "models/easyocr/craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+    "models/easyocr/english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8",
+    "models/ocr_v5/ch_PP-OCRv5_det_mobile.onnx": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae",
+    "models/ocr_v5/ch_PP-OCRv5_rec_mobile.onnx": "5825fc7ebf84ae7a412be049820b4d86d77620f204a041697b0494669b1742c5",
+    "models/ocr_v5/ch_ppocr_mobile_v2.0_cls_mobile.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+    "models/pin/l45_rc_pair/best.pt": "d8b1babd809f622ba4243becf135ae38e92effdc6fe9dd079526cf67e084fc71",
+    "reports/pin_learned_locator_l1/best.pt": "a488d0dc4897440ab7c0241c9044e1f260d02f8e2151ad80e39bcb121b4eec69",
+    "assets/cpntLibrary.json": "9c2bec334d41119f29a62cd6ff3fb36ae28fa28cbb7aeb3155875a355b38d322",
+    "models/component/component_selective120_candidate/model.json": "229feaad096c90bbab118bf822d513291e0dcf37274fb26e7b66c505be384164"
+  },
+  "frozen_environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Scripts\\python.exe",
+    "cv2_loaded_version": "4.10.0",
+    "packages": {
+      "torch": "2.14.0+cu132",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "opencv-python-headless": "4.14.0.94",
+      "opencv-python": "5.0.0.93",
+      "onnxruntime-gpu": "1.23.2",
+      "rapidocr": "3.9.2",
+      "timm": "0.9.16",
+      "ultralytics": "8.3.203"
+    },
+    "loaded_modules": {
+      "cv2": {
+        "version": "4.10.0",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Lib\\site-packages\\cv2\\__init__.py"
+      },
+      "numpy": {
+        "version": "2.3.5",
+        "file": "C:\\Users\\pps\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\site-packages\\numpy\\__init__.py"
+      },
+      "scipy": {
+        "version": "1.18.1",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Lib\\site-packages\\scipy\\__init__.py"
+      },
+      "torch": {
+        "version": "2.14.0+cu132",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\gpu_imports\\torch\\__init__.py"
+      },
+      "onnxruntime": {
+        "version": "1.23.2",
+        "file": "E:\\EDA\\EDA\\.runtime\\ort_gpu_debug\\onnxruntime\\__init__.py"
+      },
+      "rapidocr": {
+        "version": null,
+        "file": "E:\\EDA\\deliveries\\submission_updated_20261026_v2\\source\\p01_deps\\rapidocr\\__init__.py"
+      },
+      "timm": {
+        "version": "0.9.16",
+        "file": "E:\\EDA\\deliveries\\submission_updated_20261026_v2\\source\\p01_deps\\timm\\__init__.py"
+      }
+    },
+    "onnx_available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "artifact_sha256": {
+    "runs/third_stage_audit_detail_20261027/report.json": "d47eee5fd4714d3ce1dde567f97060487620a32a4e31d94c911c813eb569b304",
+    "runs/third_stage_audit_detail_20261027/network_match_summary.json": "6abde34de38773c26a49a99962650069ac2215212f316ae78c6f8c3927bcf274",
+    "pcb/topology_stage/third_stage_audit.py": "2d144e9f4f2a3144724b3ce75c8fd1d270b4f5856ebb8326381dab874378865a",
+    "tests/topology/test_third_stage_audit.py": "7406b353ffc2cfb29dc0248cdfe953f85d9a4a08a41063998443ee12ed8de117",
+    "docs/network/CURRENT150_POWER_AUDIT_20261027.json": "983b6acb02fc2c4c2d20d644c1ed871cbdf85a6abe22d55a99ccfa6cd8a6d700",
+    "docs/network/CURRENT150_BASELINE_CONFIG_20261027.json": "ec370f49beba2302e4f8de2f68b88638fdffec6bad95bda8c4cbe836e398ed83",
+    "runs/current150_power_20261027/inputs_serial/manifest.json": "31ffe9f0d04d02b1d0d0d85f0e04a7ee61a28bce2d4608906cf0fc1baab2fbf5",
+    "runs/current150_power_20261027/comparison/report.json": "3832344ceb1f348934f084bc97de0269a081cb26440482ad102429f6eb160cea",
+    "runs/current150_power_20261027/comparison/predictions_sealed.json": "9b46a9baa3924bea91941b9797312ab90e1c324b8eeea6657b41f186359a7911"
+  },
+  "validation": {
+    "data_free_unit_tests_passed": 4,
+    "observed_equals_original_topology_cases": 150,
+    "sealed_baseline_membership_parity_cases": 150,
+    "sealed_baseline_v1_v2_pair_count_parity_cases": 150,
+    "source_unchanged_during_audit": true,
+    "inference_rules_models_thresholds_configs_changed": false,
+    "GT_used_by_inference": false,
+    "production_files_changed": false,
+    "frozen_physical_groups_preserved_by_power_additions_cases": 150,
+    "change_scope": {
+      "owner": "integration",
+      "base": "2039a8cddcdab2a2b048b7b875d5bcb789c44c42",
+      "changed_file_count": 4,
+      "violations": [],
+      "status": "PASSED"
+    }
+  },
+  "pair_universes": {
+    "end_to_end_pairs": "All GT and prediction identities per image; unordered member pairs",
+    "physical_pair_stages": "Identities common to baseline, V1, V2 and GT; snap choices fixed; rails merged last",
+    "pair_stages": "Same fixed common identities; each intermediate group already rail-merged; use physical_pair_stages for the documented waterfall"
+  },
+  "geometry_tolerance_px": 5,
+  "geometry_evidence_is_not_per_decision_ground_truth": true,
+  "network_match_summary": {
+    "assigned_positive_pairs": 2060,
+    "exact_network_pairs": 530,
+    "partial_network_pairs": 1530,
+    "unmatched_prediction_nets": 2738,
+    "unmatched_GT_nets": 3332,
+    "primary_local_soft_counts": {
+      "tp": 1362.4059866133473,
+      "pred": 4798,
+      "gt": 5392,
+      "fp": 3435.5940133866525,
+      "fn": 4029.5940133866525,
+      "precision": 0.283952894250385,
+      "recall": 0.2526717334223567,
+      "f1": 0.26740058618515156,
+      "macro_f1": 0.24102481216915053
+    }
+  },
+  "aggregate": {
+    "snap_geometry": {
+      "all_raw_instances": 8460,
+      "all_snapped": 8021,
+      "legal_instances": 5950,
+      "legal_supported_correct_net": 3164,
+      "legal_wrong_identity": 1641,
+      "legal_ambiguous_GT_nets": 54,
+      "legal_no_GT_line_nearby": 580,
+      "all_unattached": 439,
+      "legal_unattached": 106,
+      "legal_wrong_net_geometry": 405
+    },
+    "power_geometry": {
+      "existing_directional_snap|supported_correct_net": 840,
+      "wire_endpoint_at_symbol_boundary|no_GT_line_nearby": 114,
+      "wire_endpoint_at_symbol_boundary|supported_correct_net": 56,
+      "image_supported_suppressed_stem|supported_correct_net": 89,
+      "existing_directional_snap|no_GT_line_nearby": 452,
+      "existing_directional_snap|wrong_net_geometry": 46,
+      "existing_directional_snap|wrong_identity": 13,
+      "image_supported_suppressed_stem|wrong_identity": 13,
+      "wire_endpoint_at_symbol_boundary|wrong_identity": 11,
+      "existing_directional_snap|ambiguous_GT_nets": 65,
+      "image_supported_suppressed_stem|wrong_net_geometry": 2,
+      "wire_endpoint_at_symbol_boundary|wrong_net_geometry": 4,
+      "image_supported_suppressed_stem|no_GT_line_nearby": 1,
+      "image_supported_suppressed_stem|ambiguous_GT_nets": 2
+    },
+    "decisions": {
+      "junctions": 13671,
+      "split_crossings": 987,
+      "short_bridges": 205,
+      "contacts": 64,
+      "duplicate_ref_groups": 4
+    },
+    "identity": {
+      "GT_unique": 9729,
+      "correct_in_net": 2915,
+      "missing_in_net": 6814,
+      "wrong_in_net": 1499,
+      "legal_tp": 2915,
+      "legal_fp": 1499,
+      "legal_fn": 6814
+    },
+    "identity_by_type": {
+      "ic": 6133,
+      "component": 3213,
+      "rail": 383
+    },
+    "wrong_identity_by_type": {
+      "ic": 1265,
+      "component": 202,
+      "rail": 32
+    },
+    "exclusive_identity_losses": {
+      "component_identity_missing": {
+        "ic": 3654,
+        "component": 1525,
+        "rail": 68
+      },
+      "ic_number_missing": {
+        "ic": 1438
+      },
+      "legal_terminal_missing": {
+        "component": 83,
+        "rail": 46
+      },
+      "legal_identity_not_in_net": {}
+    },
+    "exclusive_identity_pair_losses": {
+      "component_identity_missing": 26132,
+      "ic_number_missing": 3895,
+      "legal_terminal_missing": 699,
+      "legal_identity_not_in_net": 0
+    },
+    "end_to_end_pairs": {
+      "tp": 2583,
+      "fp": 1706,
+      "fn": 38142,
+      "GT_pairs": 40725,
+      "missing_due_to_identity": 30726,
+      "missing_despite_known_identity": 7416,
+      "false_involving_wrong_identity": 936,
+      "false_between_known_identities": 770
+    },
+    "residual_missing_pairs": {
+      "fixed_common": {
+        "at_least_one_without_wire_path": 73,
+        "both_have_wire_paths_but_disconnected": 6619
+      },
+      "v2_all_known": {
+        "at_least_one_without_wire_path": 78,
+        "both_have_wire_paths_but_disconnected": 7338
+      }
+    },
+    "identity_ceilings": {
+      "component_identity": 0.5336666931476602,
+      "raw_ic_numbers": 0.44181685945759613,
+      "legal_terminals": 0.42068784452325103,
+      "in_net": 0.42068784452325103
+    },
+    "pair_stages": {
+      "path": {
+        "tp": 95,
+        "fp": 13,
+        "fn": 8662
+      },
+      "junction": {
+        "tp": 398,
+        "fp": 139,
+        "fn": 8359
+      },
+      "bridge": {
+        "tp": 399,
+        "fp": 143,
+        "fn": 8358
+      },
+      "snap": {
+        "tp": 399,
+        "fp": 143,
+        "fn": 8358
+      },
+      "contact": {
+        "tp": 399,
+        "fp": 143,
+        "fn": 8358
+      },
+      "duplicate": {
+        "tp": 399,
+        "fp": 143,
+        "fn": 8358
+      },
+      "baseline": {
+        "tp": 399,
+        "fp": 143,
+        "fn": 8358
+      },
+      "v1": {
+        "tp": 1906,
+        "fp": 600,
+        "fn": 6851
+      },
+      "v2": {
+        "tp": 2065,
+        "fp": 635,
+        "fn": 6692
+      }
+    },
+    "pair_changes": {
+      "junction": {
+        "added_correct_pairs": 303,
+        "added_wrong_pairs": 126,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "bridge": {
+        "added_correct_pairs": 1,
+        "added_wrong_pairs": 4,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "snap": {
+        "added_correct_pairs": 0,
+        "added_wrong_pairs": 0,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "contact": {
+        "added_correct_pairs": 0,
+        "added_wrong_pairs": 0,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "duplicate": {
+        "added_correct_pairs": 0,
+        "added_wrong_pairs": 0,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "baseline": {
+        "added_correct_pairs": 0,
+        "added_wrong_pairs": 0,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "v1": {
+        "added_correct_pairs": 1507,
+        "added_wrong_pairs": 457,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      },
+      "v2": {
+        "added_correct_pairs": 159,
+        "added_wrong_pairs": 35,
+        "removed_correct_pairs": 0,
+        "removed_wrong_pairs": 0
+      }
+    },
+    "physical_pair_stages": {
+      "path": {
+        "tp": 94,
+        "fp": 13,
+        "fn": 8663
+      },
+      "junction": {
+        "tp": 396,
+        "fp": 139,
+        "fn": 8361
+      },
+      "bridge": {
+        "tp": 397,
+        "fp": 143,
+        "fn": 8360
+      },
+      "snap": {
+        "tp": 397,
+        "fp": 143,
+        "fn": 8360
+      },
+      "contact": {
+        "tp": 397,
+        "fp": 143,
+        "fn": 8360
+      },
+      "duplicate": {
+        "tp": 397,
+        "fp": 143,
+        "fn": 8360
+      },
+      "v1_physical": {
+        "tp": 427,
+        "fp": 156,
+        "fn": 8330
+      },
+      "v2_physical": {
+        "tp": 429,
+        "fp": 156,
+        "fn": 8328
+      },
+      "v2_logical": {
+        "tp": 2065,
+        "fp": 635,
+        "fn": 6692
+      }
+    },
+    "rail_merge": {
+      "baseline": {
+        "before": {
+          "tp": 397,
+          "fp": 143,
+          "fn": 8360
+        },
+        "after": {
+          "tp": 399,
+          "fp": 143,
+          "fn": 8358
+        }
+      },
+      "v1": {
+        "before": {
+          "tp": 427,
+          "fp": 156,
+          "fn": 8330
+        },
+        "after": {
+          "tp": 1906,
+          "fp": 600,
+          "fn": 6851
+        }
+      },
+      "v2": {
+        "before": {
+          "tp": 429,
+          "fp": 156,
+          "fn": 8328
+        },
+        "after": {
+          "tp": 2065,
+          "fp": 635,
+          "fn": 6692
+        }
+      }
+    },
+    "wire_coverage": {
+      "GT_length_px": 961345.6244810093,
+      "supported_length_px": 600967.7986143384,
+      "segments": {
+        "partial": 6537,
+        "none": 5360,
+        "full": 10277
+      }
+    },
+    "IC_pins": {
+      "predicted": 2306,
+      "GT": 6391,
+      "identity_matched": 1071,
+      "name_wrong_on_known_identity": 481,
+      "location_wrong_on_known_identity": 337,
+      "both_wrong_on_known_identity": 280,
+      "fully_correct": 533
+    }
+  }
+}
