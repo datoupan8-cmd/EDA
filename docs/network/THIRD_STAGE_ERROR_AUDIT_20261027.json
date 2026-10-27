@@ -272,7 +272,8 @@
       "changed_file_count": 4,
       "violations": [],
       "status": "PASSED"
-    }
+    },
+    "staged_diff_check": "PASSED"
   },
   "pair_universes": {
     "end_to_end_pairs": "All GT and prediction identities per image; unordered member pairs",
@@ -601,5 +602,6 @@
       "both_wrong_on_known_identity": 280,
       "fully_correct": 533
     }
-  }
+  },
+  "audit_implementation_commit": "92b64d6b47d09788727264d5453a9a17ce8a0074"
 }
