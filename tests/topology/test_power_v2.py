@@ -1,10 +1,11 @@
 import copy
 import contextlib
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import io
 import json
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 import numpy as np
 
 from pcb.schema import Component, Scene
@@ -73,12 +74,38 @@ class PowerV2(unittest.TestCase):
 
     def test_cli_selects_adopted_v2_and_keeps_v1_and_no_power_modes(self):
         from tools.run_team_pipeline import main
+        from pcb.core.team_config import load_team_config
+        baseline = replace(load_team_config('configs/team.json'), topology='v3')
         for options, expected in (([], 'v3'), (['--power-terminals'], 'v3_power_terminals_v2'),
                                   (['--power-terminals', '--power-version', 'v1'], 'v3_power_terminals_v1')):
             stream = io.StringIO()
-            with contextlib.redirect_stdout(stream):
+            with patch('tools.run_team_pipeline.load_team_config', return_value=baseline), contextlib.redirect_stdout(stream):
                 self.assertEqual(main(options+['--list-stages']), 0)
             self.assertEqual(json.loads(stream.getvalue())['config']['topology'], expected)
+
+    def test_cli_repeated_power_flag_preserves_configured_version_and_other_modules(self):
+        from tools.run_team_pipeline import main
+        from pcb.core.team_config import load_team_config
+        current = load_team_config('configs/team.json')
+        for version in ('v1', 'v2'):
+            configured = replace(current, topology='v3_power_terminals_'+version)
+            for options, expected in (([], version), (['--power-terminals'], version),
+                                      (['--power-terminals', '--power-version', 'v1'], 'v1'),
+                                      (['--power-terminals', '--power-version', 'v2'], 'v2')):
+                stream = io.StringIO()
+                with patch('tools.run_team_pipeline.load_team_config', return_value=configured), contextlib.redirect_stdout(stream):
+                    self.assertEqual(main(options+['--list-stages']), 0)
+                actual = json.loads(stream.getvalue())['config']
+                self.assertEqual(actual, replace(configured, topology='v3_power_terminals_'+expected).as_dict())
+
+    def test_power_flag_cannot_enable_an_unrelated_topology(self):
+        from tools.run_team_pipeline import main
+        from pcb.core.team_config import load_team_config
+        config = replace(load_team_config('configs/team.json'), topology='v1')
+        with patch('tools.run_team_pipeline.load_team_config', return_value=config), contextlib.redirect_stderr(io.StringIO()):
+            with self.assertRaises(SystemExit) as error:
+                main(['--power-terminals', '--list-stages'])
+        self.assertEqual(error.exception.code, 2)
 
 
 if __name__ == '__main__':

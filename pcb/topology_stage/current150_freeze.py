@@ -19,7 +19,17 @@ ROOT = Path(__file__).resolve().parents[2]
 GLOBAL_CACHE = ROOT/'runs/component_recovery_cache/updated_text'
 SEEDS = ROOT/'runs/power_rails_v2_20261027/current7/predictions_sealed.json'
 SELECTED = ['pcb/component', 'pcb/pin', 'pcb/core', 'pcb/wire_stage', 'pcb/network_shared',
-            'pcb/schema.py', 'pcb/submission.py']
+            'pcb/schema.py', 'pcb/submission.py', 'models', 'assets']
+
+
+def load_seed_manifest():
+    if not SEEDS.is_file():
+        return {'ACTUAL_CASE_IDS': [], 'GT_opens': 0, 'input_provenance': {}}
+    result = read(SEEDS)
+    ids = result['ACTUAL_CASE_IDS']
+    if result.get('GT_opens') != 0 or len(set(ids)) != len(ids) or any(cid not in IDS for cid in ids):
+        raise ValueError('Only unique image-only development seeds may be reused')
+    return result
 
 
 def progress_callback(cid):
@@ -43,10 +53,10 @@ class FreezeGuard(Guard):
                     self.actual_ids.add(parts[i+1])
 
 
-def version_lock():
+def version_lock(config_path='configs/team.json'):
     from pcb.core.team_config import load_team_config
     from pcb.network_shared.selection import selected_versions
-    config = load_team_config('configs/team.json')
+    config = load_team_config(config_path)
     expected = {'text': 'recovery_rotation_vertical_v1', 'component': 'rotation_vertical_n1_n2_v1',
                 'pin_localization': 'l39', 'pin_semantics': 'l39', 'wire': 'v3_frame_guard', 'topology': 'v3'}
     if any(config.as_dict()[k] != v for k, v in expected.items()) or config.enable_flying_labels:
@@ -152,7 +162,7 @@ def worker(args, inputs, guard):
     from tools.run_team_pipeline import build_runtime
     torch.set_num_threads(4)
     torch.set_num_interop_threads(1)
-    config, lock, key = version_lock()
+    config, lock, key = version_lock(args.config)
     ids = IDS[args.shard::args.shards]
     args.output.mkdir(parents=True, exist_ok=True)
     version_path = args.output/f'version_worker{args.shard}.json'
@@ -160,7 +170,7 @@ def worker(args, inputs, guard):
         raise ValueError('Do not resume with changed source/config/model versions')
     write(version_path, {'version_key': key, **lock})
     print(json.dumps({'event': 'start', 'ACTUAL_CASE_IDS': ids, 'version_key': key, 'GT_opens': 0}), flush=True)
-    seed_manifest = read(SEEDS)
+    seed_manifest = load_seed_manifest()
     records, pending = [], []
     for cid in ids:
         folder = args.output/cid
@@ -202,8 +212,9 @@ def worker(args, inputs, guard):
                           'GT_opens': guard.target_opens}), flush=True)
         write(args.output/f'progress_worker{args.shard}.json', {'cases': records, 'GT_opens': guard.target_opens,
               'actual_dataset_case_ids_opened': sorted(guard.actual_ids)})
-    if source_inventory() != lock['source_sha256']:
-        raise ValueError('Source/config changed during frozen inference')
+    _, _, final_key = version_lock(args.config)
+    if final_key != key:
+        raise ValueError('Source/config/model changed during frozen inference')
     write(args.output/f'manifest_worker{args.shard}.json', {'ACTUAL_CASE_IDS': list(ids), 'cases': records,
           'version_key': key, 'GT_opens': guard.target_opens, 'actual_dataset_case_ids_opened': sorted(guard.actual_ids)})
     print(json.dumps({'event': 'worker_complete', 'shard': args.shard, 'case_count': len(records), 'GT_opens': guard.target_opens}), flush=True)
@@ -222,8 +233,13 @@ def merge(args, inputs, guard):
             if cid in cases or cid not in IDS:
                 raise ValueError('Duplicate/invalid case')
             cases[cid] = valid_receipt(args.output/cid, cid, v['version_key'], inputs[cid][0])
+            if cases[cid] is None:
+                raise ValueError('Missing frozen receipt: '+cid)
     if list(sorted(cases)) != list(IDS) or any(v != versions[0] for v in versions):
         raise ValueError('Different versions or missing current cases')
+    _, _, current_key = version_lock(args.config)
+    if current_key != versions[0]['version_key']:
+        raise ValueError('Source/config/model changed after frozen inference')
     manifest = {**versions[0], 'ACTUAL_CASE_IDS': list(IDS), 'cases': [cases[c] for c in IDS], 'GT_opens': 0}
     write(args.output/'manifest.json', manifest)
     print(json.dumps({'event': 'current150_sealed', 'ACTUAL_CASE_IDS': IDS, 'version_key': manifest['version_key'], 'GT_opens': 0}), flush=True)
@@ -233,6 +249,8 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--dataset', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--config', default='configs/team.json',
+                   help='Use the preserved baseline config after the team default enables power terminals')
     p.add_argument('--stage', choices=('worker', 'merge'), required=True)
     p.add_argument('--shard', type=int, default=0)
     p.add_argument('--shards', type=int, default=2)

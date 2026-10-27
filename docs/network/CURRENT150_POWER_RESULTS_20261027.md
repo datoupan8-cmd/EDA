@@ -113,4 +113,32 @@ V2 只处理 V1 中“没有支持端点”的拒绝，额外读取显式传入�
 
 ## 7. 标准入口采用检查
 
-对照与选择已完成，V2 合格。正在将标准团队配置切换到 `v3_power_terminals_v2`，保留显式原版配置，并进行入口兼容、全部 150 例阶段重放及单图端到端核验。最终检查结果完成后更新此节。
+已在标准团队配置启用 `v3_power_terminals_v2`。完整配置与原版相比只改变这一项；权重、其他版本及参数均不变。
+
+- 408 项数据无关自动检查通过，包括原版/V1/V2 选择、重复供电开关、无关拓扑拒绝、模型漂移拒绝、缺失封存凭据拒绝及不安全缓存拒绝。
+- 标准注册的 Topology 与原图裁剪包装器在全部 150 例冻结 Scene/Wire 上重放，与封存 V2 预测逐例完全一致，GT 打开数为 0。
+- 0119 原图通过完整标准入口运行，不传 `--power-terminals`；最终预测和 Wire 掩膜与封存结果完全一致。实际新增 2 个引用，其中 1 个依赖 V2 的原图墨迹证据；没有执行评分或读取 GT。
+- 网络集成范围检查通过；Component、Pin、Wire、NetHypergraph、NetLine、供电接入算法与评分器源码未变。
+
+启用前的额外回退点：提交 `183523b1d03349057ed74753d76bb0b2e2cf1c93`，标签 `backup/20261027-183718-before-enable-current150-power`，其中已保存完整对照及原版配置。初始回退标签和更早模型均保留。
+
+正常运行无需供电开关：
+
+```powershell
+python tools/run_team_pipeline.py --image D:/allowed_images/example.png --output runs/power_default --device cuda --ocr-device cuda
+```
+
+需要原版时在该命令中加 `--config docs/network/CURRENT150_BASELINE_CONFIG_20261027.json`；需要 V1 时加 `--power-terminals --power-version v1`。重复传 `--power-terminals` 会保留已选版本，显式 `--power-version` 才覆盖版本。
+
+重新生成完整对照时，使用新输出目录和保留的原版配置：
+
+```powershell
+python -m pcb.topology_stage.current150_freeze --dataset D:/data/200_train_cases --output runs/reproduce_inputs --config docs/network/CURRENT150_BASELINE_CONFIG_20261027.json --stage worker --shards 1
+python -m pcb.topology_stage.current150_freeze --dataset D:/data/200_train_cases --output runs/reproduce_inputs --config docs/network/CURRENT150_BASELINE_CONFIG_20261027.json --stage merge --shards 1
+python -m pcb.topology_stage.power_v2_experiment --dataset D:/data/200_train_cases --output runs/reproduce_comparison --cohort current150 --frozen runs/reproduce_inputs --stage prepare
+python -m pcb.topology_stage.power_v2_experiment --dataset D:/data/200_train_cases --output runs/reproduce_comparison --cohort current150 --frozen runs/reproduce_inputs --stage score
+```
+
+路径须替换为本机数据目录，运行环境须具备上文固定依赖和完整模型。这些脚本只接受完整 0001—0150 白名单；可选的本地已核验缓存缺失时直接从原图生成全部预测，缺失案例则停止。封存前后及合并时会检查源码、配置和模型版本，旧缓存中的 GT 使用记录、重复或越界编号会被拒绝。
+
+测分阶段的源码与候选哈希保持原记录；后续仅有默认选择、入口兼容和复现保护改动。没有根据本轮成绩调整交点、吸附、墨迹阈值或任何模型。

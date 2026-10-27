@@ -131,14 +131,15 @@ def main(argv=None):
     parser.add_argument("--save-debug", action="store_true")
     parser.add_argument("--power-terminals", action="store_true", help="Attach supported GND/supply terminals using frozen V3 networks")
     parser.add_argument("--power-version", choices=("v1", "v2"),
-                        help="Power adapter version (default v2 with --power-terminals); v1 remains available")
+                        help="Power adapter override with --power-terminals; preserves the configured version by default")
     parser.add_argument("--list-stages", action="store_true")
     args = parser.parse_args(argv)
     config = load_team_config(args.config)
     if args.power_terminals:
-        if config.topology != "v3":
+        if config.topology not in {"v3", "v3_power_terminals_v1", "v3_power_terminals_v2"}:
             parser.error("--power-terminals requires the frozen v3 topology")
-        config = replace(config, topology="v3_power_terminals_"+(args.power_version or "v2"))
+        selected = "v2" if config.topology == "v3" else config.topology.rsplit("_", 1)[-1]
+        config = replace(config, topology="v3_power_terminals_"+(args.power_version or selected))
     elif args.power_version is not None:
         parser.error("--power-version requires --power-terminals")
     if args.list_stages:
