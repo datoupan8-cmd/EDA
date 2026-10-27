@@ -896,5 +896,6 @@
     }
   },
   "adoption_checkpoint_commit": "183523b1d03349057ed74753d76bb0b2e2cf1c93",
-  "adoption_rollback_tag": "backup/20261027-183718-before-enable-current150-power"
+  "adoption_rollback_tag": "backup/20261027-183718-before-enable-current150-power",
+  "implementation_commit": "4abdc3d0adb6f5d3e12af6155288e7bb2b7aeb38"
 }
