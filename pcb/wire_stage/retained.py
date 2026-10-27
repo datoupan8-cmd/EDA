@@ -217,6 +217,111 @@ def filter_candidate_bridges(baseline_mask, candidate_mask):
     }
 
 
+def filter_candidate_bridges_with_branch_salvage(baseline_mask, candidate_mask,
+                                                  stroke_width=1.0):
+    """Keep safe single-baseline arms of branched rejected candidates.
+
+    Candidate pixels are never synthesized. Multi-baseline components are
+    still rejected in full unless a skeleton branch cluster separates them
+    into pieces that each touch exactly one baseline component. Each piece is
+    added incrementally and checked by the ordinary bridge guard against the
+    current output, so fragments cannot reconnect distinct components or
+    remove an earlier V8 pixel.
+    """
+    baseline = np.asarray(baseline_mask)
+    candidate = np.asarray(candidate_mask)
+    if baseline.ndim != 2 or candidate.ndim != 2 or candidate.shape != baseline.shape:
+        raise ValueError("baseline and candidate masks must be matching 2D arrays")
+
+    guarded, rejected, initial_detail = filter_candidate_bridges(baseline, candidate)
+    baseline_bool = baseline > 0
+    added = (candidate > 0) & ~baseline_bool
+    count, labels, _, _ = cv2.connectedComponentsWithStats(added.astype(np.uint8), 8)
+    _, baseline_labels, _, _ = cv2.connectedComponentsWithStats(
+        baseline_bool.astype(np.uint8), 8
+    )
+    result = guarded.copy()
+    branch_cut_px = max(1, int(np.ceil(max(1.0, float(stroke_width)))))
+    salvaged_components = 0
+    salvaged_pixels = 0
+    rejected_branch_pieces = 0
+    merge_guard_rejected_pieces = 0
+    merge_guard_rejected_pixels = 0
+
+    for label in range(1, count):
+        component = labels == label
+        if not np.any(component & rejected):
+            continue
+        skeleton = skeletonize(component)
+        neighbors = cv2.filter2D(
+            skeleton.astype(np.uint8), cv2.CV_16S,
+            np.ones((3, 3), np.int16), borderType=cv2.BORDER_CONSTANT,
+        ) - skeleton.astype(np.int16)
+        branch_pixels = (skeleton & (neighbors >= 3)).astype(np.uint8)
+        branch_count, _ = cv2.connectedComponents(branch_pixels, 8)
+        if branch_count <= 1:
+            continue
+
+        # Cut a small image-supported window around each skeleton branch point.
+        # Fragments that still touch multiple baseline regions remain rejected.
+        kernel_size = 2 * branch_cut_px + 1
+        cut_kernel = np.ones((kernel_size, kernel_size), np.uint8)
+        cut_zone = cv2.dilate(branch_pixels, cut_kernel) > 0
+        pieces = component & ~cut_zone
+        piece_count, piece_labels, _, _ = cv2.connectedComponentsWithStats(
+            pieces.astype(np.uint8), 8
+        )
+        component_salvaged = False
+        for piece_id in range(1, piece_count):
+            piece = piece_labels == piece_id
+            if int(piece.sum()) < 3:
+                continue
+            near_piece = cv2.dilate(piece.astype(np.uint8), np.ones((3, 3), np.uint8)) > 0
+            touched = np.unique(baseline_labels[near_piece & baseline_bool])
+            touched = touched[touched > 0]
+            if touched.size != 1:
+                rejected_branch_pieces += 1
+                continue
+            trial = cv2.bitwise_or(result, piece.astype(np.uint8) * 255)
+            safe_trial, trial_rejected, _ = filter_candidate_bridges(result, trial)
+            if np.any(trial_rejected) or not np.all(safe_trial[result > 0] > 0):
+                merge_guard_rejected_pieces += 1
+                merge_guard_rejected_pixels += int(piece.sum())
+                continue
+            result = safe_trial
+            salvaged_pixels += int(piece.sum())
+            component_salvaged = True
+        salvaged_components += int(component_salvaged)
+
+    detail = {
+        **initial_detail,
+        "branch_salvage_component_count": int(salvaged_components),
+        "branch_salvage_candidate_pixels": int(salvaged_pixels + merge_guard_rejected_pixels),
+        "branch_salvage_retained_pixels": int(salvaged_pixels),
+        "branch_salvage_pieces_rejected": int(rejected_branch_pieces),
+        "branch_cut_radius_px": int(branch_cut_px),
+        "incremental_guard_rejected_pieces": int(merge_guard_rejected_pieces),
+        "incremental_guard_rejected_pixels": int(merge_guard_rejected_pixels),
+        "limitations": list(initial_detail["limitations"]) + [
+            "skeleton branch cuts are raster heuristics and may remove legitimate junction pixels",
+            "only candidate fragments attached to exactly one baseline region are eligible",
+            "each accepted fragment must also avoid merging any currently separate mask components",
+        ],
+    }
+    marked_rejected = rejected & ~(result > 0)
+    return result, marked_rejected, detail
+
+
+def combine_candidate_anchor_masks(baseline_mask, terminal_corridor):
+    """Combine validated baseline-wire and predicted terminal evidence masks."""
+    baseline = np.asarray(baseline_mask)
+    terminal = np.asarray(terminal_corridor)
+    if baseline.ndim != 2 or terminal.shape != baseline.shape:
+        raise ValueError("baseline and terminal corridor must be matching 2D arrays")
+    return cv2.bitwise_or((baseline > 0).astype(np.uint8) * 255,
+                          (terminal > 0).astype(np.uint8) * 255)
+
+
 class WireStageV7PaletteCorridorRecall:
     """Non-default recall experiment anchored to pin corridors and base mask.
 
@@ -225,7 +330,17 @@ class WireStageV7PaletteCorridorRecall:
     baseline mask regions. The default v3 output is always retained.
     """
 
+    def _candidate_anchor_mask(self, baseline_mask, terminal_corridor):
+        return terminal_corridor
+
+    def _palette_selection_description(self):
+        return "all line-supported palette candidates; component must meet a terminal corridor"
+
     def run(self, image, scene, context):
+        return self._run_with_protection(image, scene, context, None)
+
+    def _run_with_protection(self, image, scene, context, protection_baseline,
+                             bridge_filter=None):
         from ..core.interfaces import WireStageOutput
         from .v3 import build_suppressed_wire_mask, _terminal_corridors
 
@@ -234,13 +349,14 @@ class WireStageV7PaletteCorridorRecall:
         candidate_scene = copy.deepcopy(scene)
         stroke = float(baseline_scene.diagnostics.get("wire_stroke_width", 1.0))
         terminal_corridor = _terminal_corridors(candidate_scene, image.shape, stroke)
+        candidate_anchor = self._candidate_anchor_mask(baseline.mask, terminal_corridor)
         extra = np.zeros(terminal_corridor.shape, dtype=np.uint8)
         retained_components = 0
 
         def collect_candidate(_name, mask):
             nonlocal retained_components
             retained, count = retain_corridor_anchored_components(
-                (mask,), terminal_corridor
+                (mask,), candidate_anchor
             )
             np.bitwise_or(extra, retained, out=extra)
             retained_components += count
@@ -272,7 +388,17 @@ class WireStageV7PaletteCorridorRecall:
         supplemental = WireStageOutput(extra, color_debug, suppressed, corridor)
         supplemental = suppress_box_frames(image, candidate_scene, supplemental)
         combined = cv2.bitwise_or(baseline.mask, supplemental.mask)
-        mask, rejected, detail = filter_candidate_bridges(baseline.mask, combined)
+        if protection_baseline is None:
+            guard_baseline = baseline.mask
+        else:
+            guard_baseline = np.asarray(protection_baseline)
+            combined = cv2.bitwise_or(combined, guard_baseline)
+        if bridge_filter is None:
+            mask, rejected, detail = filter_candidate_bridges(guard_baseline, combined)
+        else:
+            mask, rejected, detail = bridge_filter(guard_baseline, combined, stroke)
+        detail["guard_baseline"] = ("v3_frame_guard" if protection_baseline is None
+                                    else "v7_palette_corridor_recall")
 
         scene.diagnostics.update(baseline_scene.diagnostics)
         scene.diagnostics["wire_candidate_corridor_recall"] = {
@@ -280,7 +406,7 @@ class WireStageV7PaletteCorridorRecall:
             "retained_supported_components": int(retained_components),
             "added_mask_pixels": int(((mask > 0) & (baseline.mask == 0)).sum()),
             "rejected_by_bridge_guard_pixels": int(rejected.sum()),
-            "palette_selection": "all line-supported palette candidates; component must meet a terminal corridor",
+            "palette_selection": self._palette_selection_description(),
         }
         marked_suppressed = (baseline.suppressed.copy() if baseline.suppressed is not None
                              else np.zeros(mask.shape, dtype=np.uint8))
@@ -289,4 +415,32 @@ class WireStageV7PaletteCorridorRecall:
             mask, baseline.color_debug, marked_suppressed,
             baseline.corridor if baseline.corridor is not None else corridor,
             baseline.diagnostics, baseline.debug,
+        )
+
+
+class WireStageV8BaselineAnchoredRecall(WireStageV7PaletteCorridorRecall):
+    """Non-default recall candidate anchored to v3 evidence without regressing v7."""
+
+    def _candidate_anchor_mask(self, baseline_mask, terminal_corridor):
+        return combine_candidate_anchor_masks(baseline_mask, terminal_corridor)
+
+    def _palette_selection_description(self):
+        return ("all line-supported palette candidates anchored to either the v3 baseline "
+                "mask or a predicted terminal corridor; multi-v7-baseline bridges are rejected")
+
+    def run(self, image, scene, context):
+        v7_scene = copy.deepcopy(scene)
+        v7_output = WireStageV7PaletteCorridorRecall().run(image, v7_scene, context)
+        return self._run_with_protection(image, scene, context, v7_output.mask)
+
+
+class WireStageV9BranchSalvageRecall(WireStageV8BaselineAnchoredRecall):
+    """Experimental partial salvage of image-supported arms at branch cuts."""
+
+    def run(self, image, scene, context):
+        v7_scene = copy.deepcopy(scene)
+        v7_output = WireStageV7PaletteCorridorRecall().run(image, v7_scene, context)
+        return self._run_with_protection(
+            image, scene, context, v7_output.mask,
+            bridge_filter=filter_candidate_bridges_with_branch_salvage,
         )
