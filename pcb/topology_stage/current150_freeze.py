@@ -22,6 +22,12 @@ SELECTED = ['pcb/component', 'pcb/pin', 'pcb/core', 'pcb/wire_stage', 'pcb/netwo
             'pcb/schema.py', 'pcb/submission.py']
 
 
+def progress_callback(cid):
+    def notify(stage, **detail):
+        print(json.dumps({'event': 'stage_progress', 'case_id': cid, 'stage': stage, **detail}), flush=True)
+    return notify
+
+
 class FreezeGuard(Guard):
     def __init__(self):
         self.actual_ids = set()
@@ -174,8 +180,7 @@ def worker(args, inputs, guard):
     for cid in pending:
         start = time.perf_counter()
         print(json.dumps({'event': 'start_case', 'case_id': cid, 'GT_opens': guard.target_opens}), flush=True)
-        def progress(message, **detail):
-            print(json.dumps({'event': 'stage_progress', 'case_id': cid, 'message': message, **detail}), flush=True)
+        progress = progress_callback(cid)
         with guard.inferring():
             image = read_image(inputs[cid][0])
             h, w = image.shape[:2]
