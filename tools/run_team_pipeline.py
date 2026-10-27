@@ -58,7 +58,8 @@ def runtime_registry(config):
     return registry
 
 
-def build_runtime(config, device, ocr_device, cache: Path):
+def build_runtime(config, device, ocr_device, cache: Path, *, net_lines_version=None,
+                  save_net_lines_provenance=False):
     """Generic runtime setup. Models/algorithm decisions belong to stages."""
     import torch
     from pcb.component.detector_yolo import YoloComponentDetector
@@ -75,6 +76,8 @@ def build_runtime(config, device, ocr_device, cache: Path):
                                     device="0" if device == "cuda" else device,
                                     cache_dir=cache / "yolo")
     pipeline = ModularPipeline(config, runtime_registry(config))
+    from pcb.network_shared.line_runtime import configure_lines
+    configure_lines(pipeline.topology, net_lines_version, provenance=save_net_lines_provenance)
     if config.topology == "v3_power_terminals_v2":
         from pcb.topology_stage.power_v2 import PowerEvidenceWire
         pipeline.wire = PowerEvidenceWire(pipeline.wire)
@@ -129,6 +132,9 @@ def main(argv=None):
     parser.add_argument("--evaluator", choices=("pin_protocol2055", "clarified_202610_v1", "legacy_v2"),
                         default="pin_protocol2055", help="Explicit local protocol; none is organizer code")
     parser.add_argument("--save-debug", action="store_true")
+    parser.add_argument("--net-lines-version", help="Per-run NetLine override; does not rewrite module defaults")
+    parser.add_argument("--save-net-lines-provenance", action="store_true",
+                        help="Save optional source-edge sidecar beside result.json")
     parser.add_argument("--power-terminals", action="store_true", help="Attach supported GND/supply terminals using frozen V3 networks")
     parser.add_argument("--power-version", choices=("v1", "v2"),
                         help="Power adapter override with --power-terminals; preserves the configured version by default")
@@ -142,8 +148,16 @@ def main(argv=None):
         config = replace(config, topology="v3_power_terminals_"+(args.power_version or selected))
     elif args.power_version is not None:
         parser.error("--power-version requires --power-terminals")
+    from pcb.network_shared.line_runtime import runtime_versions
+    try:
+        listed_network_versions = runtime_versions(config.topology, args.net_lines_version,
+                                                  provenance=args.save_net_lines_provenance)
+    except ValueError as error:
+        parser.error(str(error))
     if args.list_stages:
-        print(json.dumps({"config": config.as_dict(), "stages": runtime_registry(config).describe()}, indent=2))
+        print(json.dumps({"config": config.as_dict(), "stages": runtime_registry(config).describe(),
+                          "network_versions": listed_network_versions,
+                          "net_lines_provenance": args.save_net_lines_provenance}, indent=2))
         return 0
     if args.image is None and args.dataset is None:
         parser.error("Provide --image or --dataset")
@@ -161,7 +175,9 @@ def main(argv=None):
     # Shared guard is reused exactly, without importing experiment algorithms.
     from tools.team_access_guard import Guard
     guard = Guard()
-    pipeline, ocr, detector, device = build_runtime(config, args.device, args.ocr_device, cache)
+    pipeline, ocr, detector, device = build_runtime(
+        config, args.device, args.ocr_device, cache, net_lines_version=args.net_lines_version,
+        save_net_lines_provenance=args.save_net_lines_provenance)
     network_versions = network_version_snapshot(pipeline)
     records = []
     start = time.perf_counter()
@@ -179,6 +195,9 @@ def main(argv=None):
             validate_strict(artifacts.result, (w, h))
             folder = output / cid
             write_json(folder / "result.json", artifacts.result)
+            if args.save_net_lines_provenance:
+                from pcb.network_shared.line_runtime import provenance_snapshot
+                write_json(folder / "net_lines_provenance.json", provenance_snapshot(pipeline.topology))
             artifacts.scene.diagnostics["seconds"] = time.perf_counter() - t0
             write_json(folder / "diagnostics.json", artifacts.scene.diagnostics)
             if args.save_debug:
@@ -191,6 +210,7 @@ def main(argv=None):
         write_json(output / "progress.json", {"cases": records, "sealed_holdout_used": False})
     report = {"OFFICIAL_SCORE": False, "sealed_holdout_used": False, "evaluator": args.evaluator,
               "config": config.as_dict(), "network_versions": network_versions,
+              "net_lines_provenance": args.save_net_lines_provenance,
               "device": device, "success_count": len(records),
               "failure_count": 0, "seconds": time.perf_counter()-start, "cases": records}
     if args.evaluate:

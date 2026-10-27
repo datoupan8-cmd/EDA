@@ -1,5 +1,9 @@
 # 网络两项的拆分、运行与修改说明
 
+## NetLine 包整合（2026-10-27）
+
+总程序已接入 `path_v1`、`path_collinear_v1` 和可选来源追踪文件，普通 V2/V3、供电端子 V1/V2 均支持。通过 `--net-lines-version` 单次选择，增加 `--save-net-lines-provenance` 可保存独立 sidecar；默认仍为 `legacy_v2`。具体命令、兼容性和本次验证见 [NetLine 整合说明](lines/README.md)。
+
 ## 当前默认：供电端子 V2（2026-10-27）
 
 标准团队配置现在选择 `v3_power_terminals_v2`，无需额外传 `--power-terminals`。上游固定 N1/N2＋L39，两个网络插槽仍为 `legacy_v2`。完整 150 例的分数、误连接代价和版本证据见 [CURRENT150_POWER_RESULTS_20261027.md](CURRENT150_POWER_RESULTS_20261027.md)。当前工作分支固定为 `feature/pin-l45-validated-20261012`。
