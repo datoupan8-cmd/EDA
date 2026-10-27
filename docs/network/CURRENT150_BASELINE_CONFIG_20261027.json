@@ -1,0 +1,14 @@
+{
+  "text": "recovery_rotation_vertical_v1",
+  "component": "rotation_vertical_n1_n2_v1",
+  "pin_localization": "l39",
+  "pin_semantics": "l39",
+  "wire": "v3_frame_guard",
+  "topology": "v3",
+  "submission": "official",
+  "component_stage": "BEST",
+  "text_rules": "v4_1",
+  "variant": "baseline",
+  "enable_flying_labels": false,
+  "legacy_pipeline_name": "v4_component"
+}

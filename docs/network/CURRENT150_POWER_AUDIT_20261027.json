@@ -1,0 +1,530 @@
+{
+  "OFFICIAL_SCORE": false,
+  "baseline_commit": "e8f734c126e48918e622030e2d7f73fb4064c180",
+  "evaluation_commit": "7e86336",
+  "rollback_tag": "backup/20261027-144559-before-current150-power",
+  "version_key": "1362ec34880e9faed2de7e9a25ac51ca92f6035d63f162d719be92aeec399ce9",
+  "ACTUAL_CASE_IDS": [
+    "0001",
+    "0002",
+    "0003",
+    "0004",
+    "0005",
+    "0006",
+    "0007",
+    "0008",
+    "0009",
+    "0010",
+    "0011",
+    "0012",
+    "0013",
+    "0014",
+    "0015",
+    "0016",
+    "0017",
+    "0018",
+    "0019",
+    "0020",
+    "0021",
+    "0022",
+    "0023",
+    "0024",
+    "0025",
+    "0026",
+    "0027",
+    "0028",
+    "0029",
+    "0030",
+    "0031",
+    "0032",
+    "0033",
+    "0034",
+    "0035",
+    "0036",
+    "0037",
+    "0038",
+    "0039",
+    "0040",
+    "0041",
+    "0042",
+    "0043",
+    "0044",
+    "0045",
+    "0046",
+    "0047",
+    "0048",
+    "0049",
+    "0050",
+    "0051",
+    "0052",
+    "0053",
+    "0054",
+    "0055",
+    "0056",
+    "0057",
+    "0058",
+    "0059",
+    "0060",
+    "0061",
+    "0062",
+    "0063",
+    "0064",
+    "0065",
+    "0066",
+    "0067",
+    "0068",
+    "0069",
+    "0070",
+    "0071",
+    "0072",
+    "0073",
+    "0074",
+    "0075",
+    "0076",
+    "0077",
+    "0078",
+    "0079",
+    "0080",
+    "0081",
+    "0082",
+    "0083",
+    "0084",
+    "0085",
+    "0086",
+    "0087",
+    "0088",
+    "0089",
+    "0090",
+    "0091",
+    "0092",
+    "0093",
+    "0094",
+    "0095",
+    "0096",
+    "0097",
+    "0098",
+    "0099",
+    "0100",
+    "0101",
+    "0102",
+    "0103",
+    "0104",
+    "0105",
+    "0106",
+    "0107",
+    "0108",
+    "0109",
+    "0110",
+    "0111",
+    "0112",
+    "0113",
+    "0114",
+    "0115",
+    "0116",
+    "0117",
+    "0118",
+    "0119",
+    "0120",
+    "0121",
+    "0122",
+    "0123",
+    "0124",
+    "0125",
+    "0126",
+    "0127",
+    "0128",
+    "0129",
+    "0130",
+    "0131",
+    "0132",
+    "0133",
+    "0134",
+    "0135",
+    "0136",
+    "0137",
+    "0138",
+    "0139",
+    "0140",
+    "0141",
+    "0142",
+    "0143",
+    "0144",
+    "0145",
+    "0146",
+    "0147",
+    "0148",
+    "0149",
+    "0150"
+  ],
+  "config": {
+    "text": "recovery_rotation_vertical_v1",
+    "component": "rotation_vertical_n1_n2_v1",
+    "pin_localization": "l39",
+    "pin_semantics": "l39",
+    "wire": "v3_frame_guard",
+    "topology": "v3",
+    "submission": "official",
+    "component_stage": "BEST",
+    "text_rules": "v4_1",
+    "variant": "baseline",
+    "enable_flying_labels": false,
+    "legacy_pipeline_name": "v4_component"
+  },
+  "network_versions": {
+    "net_hypergraph": "legacy_v2",
+    "net_lines": "legacy_v2"
+  },
+  "models_sha256": {
+    "models/component/ocr_v5_server/ch_PP-OCRv5_det_server.onnx": "0f8846b1d4bba223a2a2f9d9b44022fbc22cc019051a602b41a7fda9667e4cad",
+    "models/component/ocr_v5_server/ch_PP-OCRv5_rec_server.onnx": "e09385400eaaaef34ceff54aeb7c4f0f1fe014c27fa8b9905d4709b65746562a",
+    "models/component/parseq/parseq-bb5792a6.pt": "bb5792a68e367476abca029cbf8699abc805f3d3dc7e57aae45c8ec4f7b7cd00",
+    "models/component/parseq_schematic120/best.pt": "f42061a590476675269ec0ded0d4027261d6ff712ed58615f8c4ba5fc8d55417",
+    "models/component/yolo11m_finetune120/best.pt": "38555d3e6b4617429a51e1e5afdfd982e5c58a0c67ba334df12b23fbaec01685",
+    "models/component_yolo11n_baseline_best.pt": "42860935a0626a4445f2e30bf020c8e76ec01a87b816c6aacdf6288657bf1ac5",
+    "models/component_yolo11n_continue_v2_best.pt": "51b4735d19315ba3ada49143e6f912aa414589f7961e140faab177dc6db7e776",
+    "models/easyocr/craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+    "models/easyocr/english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8",
+    "models/ocr_v5/ch_PP-OCRv5_det_mobile.onnx": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae",
+    "models/ocr_v5/ch_PP-OCRv5_rec_mobile.onnx": "5825fc7ebf84ae7a412be049820b4d86d77620f204a041697b0494669b1742c5",
+    "models/ocr_v5/ch_ppocr_mobile_v2.0_cls_mobile.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+    "models/pin/l45_rc_pair/best.pt": "d8b1babd809f622ba4243becf135ae38e92effdc6fe9dd079526cf67e084fc71",
+    "reports/pin_learned_locator_l1/best.pt": "a488d0dc4897440ab7c0241c9044e1f260d02f8e2151ad80e39bcb121b4eec69",
+    "assets/cpntLibrary.json": "9c2bec334d41119f29a62cd6ff3fb36ae28fa28cbb7aeb3155875a355b38d322",
+    "models/component/component_selective120_candidate/model.json": "229feaad096c90bbab118bf822d513291e0dcf37274fb26e7b66c505be384164"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Scripts\\python.exe",
+    "cv2_loaded_version": "4.10.0",
+    "packages": {
+      "torch": "2.14.0+cu132",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "opencv-python-headless": "4.14.0.94",
+      "opencv-python": "5.0.0.93",
+      "onnxruntime-gpu": "1.23.2",
+      "rapidocr": "3.9.2",
+      "timm": "0.9.16",
+      "ultralytics": "8.3.203"
+    },
+    "loaded_modules": {
+      "cv2": {
+        "version": "4.10.0",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Lib\\site-packages\\cv2\\__init__.py"
+      },
+      "numpy": {
+        "version": "2.3.5",
+        "file": "C:\\Users\\pps\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\site-packages\\numpy\\__init__.py"
+      },
+      "scipy": {
+        "version": "1.18.1",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Lib\\site-packages\\scipy\\__init__.py"
+      },
+      "torch": {
+        "version": "2.14.0+cu132",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\gpu_imports\\torch\\__init__.py"
+      },
+      "onnxruntime": {
+        "version": "1.23.2",
+        "file": "E:\\EDA\\EDA\\.runtime\\ort_gpu_debug\\onnxruntime\\__init__.py"
+      },
+      "rapidocr": {
+        "version": null,
+        "file": "E:\\EDA\\deliveries\\submission_updated_20261026_v2\\source\\p01_deps\\rapidocr\\__init__.py"
+      },
+      "timm": {
+        "version": "0.9.16",
+        "file": "E:\\EDA\\deliveries\\submission_updated_20261026_v2\\source\\p01_deps\\timm\\__init__.py"
+      }
+    },
+    "onnx_available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "inference_GT_opens": 0,
+  "score_GT_opens": 150,
+  "reserved_used": false,
+  "artifact_sha256": {
+    "inputs_serial/manifest.json": "31ffe9f0d04d02b1d0d0d85f0e04a7ee61a28bce2d4608906cf0fc1baab2fbf5",
+    "comparison/predictions_sealed.json": "9b46a9baa3924bea91941b9797312ab90e1c324b8eeea6657b41f186359a7911",
+    "comparison/report.json": "3832344ceb1f348934f084bc97de0269a081cb26440482ad102429f6eb160cea",
+    "adoption_decision.json": "726a1653f3637bb26427ceca1182cf8e81a86b64aff30c70894425373fcafc14",
+    "post_freeze_integrity.json": "93a0c70cecbb79671bf480e8537d1617f4f028f2350a29b54ab503c8a45bea7a"
+  },
+  "decision": {
+    "source_report": "E:\\EDA\\worktrees\\component-n1n2-feature-20261026\\runs\\current150_power_20261027\\comparison\\report.json",
+    "splits": {
+      "all": {
+        "baseline": {
+          "macro_f1_percent": {
+            "Component": 55.351480289312036,
+            "Pin": 8.139990982445724,
+            "NetHypergraph": 22.6380079958583,
+            "NetLine": 2.365348955249229
+          },
+          "FinalScore": 26.800279526480367,
+          "net_gain_pp": 0.0,
+          "score_gain": 0.0,
+          "common_pairs": {
+            "false": 143,
+            "missed": 8358
+          },
+          "wrong_added": 0,
+          "missed_repaired": 0,
+          "pair_budget_pass": true,
+          "train_pass": false,
+          "internal_pass": true
+        },
+        "v1": {
+          "macro_f1_percent": {
+            "Component": 55.351480289312036,
+            "Pin": 8.139990982445724,
+            "NetHypergraph": 24.05017808183266,
+            "NetLine": 4.368600550742588
+          },
+          "FinalScore": 27.49486421612073,
+          "net_gain_pp": 1.4121700859743624,
+          "score_gain": 0.6945846896403651,
+          "common_pairs": {
+            "false": 600,
+            "missed": 6851
+          },
+          "wrong_added": 457,
+          "missed_repaired": 1507,
+          "pair_budget_pass": true,
+          "train_pass": true,
+          "internal_pass": true
+        },
+        "v2": {
+          "macro_f1_percent": {
+            "Component": 55.351480289312036,
+            "Pin": 8.139990982445724,
+            "NetHypergraph": 24.102481216915052,
+            "NetLine": 4.5972262781579465
+          },
+          "FinalScore": 27.536032886141104,
+          "net_gain_pp": 1.4644732210567557,
+          "score_gain": 0.7357533596607375,
+          "common_pairs": {
+            "false": 635,
+            "missed": 6692
+          },
+          "wrong_added": 492,
+          "missed_repaired": 1666,
+          "pair_budget_pass": true,
+          "train_pass": true,
+          "internal_pass": true
+        }
+      },
+      "train": {
+        "baseline": {
+          "macro_f1_percent": {
+            "Component": 55.2138874661752,
+            "Pin": 8.558196417435177,
+            "NetHypergraph": 23.116764292239072,
+            "NetLine": 2.4715076662618287
+          },
+          "FinalScore": 27.041733613121213,
+          "net_gain_pp": 0.0,
+          "score_gain": 0.0,
+          "common_pairs": {
+            "false": 110,
+            "missed": 6538
+          },
+          "wrong_added": 0,
+          "missed_repaired": 0,
+          "pair_budget_pass": true,
+          "train_pass": false,
+          "internal_pass": true
+        },
+        "v1": {
+          "macro_f1_percent": {
+            "Component": 55.2138874661752,
+            "Pin": 8.558196417435177,
+            "NetHypergraph": 24.69851335688164,
+            "NetLine": 4.456831626905454
+          },
+          "FinalScore": 27.793878181810477,
+          "net_gain_pp": 1.581749064642568,
+          "score_gain": 0.752144568689264,
+          "common_pairs": {
+            "false": 359,
+            "missed": 5282
+          },
+          "wrong_added": 249,
+          "missed_repaired": 1256,
+          "pair_budget_pass": true,
+          "train_pass": true,
+          "internal_pass": true
+        },
+        "v2": {
+          "macro_f1_percent": {
+            "Component": 55.2138874661752,
+            "Pin": 8.558196417435177,
+            "NetHypergraph": 24.77174427216447,
+            "NetLine": 4.72686752900998
+          },
+          "FinalScore": 27.846512592369915,
+          "net_gain_pp": 1.6549799799253946,
+          "score_gain": 0.8047789792487023,
+          "common_pairs": {
+            "false": 392,
+            "missed": 5145
+          },
+          "wrong_added": 282,
+          "missed_repaired": 1393,
+          "pair_budget_pass": true,
+          "train_pass": true,
+          "internal_pass": true
+        }
+      },
+      "internal": {
+        "baseline": {
+          "macro_f1_percent": {
+            "Component": 55.90185158185934,
+            "Pin": 6.467169242487909,
+            "NetHypergraph": 20.722982810335193,
+            "NetLine": 1.94071411119883
+          },
+          "FinalScore": 25.834463179916977,
+          "net_gain_pp": 0.0,
+          "score_gain": 0.0,
+          "common_pairs": {
+            "false": 33,
+            "missed": 1820
+          },
+          "wrong_added": 0,
+          "missed_repaired": 0,
+          "pair_budget_pass": true,
+          "train_pass": false,
+          "internal_pass": true
+        },
+        "v1": {
+          "macro_f1_percent": {
+            "Component": 55.90185158185934,
+            "Pin": 6.467169242487909,
+            "NetHypergraph": 21.456836981636748,
+            "NetLine": 4.0156762460911235
+          },
+          "FinalScore": 26.298808353361753,
+          "net_gain_pp": 0.733854171301554,
+          "score_gain": 0.46434517344477655,
+          "common_pairs": {
+            "false": 241,
+            "missed": 1569
+          },
+          "wrong_added": 208,
+          "missed_repaired": 251,
+          "pair_budget_pass": true,
+          "train_pass": true,
+          "internal_pass": true
+        },
+        "v2": {
+          "macro_f1_percent": {
+            "Component": 55.90185158185934,
+            "Pin": 6.467169242487909,
+            "NetHypergraph": 21.425428995917407,
+            "NetLine": 4.0786612747498125
+          },
+          "FinalScore": 26.29411406122585,
+          "net_gain_pp": 0.7024461855822117,
+          "score_gain": 0.45965088130887466,
+          "common_pairs": {
+            "false": 243,
+            "missed": 1547
+          },
+          "wrong_added": 210,
+          "missed_repaired": 273,
+          "pair_budget_pass": true,
+          "train_pass": true,
+          "internal_pass": true
+        }
+      }
+    },
+    "selected_by_train": "v2",
+    "adopt": "v2",
+    "power_exports": {
+      "baseline": {
+        "physical_exported_nets": 5165,
+        "gnd_components": 1545,
+        "gnd_with_legal_pins": 0,
+        "gnd_in_network": 0,
+        "supply_components": 670,
+        "supply_with_legal_pins": 36,
+        "supply_in_network": 36,
+        "supply_with_value": 561,
+        "logical_nets_after_rail_merge": 5156
+      },
+      "v1": {
+        "physical_exported_nets": 6117,
+        "gnd_components": 1545,
+        "gnd_with_legal_pins": 1309,
+        "gnd_in_network": 1309,
+        "supply_components": 670,
+        "supply_with_legal_pins": 328,
+        "supply_in_network": 328,
+        "supply_with_value": 561,
+        "logical_nets_after_rail_merge": 4834
+      },
+      "v2": {
+        "physical_exported_nets": 6166,
+        "gnd_components": 1545,
+        "gnd_with_legal_pins": 1355,
+        "gnd_in_network": 1355,
+        "supply_components": 670,
+        "supply_with_legal_pins": 389,
+        "supply_in_network": 389,
+        "supply_with_value": 561,
+        "logical_nets_after_rail_merge": 4798
+      }
+    },
+    "candidate_diagnostics": {
+      "v1": {
+        "added_refs_by_type": {
+          "gnd": 1309,
+          "v": 292
+        },
+        "methods": {
+          "existing_directional_snap": 1416,
+          "wire_endpoint_at_symbol_boundary": 185
+        },
+        "rejected_reasons": {
+          "no_supported_terminal": 470,
+          "missing_supply_identity": 109,
+          "existing_export_protected": 25,
+          "ambiguous_wire_groups": 10
+        },
+        "case_score_change": {
+          "win": 102,
+          "loss": 40,
+          "tie": 8
+        }
+      },
+      "v2": {
+        "added_refs_by_type": {
+          "gnd": 1355,
+          "v": 353
+        },
+        "methods": {
+          "existing_directional_snap": 1416,
+          "wire_endpoint_at_symbol_boundary": 185,
+          "image_supported_suppressed_stem": 107
+        },
+        "rejected_reasons": {
+          "no_supported_terminal": 363,
+          "missing_supply_identity": 109,
+          "existing_export_protected": 25,
+          "ambiguous_wire_groups": 10
+        },
+        "case_score_change": {
+          "win": 101,
+          "loss": 41,
+          "tie": 8
+        }
+      }
+    }
+  },
+  "standard_default_adoption": "qualified; runtime checks pending"
+}
