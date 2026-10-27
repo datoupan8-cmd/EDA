@@ -58,7 +58,8 @@ def prepare(args, ids, inputs, guard):
     if args.output.exists():
         raise ValueError('Use a fresh output directory')
     args.output.mkdir(parents=True)
-    old_manifest = read(LEGACY_ROOT/'manifest.json') if args.cohort == 'frozen150' else None
+    frozen_root = args.frozen if args.cohort == 'current150' else LEGACY_ROOT
+    old_manifest = read(frozen_root/'manifest.json') if args.cohort in ('frozen150', 'current150') else None
     if old_manifest is not None:
         if old_manifest['ACTUAL_CASE_IDS'] != list(IDS) or old_manifest['GT_opens'] or old_manifest.get('blocked_accesses', 0):
             raise ValueError('Require the complete image-only 0001-0150 manifest')
@@ -76,7 +77,7 @@ def prepare(args, ids, inputs, guard):
     for cid in ids:
         start = time.perf_counter()
         with guard.inferring():
-            folder = LEGACY_ROOT/cid if args.cohort == 'frozen150' else current_folder(cid)
+            folder = frozen_root/cid if args.cohort in ('frozen150', 'current150') else current_folder(cid)
             if old_manifest is not None:
                 for key, filename in (('scene', 'scene.json'), ('mask', 'wire_mask.png'), ('prediction', 'result.json')):
                     if sha(folder/filename) != original_records[cid][key]:
@@ -163,7 +164,7 @@ def score(args, ids, inputs, guard):
               'target_opens': guard.target_opens, 'reserved_used': False, 'rows': rows,
               'common_identity_pairs': pair_rows, 'aggregate': {}}
     splits = {'all': ids}
-    if args.cohort == 'frozen150':
+    if args.cohort in ('frozen150', 'current150'):
         splits.update(train=TRAIN, internal=DEV)
     for split, chosen in splits.items():
         report['aggregate'][split] = {v: peer.aggregate([r['evaluation'] for r in rr if r['case_id'] in chosen])
@@ -176,12 +177,15 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--dataset', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
-    p.add_argument('--cohort', choices=('frozen150', 'current7'), default='frozen150')
+    p.add_argument('--cohort', choices=('frozen150', 'current7', 'current150'), default='frozen150')
+    p.add_argument('--frozen', type=Path, help='Required current150 sealed baseline root')
     p.add_argument('--stage', choices=('prepare', 'score'), required=True)
     args = p.parse_args()
     guard = Guard()
     inputs = discover(args.dataset)
-    ids = IDS if args.cohort == 'frozen150' else CURRENT_IDS
+    if args.cohort == 'current150' and (args.frozen is None or not (args.frozen/'manifest.json').is_file()):
+        raise ValueError('current150 requires a completed, sealed --frozen directory')
+    ids = CURRENT_IDS if args.cohort == 'current7' else IDS
     (prepare if args.stage == 'prepare' else score)(args, ids, inputs, guard)
 
 
