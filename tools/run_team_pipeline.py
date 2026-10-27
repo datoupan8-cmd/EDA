@@ -52,6 +52,9 @@ def runtime_registry(config):
     if config.topology == "v3_power_terminals_v1":
         from pcb.topology_stage.power_v1 import PowerTerminalTopology
         registry.register("topology", config.topology, PowerTerminalTopology)
+    elif config.topology == "v3_power_terminals_v2":
+        from pcb.topology_stage.power_v2 import PowerTerminalTopologyV2
+        registry.register("topology", config.topology, PowerTerminalTopologyV2)
     return registry
 
 
@@ -71,7 +74,11 @@ def build_runtime(config, device, ocr_device, cache: Path):
     detector = YoloComponentDetector(ROOT / "models/component_yolo11n_continue_v2_best.pt",
                                     device="0" if device == "cuda" else device,
                                     cache_dir=cache / "yolo")
-    return ModularPipeline(config, runtime_registry(config)), ocr, detector, device
+    pipeline = ModularPipeline(config, runtime_registry(config))
+    if config.topology == "v3_power_terminals_v2":
+        from pcb.topology_stage.power_v2 import PowerEvidenceWire
+        pipeline.wire = PowerEvidenceWire(pipeline.wire)
+    return pipeline, ocr, detector, device
 
 
 def select_inputs(image: Path | None, dataset: Path | None, cases: str | None):
@@ -123,13 +130,17 @@ def main(argv=None):
                         default="pin_protocol2055", help="Explicit local protocol; none is organizer code")
     parser.add_argument("--save-debug", action="store_true")
     parser.add_argument("--power-terminals", action="store_true", help="Attach supported GND/supply terminals using frozen V3 networks")
+    parser.add_argument("--power-version", choices=("v1", "v2"), default="v1",
+                        help="Power adapter version; v2 requires --power-terminals and uses local image ink")
     parser.add_argument("--list-stages", action="store_true")
     args = parser.parse_args(argv)
     config = load_team_config(args.config)
     if args.power_terminals:
         if config.topology != "v3":
             parser.error("--power-terminals requires the frozen v3 topology")
-        config = replace(config, topology="v3_power_terminals_v1")
+        config = replace(config, topology="v3_power_terminals_"+args.power_version)
+    elif args.power_version != "v1":
+        parser.error("--power-version requires --power-terminals")
     if args.list_stages:
         print(json.dumps({"config": config.as_dict(), "stages": runtime_registry(config).describe()}, indent=2))
         return 0
