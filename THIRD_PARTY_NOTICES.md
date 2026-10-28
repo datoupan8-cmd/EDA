@@ -7,3 +7,5 @@
 运行依赖 NumPy、OpenCV、SciPy、scikit-image、RapidOCR ONNXRuntime、ONNX Runtime、Pillow，分别适用其自身许可。OCR 模型由 rapidocr-onnxruntime 安装包提供，未从用户数据训练。正式对外发布镜像时，应保留依赖及模型对应的许可证与声明。
 
 legacy 中脚本是用户原始代码副本。示例图片来自用户提供的比赛 Dataset300，交付用于本次比赛开发和验证，不作公开再发布授权声明。
+
+2026-10-19 Component更新：PARSeq局部识别使用[官方项目](https://github.com/baudm/parseq)的推理源码，原样保存在 `pcb/component/_vendor/parseq/`，包含上游Apache-2.0 LICENSE、NOTICE和逐文件SHA256清单。其官方预训练权重及本项目仅以前150例允许训练部分微调的权重分别保存在 `models/component/parseq/`、`models/component/parseq_schematic120/`；这部分不适用上文对早期三个ZIP审计副本的描述。推理额外依赖timm 0.9.16与PyYAML，适用各自许可。

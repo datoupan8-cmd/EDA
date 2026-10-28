@@ -39,6 +39,8 @@ def main():
     p.add_argument('--scenes',type=Path,required=True)
     p.add_argument('--baseline',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--config',default='docs/network/CURRENT150_BASELINE_CONFIG_20261027.json',
+                   help='Explicit no-power baseline for historical parity capture/verification')
     args=p.parse_args()
     if args.output.exists():raise ValueError('Fresh output required')
     done=read(args.scenes/'complete.json');inputs=read(args.scenes/'input_manifest.json')
@@ -46,7 +48,7 @@ def main():
     wanted={14,17,18,87,103}|set(range(5,151,5))
     assert {int(r['case_id']) for r in inputs}==wanted
     source_rows={r['case_id']:r for r in done['records']}
-    config=load_team_config(ROOT/'configs/team.json');registry=build_default_registry()
+    config=load_team_config(args.config);registry=build_default_registry()
     wire=registry.create('wire',config.wire);topology=registry.create('topology',config.topology)
     rows=[];start=time.perf_counter()
     for item in inputs:

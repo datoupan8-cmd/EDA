@@ -12,9 +12,27 @@ SCOPES = {
                       "tests/wire/", "tests/topology/", "docs/wire_topology/", "models/wire_topology/"),
 }
 
+# This explicitly named release branch carries both published owners. Ordinary
+# feature/component-* and feature/pin-* branches keep their strict single owner.
+SCOPES["component_pin_release"] = SCOPES["component"] + SCOPES["pin"]
+SHARED_PATHS = {
+    "component_pin_release": frozenset({
+        ".gitattributes", ".gitignore", "README.md", "THIRD_PARTY_NOTICES.md",
+        "requirements.txt", "models/SHA256SUMS.json",
+        "tests/contracts/test_team_module_slots.py",
+        "tools/benchmark_component_ocr_decode.py",
+        "tools/evaluate_component_local_joint.py",
+        "tools/evaluate_component_ocr_ablation.py", "tools/evaluate_component_p01.py",
+        ".github/workflows/team-modules.yml", "tools/check_module_scope.py",
+        "tests/contracts/test_module_scope.py",
+    }),
+}
+
 
 def check_paths(owner: str, paths):
-    return sorted(p for p in paths if not any(p.startswith(prefix) for prefix in SCOPES[owner]))
+    shared = SHARED_PATHS.get(owner, frozenset())
+    return sorted(p for p in paths if p not in shared and
+                  not any(p.startswith(prefix) for prefix in SCOPES[owner]))
 
 
 def main():

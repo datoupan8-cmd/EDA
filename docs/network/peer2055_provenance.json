@@ -1,0 +1,17 @@
+{
+  "archive_name": "Agent交接资料_不用于官网提交_20261026.zip",
+  "archive_sha256": "1baa7a80bbeaa3e53faf43023b3fdae1090ffb60baf0f7e205ad7fd8e2becaef",
+  "source_entry": "code/evaluation/pin_protocol2055_eval.py",
+  "original_sha256": "66b9ba3172f766e6cecc58164e60cc4d5c8021543da80fa5fc740858aeed4558",
+  "portable_sha256": "74d8e3714e6cd2537ea857f6eaaa2aa8cd887bcbba7b542812706639b6d74297",
+  "adaptation": [
+    "Normalize CRCRLF/CRLF to LF",
+    "Remove original computer REPO/sys.path insertion",
+    "Import existing pcb.assignment through relative import"
+  ],
+  "dependency_original_sha256": "77253f27f9d91e4c7406809f141a5c5f1895cb14736f9e6af5c1da751a578b59",
+  "dependency_project_sha256": "77253f27f9d91e4c7406809f141a5c5f1895cb14736f9e6af5c1da751a578b59",
+  "source_is_official": false,
+  "semantic_definition_sha256": "a5fac36de5e2f9d443d4d9392eee7ce4bbe1e7bf0eb0a71bfd83b7013a7609c2",
+  "assignment_semantics_equal": true
+}

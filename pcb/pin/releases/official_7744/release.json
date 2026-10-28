@@ -1,0 +1,268 @@
+{
+  "component_files": {
+    "configs/component/baseline_peer_latest.json": {
+      "size": 107,
+      "sha256": "2b15973d0887388631657486510b89cf7d8fa5b2e5bf7110fb089ec852199a1b"
+    },
+    "configs/component/current.json": {
+      "size": 123,
+      "sha256": "60cdb2b5978488d73ef9a6c950774157a379014a1fd4a8f4392921158e105559"
+    },
+    "configs/component/team_peer_latest.json": {
+      "size": 218,
+      "sha256": "d2aee066616b6e4706cc16f93a75c285be0abc0c3295d57ceeaec4acd24e450a"
+    },
+    "models/ocr_v5/ch_PP-OCRv5_det_mobile.onnx": {
+      "size": 4819576,
+      "sha256": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae"
+    },
+    "models/ocr_v5/ch_PP-OCRv5_rec_mobile.onnx": {
+      "size": 16631306,
+      "sha256": "5825fc7ebf84ae7a412be049820b4d86d77620f204a041697b0494669b1742c5"
+    },
+    "models/ocr_v5/ch_ppocr_mobile_v2.0_cls_mobile.onnx": {
+      "size": 585532,
+      "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+    },
+    "models/ocr_v5/manifest.json": {
+      "size": 1392,
+      "sha256": "e1add422c1461d3b64ccd6d84b57050fd8ece39a3a928f824a657bf991319b8d"
+    },
+    "pcb/component/alternative_ocr.py": {
+      "size": 5048,
+      "sha256": "4de25336bcff6f005d5d85ac133a955753ee16aaeb6da3578c03b2eb78cd7846"
+    },
+    "pcb/component/contextual_values.py": {
+      "size": 5046,
+      "sha256": "841aa87a80213982ab277f3c0e896b4e7e216837d5163d32a8b58968ede1d6b1"
+    },
+    "pcb/component/registry.py": {
+      "size": 793,
+      "sha256": "28e45ceab9d731f70e6245ec732caa961ac92dbb5a2f48f163294b71b7d54d67"
+    },
+    "pcb/component/text_enrichment.py": {
+      "size": 7011,
+      "sha256": "a1ecd265fd07afd89e659f1ec9034927b0bd6eb9aa19a10b9b9c277586a1764f"
+    },
+    "requirements.txt": {
+      "size": 301,
+      "sha256": "1c8bfea549b13f6455b6d6d1afe1ab56c3dc1a14cecec4e0b44954c38d3c57a7"
+    },
+    "tests/component/__init__.py": {
+      "size": 29,
+      "sha256": "1fc6da431ad70ebf21376175196e67dc0258bb6e49eaa152894fa622c891e7cf"
+    },
+    "tests/component/test_contextual_values.py": {
+      "size": 4850,
+      "sha256": "4227894d1c74cf9f78b6dad067d06179c5e8b8e0916d92329cd99b7f7d816b4d"
+    },
+    "tests/component/test_text_enrichment.py": {
+      "size": 6015,
+      "sha256": "40634415ce79e8dd5605c17c33372c234f41facc0eaa846024374d0e6fd8fcbc"
+    },
+    "tests/contracts/test_team_module_slots.py": {
+      "size": 9134,
+      "sha256": "832d469c4f1c1b72dbb3df2bebaf1e79d366ef0239bdd0778e57daf40dc6db96"
+    }
+  },
+  "layers": {
+    "T": {
+      "parent_tag": "eda-pin-l45:validation-20261012",
+      "parent_image_id": "sha256:d7e74304feaa5300bce4ac6a39a5ca2edc1af15ec1619bc0dec409dd960e517b",
+      "asset_directory": "T_context",
+      "context_files": {
+        ".dockerignore": {
+          "size": 46,
+          "sha256": "c5c51dace095d0e3adb04a16af7f6a138ff0c43a5c09dde699b2832181318df7"
+        },
+        "Dockerfile": {
+          "size": 123,
+          "sha256": "0103277c24b844a73dfcde3864c7d008cb46e6d02055afd417f08a1807f35c0a"
+        },
+        "run.sh": {
+          "size": 78,
+          "sha256": "e5b8bed3d480dc69181acceea73ed2060b5b3846120ee9406f374f57724d1164"
+        },
+        "runtime_manifest.json": {
+          "size": 189475,
+          "sha256": "09d3e5550517bb43f2ce8c516977884e55d91f7016c44fa30747f84302cae618"
+        },
+        "t_runtime/algorithm.json": {
+          "size": 817,
+          "sha256": "4e0da9eaf029c9402ab075d6e130edaaff893d207dc4f3dcdffaac863b56a34e"
+        },
+        "t_runtime/ground_runtime.py": {
+          "size": 3058,
+          "sha256": "6816c15cd3d73eec9314d856da1aed84ea7f3399527808f2a902f919a5b277cf"
+        },
+        "t_runtime/linux_ground_T_runner.py": {
+          "size": 3484,
+          "sha256": "a685dbd1d376863d3e0903dd23d4082021e500da64378712384efd50d57fd6d5"
+        },
+        "t_runtime/portable_manifest.json": {
+          "size": 742,
+          "sha256": "419391e3630d7801c4bf9f24b089341e37af7ffa3cc49f0c7b7445f883489741"
+        },
+        "t_runtime/release_entry.py": {
+          "size": 1869,
+          "sha256": "2171ff0271d6d6c94805eaf704fbce70a811f0173e40680db2b0725a88aacc81"
+        }
+      },
+      "manifest_overlay": "T_context/runtime_manifest_overlay.json",
+      "runtime_manifest_path": "runtime_manifest.json"
+    },
+    "integrated": {
+      "parent_tag": "eda-pin-l46-t:submission-20261015",
+      "parent_image_id": "sha256:a4cbf6469a3d0a5d28e8df14e36cd527ca086e47d1d7d588071b1880b1110332",
+      "asset_directory": "integration_context",
+      "context_files": {
+        ".dockerignore": {
+          "size": 24,
+          "sha256": "cf9143fdfce145f9234e589317912e7c9fad341276064294f22da3946d23758e"
+        },
+        "Dockerfile": {
+          "size": 585,
+          "sha256": "2ce98d1903b890a2dda34057e7693a5a47c1152f8783e511f860e28b522affb5"
+        },
+        "payload/requirements.txt": {
+          "size": 301,
+          "sha256": "1c8bfea549b13f6455b6d6d1afe1ab56c3dc1a14cecec4e0b44954c38d3c57a7"
+        },
+        "payload/run.sh": {
+          "size": 80,
+          "sha256": "8b57f718c4803c2508ff08fd638bad812f744d04946123ffed6eb81a56b599eb"
+        },
+        "payload/runtime_manifest.json": {
+          "size": 192257,
+          "sha256": "c74029e8cf047c80224d959e7fb34534ed9b5431ee99d3d6b957683ce53cca7f"
+        },
+        "wheels/antlr4-python3-runtime-4.9.3.tar.gz": {
+          "size": 117034,
+          "sha256": "f224469b4168294902bb1efa80a8bf7855f24c99aef99cbefc1bcd3cce77881b"
+        },
+        "wheels/colorlog-6.10.1-py3-none-any.whl": {
+          "size": 11743,
+          "sha256": "2d7e8348291948af66122cff006c9f8da6255d224e7cf8e37d8de2df3bad8c9c"
+        },
+        "wheels/omegaconf-2.3.0-py3-none-any.whl": {
+          "size": 79500,
+          "sha256": "7b4df175cdb08ba400f45cae3bdcae7ba8365db4d165fc65fd04b050ab63b46b"
+        },
+        "wheels/rapidocr-3.9.2-py3-none-any.whl": {
+          "size": 27275208,
+          "sha256": "04d6b8d151f823d930bd91910555f57bea897c0c44fa6794267b94cf9c1ef9a0"
+        },
+        "payload/integration_runtime/entry.py": {
+          "size": 1943,
+          "sha256": "fb0f7877c8e4ce5db500896d0ad0c656523ac493aec8c82c3baf29ba6ed35a7e"
+        },
+        "payload/integration_runtime/finalize_manifest.py": {
+          "size": 1390,
+          "sha256": "c5adb23961e6b8fbe6f9420f6da6c06f947a8487d8e47fdc005d13d1835f144c"
+        },
+        "payload/integration_runtime/integration_manifest.json": {
+          "size": 5913,
+          "sha256": "a6b06898bd25f60d91d8f836431806fb5936ce80615822f7199e94c34f96ab89"
+        },
+        "payload/integration_runtime/runner.py": {
+          "size": 5291,
+          "sha256": "4c627e8c26d458c91c4f8caa2f8dd3aee9b50404eef621fd3a600dbc54411c7f"
+        },
+        "payload/tests/component/test_contextual_values.py": {
+          "size": 4850,
+          "sha256": "4227894d1c74cf9f78b6dad067d06179c5e8b8e0916d92329cd99b7f7d816b4d"
+        },
+        "payload/tests/component/test_text_enrichment.py": {
+          "size": 6015,
+          "sha256": "40634415ce79e8dd5605c17c33372c234f41facc0eaa846024374d0e6fd8fcbc"
+        },
+        "payload/tests/component/__init__.py": {
+          "size": 29,
+          "sha256": "1fc6da431ad70ebf21376175196e67dc0258bb6e49eaa152894fa622c891e7cf"
+        },
+        "payload/tests/contracts/test_team_module_slots.py": {
+          "size": 9134,
+          "sha256": "832d469c4f1c1b72dbb3df2bebaf1e79d366ef0239bdd0778e57daf40dc6db96"
+        },
+        "payload/pcb/component/alternative_ocr.py": {
+          "size": 5048,
+          "sha256": "4de25336bcff6f005d5d85ac133a955753ee16aaeb6da3578c03b2eb78cd7846"
+        },
+        "payload/pcb/component/contextual_values.py": {
+          "size": 5046,
+          "sha256": "841aa87a80213982ab277f3c0e896b4e7e216837d5163d32a8b58968ede1d6b1"
+        },
+        "payload/pcb/component/registry.py": {
+          "size": 793,
+          "sha256": "28e45ceab9d731f70e6245ec732caa961ac92dbb5a2f48f163294b71b7d54d67"
+        },
+        "payload/pcb/component/text_enrichment.py": {
+          "size": 7011,
+          "sha256": "a1ecd265fd07afd89e659f1ec9034927b0bd6eb9aa19a10b9b9c277586a1764f"
+        },
+        "payload/models/ocr_v5/ch_PP-OCRv5_det_mobile.onnx": {
+          "size": 4819576,
+          "sha256": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae"
+        },
+        "payload/models/ocr_v5/ch_PP-OCRv5_rec_mobile.onnx": {
+          "size": 16631306,
+          "sha256": "5825fc7ebf84ae7a412be049820b4d86d77620f204a041697b0494669b1742c5"
+        },
+        "payload/models/ocr_v5/ch_ppocr_mobile_v2.0_cls_mobile.onnx": {
+          "size": 585532,
+          "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+        },
+        "payload/models/ocr_v5/manifest.json": {
+          "size": 1392,
+          "sha256": "e1add422c1461d3b64ccd6d84b57050fd8ece39a3a928f824a657bf991319b8d"
+        },
+        "payload/configs/component/baseline_peer_latest.json": {
+          "size": 107,
+          "sha256": "2b15973d0887388631657486510b89cf7d8fa5b2e5bf7110fb089ec852199a1b"
+        },
+        "payload/configs/component/current.json": {
+          "size": 123,
+          "sha256": "60cdb2b5978488d73ef9a6c950774157a379014a1fd4a8f4392921158e105559"
+        },
+        "payload/configs/component/team_peer_latest.json": {
+          "size": 218,
+          "sha256": "d2aee066616b6e4706cc16f93a75c285be0abc0c3295d57ceeaec4acd24e450a"
+        }
+      },
+      "manifest_overlay": "integration_context/runtime_manifest_overlay.json",
+      "runtime_manifest_path": "payload/runtime_manifest.json"
+    }
+  },
+  "dependency_files": [
+    {
+      "package": "rapidocr",
+      "version": "3.9.2",
+      "file": "rapidocr-3.9.2-py3-none-any.whl",
+      "bytes": 27275208,
+      "sha256": "04d6b8d151f823d930bd91910555f57bea897c0c44fa6794267b94cf9c1ef9a0"
+    },
+    {
+      "package": "omegaconf",
+      "version": "2.3.0",
+      "file": "omegaconf-2.3.0-py3-none-any.whl",
+      "bytes": 79500,
+      "sha256": "7b4df175cdb08ba400f45cae3bdcae7ba8365db4d165fc65fd04b050ab63b46b"
+    },
+    {
+      "package": "colorlog",
+      "version": "6.10.1",
+      "file": "colorlog-6.10.1-py3-none-any.whl",
+      "bytes": 11743,
+      "sha256": "2d7e8348291948af66122cff006c9f8da6255d224e7cf8e37d8de2df3bad8c9c"
+    },
+    {
+      "package": "antlr4-python3-runtime",
+      "version": "4.9.3",
+      "file": "antlr4-python3-runtime-4.9.3.tar.gz",
+      "bytes": 117034,
+      "sha256": "f224469b4168294902bb1efa80a8bf7855f24c99aef99cbefc1bcd3cce77881b"
+    }
+  ],
+  "component_sources_in_this_release_commit": false,
+  "new_models_in_this_release_commit": false
+}

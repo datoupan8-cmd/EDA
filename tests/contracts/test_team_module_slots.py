@@ -47,8 +47,8 @@ class TeamSlotTests(unittest.TestCase):
 
     def test_default_selects_both_latest_modules(self):
         config = load_team_config("configs/team.json")
-        self.assertEqual(config.text, "ppocrv5_mobile")
-        self.assertEqual(config.component, "contextual_values_v2")
+        self.assertEqual(config.text, "recovery_rotation_vertical_v1")
+        self.assertEqual(config.component, "rotation_vertical_n1_n2_v1")
         self.assertEqual((config.pin_localization, config.pin_semantics), ("l39", "l39"))
         self.assertEqual(config.wire, "v3_frame_guard")
 

@@ -1,0 +1,112 @@
+{
+  "scope": "Component_only",
+  "OFFICIAL_SCORE": false,
+  "reserved_used": false,
+  "case_range": "0001..0150",
+  "aggregate": {
+    "baseline": {
+      "all150": {
+        "macro_ComponentF1": 0.43305862474366874,
+        "micro_Component": {
+          "tp": 2694,
+          "pred": 6163,
+          "gt": 6080,
+          "precision": 0.4371247768943696,
+          "recall": 0.4430921052631579,
+          "f1": 0.4400882136731193
+        }
+      },
+      "train120": {
+        "macro_ComponentF1": 0.4337061822947141,
+        "micro_Component": {
+          "tp": 2137,
+          "pred": 4932,
+          "gt": 4801,
+          "precision": 0.4332927818329278,
+          "recall": 0.44511560091647573,
+          "f1": 0.43912462755573817
+        }
+      },
+      "check30": {
+        "macro_ComponentF1": 0.4304683945394874,
+        "micro_Component": {
+          "tp": 557,
+          "pred": 1231,
+          "gt": 1279,
+          "precision": 0.4524776604386678,
+          "recall": 0.4354964816262705,
+          "f1": 0.4438247011952191
+        }
+      }
+    },
+    "P01": {
+      "all150": {
+        "macro_ComponentF1": 0.5401056793077258,
+        "micro_Component": {
+          "tp": 2642,
+          "pred": 3434,
+          "gt": 6080,
+          "precision": 0.7693651718112988,
+          "recall": 0.43453947368421053,
+          "f1": 0.5553920538154299
+        }
+      },
+      "train120": {
+        "macro_ComponentF1": 0.542452215017992,
+        "micro_Component": {
+          "tp": 2098,
+          "pred": 2723,
+          "gt": 4801,
+          "precision": 0.7704737421961072,
+          "recall": 0.43699229327223493,
+          "f1": 0.5576820839978734
+        }
+      },
+      "check30": {
+        "macro_ComponentF1": 0.5307195364666608,
+        "micro_Component": {
+          "tp": 544,
+          "pred": 711,
+          "gt": 1279,
+          "precision": 0.7651195499296765,
+          "recall": 0.4253322908522283,
+          "f1": 0.5467336683417086
+        }
+      }
+    }
+  },
+  "delta": {
+    "all150": 0.10704705456405705,
+    "train120": 0.10874603272327793,
+    "check30": 0.10025114192717344
+  },
+  "improved_pages": 146,
+  "worse_pages": 2,
+  "same_pages": 2,
+  "prediction_count": 300,
+  "all150_reference_parity": true,
+  "OCR_control": "shared sealed image-only PP-OCRv5 beam tokens; fresh YOLO/PARSeq",
+  "parameter_sha256": "229feaad096c90bbab118bf822d513291e0dcf37274fb26e7b66c505be384164",
+  "selected_profile": "ordered_yolo11m_local_parseq_p01_v1",
+  "source_sha256": {
+    "tools/evaluate_component_p01.py": "b6abf4a47d10d19cb1f2056e25c39af8e80a632852d212c11de7b5022b48a30e",
+    "pcb/component/selective_filter.py": "61c7a9ab2570dd98cecaf30d3be95aa1d0769220178881b04dc63f9543b9c437",
+    "pcb/component/registry.py": "5f1c2cf5cdc978a2958e5dff2aaada1e6a389e326ff0928169aab2a63d79963a",
+    "pcb/component/local_combination.py": "d43130c242ccee759393f7b11223396eb73c5705cff82becbb6927a4a5f72316",
+    "pcb/component/parseq_local.py": "3cfe1069baca3dc541ac015845ccc81040fc2188b88c3f43246e96da7fa1bda1",
+    "pcb/component/parseq_adapted.py": "1547ec44ca9101274381be310536dac96b0c9d4f7b60f7b9915bc4d6d00155b6",
+    "pcb/component/ocr_ablation.py": "43564336f5740b719f00c2428b159d17298f614e455146e62e30b1d6bc93d14b",
+    "configs/component/current.json": "f7ea8b2a9fc4f050691fbcc1cc7399ab0a403e3773764c4b92ff0966b3d1b68b",
+    "configs/component/p01.json": "f7ea8b2a9fc4f050691fbcc1cc7399ab0a403e3773764c4b92ff0966b3d1b68b",
+    "configs/pin/current.json": "1491867f7cd47bac7d3c9130b8e3544aa3664da90e4166eb23b2b13965f042ef",
+    "configs/wire_topology/current.json": "0ac0506e97b904e2d9a5153128d868a9c0dbb7f39d76c95d9c2eb6933e29e6ca",
+    "evaluate_v2.py": "07812ca27f48f41c822aa66c05f07e8378816d21fdf50fe6a809c1c94d01eb3d"
+  },
+  "tests": {
+    "working_tree_suite_before_final_checkout_checks": 472,
+    "clean_candidate_snapshot_suite": 377,
+    "repository_doctor_passed": true,
+    "Git_diff_check_passed": true
+  },
+  "official_container_tested": false
+}

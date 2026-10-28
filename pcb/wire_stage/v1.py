@@ -1,4 +1,5 @@
 """Pixel wire extraction and path tracing. Logical tree edges are never exported as wires."""
+from dataclasses import dataclass
 import cv2
 import numpy as np
 from skimage.morphology import skeletonize
@@ -78,6 +79,64 @@ def simplify(path,epsilon=1.0):
     points=np.array([(x,y) for y,x in path],np.float32).reshape(-1,1,2)
     approx=cv2.approxPolyDP(points,epsilon,False).reshape(-1,2)
     return [(tuple(map(float,a)),tuple(map(float,b))) for a,b in zip(approx,approx[1:]) if np.linalg.norm(a-b)>0]
+
+@dataclass(frozen=True)
+class IndexedSimplification:
+    """Legacy geometry plus exact source indices, absent when ambiguous."""
+
+    vertices: tuple
+    source_vertex_indices: tuple[int, ...] | None
+    segments: tuple
+    segment_edge_ranges: tuple[tuple[int, int] | None, ...]
+
+
+def _unique_ordered_vertex_indices(points, vertices):
+    """Accept only a unique ordered embedding; never use nearest coordinates."""
+    earliest = []
+    cursor = 0
+    for vertex in vertices:
+        while cursor < len(points) and points[cursor] != vertex:
+            cursor += 1
+        if cursor == len(points):
+            return None
+        earliest.append(cursor)
+        cursor += 1
+
+    latest = []
+    cursor = len(points) - 1
+    for vertex in reversed(vertices):
+        while cursor >= 0 and points[cursor] != vertex:
+            cursor -= 1
+        if cursor < 0:
+            return None
+        latest.append(cursor)
+        cursor -= 1
+    if earliest != list(reversed(latest)):
+        return None
+    return tuple(earliest)
+
+
+def simplify_with_indices(path, epsilon=1.0):
+    """Keep legacy geometry and record half-open raw edge ranges.
+
+    Repeated coordinates or float32 rounding may make source occurrences
+    ambiguous. Geometry is retained and source ranges remain unknown.
+    """
+    if len(path) == 0:
+        return IndexedSimplification((), (), (), ())
+    points = np.array([(x, y) for y, x in path], np.float32).reshape(-1, 1, 2)
+    approx = cv2.approxPolyDP(points, epsilon, False).reshape(-1, 2)
+    vertices = tuple(tuple(map(float, point)) for point in approx)
+    source_points = tuple((float(x), float(y)) for y, x in path)
+    indices = _unique_ordered_vertex_indices(source_points, vertices)
+    segments = []
+    ranges = []
+    for index, (a, b) in enumerate(zip(approx, approx[1:])):
+        if np.linalg.norm(a-b) > 0:
+            segments.append((vertices[index], vertices[index+1]))
+            ranges.append(None if indices is None else (indices[index], indices[index+1]))
+    return IndexedSimplification(vertices, indices, tuple(segments), tuple(ranges))
+
 
 def projection(p,a,b):
     p,a,b=np.asarray(p,float),np.asarray(a,float),np.asarray(b,float)

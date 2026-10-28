@@ -1,6 +1,6 @@
 {
   "wire": "v3_frame_guard",
-  "topology": "v3",
+  "topology": "v3_power_terminals_v2",
   "variant": "baseline",
   "enable_flying_labels": false
 }

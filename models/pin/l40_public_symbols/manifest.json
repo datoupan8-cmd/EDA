@@ -1,0 +1,123 @@
+{
+  "sources": [
+    {
+      "model": "ATMEGA8A-AU",
+      "code": "C16190",
+      "url": "https://easyeda.com/api/products/C16190/components",
+      "file": "C16190.json",
+      "sha256": "8699685f8b649b56582cf9a4799c7baecdda822955d3b92c8299b8402a90815b",
+      "bytes": 62966,
+      "title": "ATMEGA8A-AU",
+      "uuid": "674af1b89b9566cc36d24efbe4c854d9",
+      "updateTime": 1698206105,
+      "shape_types": [
+        "E",
+        "P",
+        "R"
+      ],
+      "pin_count": 32,
+      "status": "downloaded",
+      "accessed_at_utc": "2026-10-12T01:15:59.606299+00:00"
+    },
+    {
+      "model": "ZX-PZ2.54-1-20PZZ",
+      "code": "C7501271",
+      "url": "https://easyeda.com/api/products/C7501271/components",
+      "file": "C7501271.json",
+      "sha256": "8c4d2d000b0794e9b8219c42b90240ac97d763463361de60821e689435dcb096",
+      "bytes": 20538,
+      "title": "ZX-PZ2.54-1-20PZZ",
+      "uuid": "9f77db6d27a546c08215027963722e21",
+      "updateTime": 1741164656,
+      "shape_types": [
+        "E",
+        "P",
+        "R"
+      ],
+      "pin_count": 20,
+      "status": "downloaded",
+      "accessed_at_utc": "2026-10-12T01:15:59.933443+00:00"
+    },
+    {
+      "model": "KH-2.54FH-1X15P-H8.5",
+      "code": "C2932676",
+      "url": "https://easyeda.com/api/products/C2932676/components",
+      "file": "C2932676.json",
+      "sha256": "875e3a36f0a5da6d72c740c1f3019e2259f8f03bc92aee5e6242e0dd59255dd8",
+      "bytes": 17005,
+      "title": "KH-2.54FH-1X15P-H8.5",
+      "uuid": "0d8ecd4e1d924e758081b56a7fb6f326",
+      "updateTime": 1714155106,
+      "shape_types": [
+        "E",
+        "P",
+        "R"
+      ],
+      "pin_count": 15,
+      "status": "downloaded",
+      "accessed_at_utc": "2026-10-12T01:15:59.075956+00:00"
+    },
+    {
+      "model": "STM32F103C8T6",
+      "code": "C8734",
+      "url": "https://easyeda.com/api/products/C8734/components",
+      "file": "C8734.json",
+      "sha256": "f9fc217b37a2b1ccbb8e9eaf7322927dbe094f89ea171076a3e315cc16b1c6b7",
+      "bytes": 91466,
+      "title": "STM32F103C8T6",
+      "uuid": "7347be22b5856eba3ffccb74c7404572",
+      "updateTime": 1750141599,
+      "shape_types": [
+        "E",
+        "P",
+        "R"
+      ],
+      "pin_count": 48,
+      "status": "downloaded",
+      "accessed_at_utc": "2026-10-12T01:15:59.933673+00:00"
+    },
+    {
+      "model": "MPU6050",
+      "code": "C24112",
+      "url": "https://easyeda.com/api/products/C24112/components",
+      "file": "C24112.json",
+      "sha256": "fa5700c4789d331fe419bbfee526583c4bcd5d5a676fad46a678e80a6012c3cd",
+      "bytes": 28893,
+      "title": "MPU-6050_C24112",
+      "uuid": "a571133e57b33f8fdf2317261143470d",
+      "updateTime": 1751101796,
+      "shape_types": [
+        "E",
+        "P",
+        "R"
+      ],
+      "pin_count": 25,
+      "status": "downloaded",
+      "accessed_at_utc": "2026-10-12T01:16:00.009459+00:00"
+    },
+    {
+      "model": "RP2040-Zero",
+      "code": "7b24158791074d248c4530b7d4e6639c",
+      "url": "https://easyeda.com/api/components/7b24158791074d248c4530b7d4e6639c",
+      "file": "7b24158791074d248c4530b7d4e6639c.json",
+      "sha256": "a2542c0001a5fb78ad3459e06816c851666ed82768c7eb024e0f65747f3e6c78",
+      "bytes": 9751,
+      "title": "RP2040-Zero",
+      "uuid": "7b24158791074d248c4530b7d4e6639c",
+      "updateTime": 1740970073,
+      "shape_types": [
+        "ARC",
+        "PAD",
+        "RECT",
+        "TEXT",
+        "TRACK"
+      ],
+      "pin_count": 0,
+      "status": "downloaded",
+      "accessed_at_utc": "2026-10-12T01:16:00.330130+00:00"
+    }
+  ],
+  "GT_used": false,
+  "network_inference_allowed": false,
+  "runtime_adoption": false
+}

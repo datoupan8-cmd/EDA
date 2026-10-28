@@ -1,0 +1,88 @@
+{
+  "baseline": "Component c82 + L45 Pin + original T",
+  "official_submission_id": 7744,
+  "scores": {
+    "component_f1": 0.508448,
+    "pin_f1": 0.768938,
+    "connectivity_f1": 0.21592,
+    "wire_f1": 0.061475,
+    "final_score": 42.648846
+  },
+  "previous_official_submission_id": 7637,
+  "delta_vs_previous": {
+    "final_score": 2.577671,
+    "component_f1": 0.056183,
+    "pin_f1": 0.037207,
+    "connectivity_f1": -0.00223,
+    "wire_f1": 0.004006
+  },
+  "aggregate_coverage": {
+    "metric_coverage": {
+      "final_score": {
+        "down": 3,
+        "up": 7
+      },
+      "component_f1": {
+        "down": 1,
+        "up": 7,
+        "equal": 2
+      },
+      "pin_f1": {
+        "down": 4,
+        "equal": 1,
+        "up": 5
+      },
+      "connectivity_f1": {
+        "down": 5,
+        "up": 2,
+        "equal": 3
+      },
+      "wire_f1": {
+        "down": 3,
+        "up": 4,
+        "equal": 3
+      }
+    },
+    "largest_gain": 10.245035,
+    "largest_loss": -10.29321,
+    "leave_best_out_mean_total_delta": 1.7257411111111112,
+    "micro_count_deltas": {
+      "component": {
+        "tp": 16,
+        "fp": -16,
+        "fn": -16
+      },
+      "pin": {
+        "tp": 6,
+        "fp": 14,
+        "fn": -6
+      },
+      "wire": {
+        "tp": 6,
+        "fp": 103,
+        "fn": -6
+      }
+    }
+  },
+  "protocol_sha256": "6f4ee86fadaa5d8de2d9d30d0d23a0270d497922437edbf8ec5a84ab119fcdf6",
+  "new_component_full150_scoring_run": false,
+  "inference_GT_reads": 0,
+  "inference_network_attempts": 0,
+  "component_commit": "c82f32ef90f0d725da00c2ae4fbbeabc5bf49ca8",
+  "source_snapshot": "b4eb6fce36a8b85f8c78815c2424a458fbc71eb6",
+  "image_tag": "eda-component-l45-t:submission-20261015",
+  "locally_verified_image_id": "sha256:a73d3423e4153cafa3e6b3d3b2d8c123a6b329865ada954280b75382870d8fef",
+  "official_return_independently_contains_full_image_id": false,
+  "runtime_hashes_and_tag_match_delivered_package": true,
+  "package_filename": "submissionComponent_L45_T.zip",
+  "package_bytes": 3461766898,
+  "package_sha256": "ca9878ec9fc6f3520b6569a5c3f83757d4521ec2b89242a21dbc54e0cf6735c5",
+  "official_result_zip_sha256": "ff3091c441271870d8743e228f317f3cfe81cdc03b124216ba5c4297bc0b848f",
+  "fallbacks": [
+    "L45+T/7637",
+    "L45/7548"
+  ],
+  "ordinary_defaults_and_Component_files_unchanged": true,
+  "SEALED_HOLDOUT_USED_FOR_DEVELOPMENT": false,
+  "scope": "Our Pin/T runtime, packaging integration and aggregate baseline record only; no Component code or private predictions."
+}

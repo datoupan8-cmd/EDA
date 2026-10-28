@@ -1,5 +1,17 @@
 # 网络两项的拆分、运行与修改说明
 
+## NetLine 包整合（2026-10-27）
+
+总程序已接入 `path_v1`、`path_collinear_v1` 和可选来源追踪文件，普通 V2/V3、供电端子 V1/V2 均支持。通过 `--net-lines-version` 单次选择，增加 `--save-net-lines-provenance` 可保存独立 sidecar；默认仍为 `legacy_v2`。具体命令、兼容性和本次验证见 [NetLine 整合说明](lines/README.md)。
+
+## 当前默认：供电端子 V2（2026-10-27）
+
+标准团队配置现在选择 `v3_power_terminals_v2`，无需额外传 `--power-terminals`。上游固定 N1/N2＋L39，两个网络插槽仍为 `legacy_v2`。完整 150 例的分数、误连接代价和版本证据见 [CURRENT150_POWER_RESULTS_20261027.md](CURRENT150_POWER_RESULTS_20261027.md)。当前工作分支固定为 `feature/pin-l45-validated-20261012`。
+
+复现原版时显式传 `--config docs/network/CURRENT150_BASELINE_CONFIG_20261027.json`；复现 V1 时加 `--power-terminals --power-version v1`。原版历史 parity 工具也使用该保留配置。下面的拆分说明和分支示例为历史记录，当前分支与配置以本节及 AGENTS.md 为准。
+
+## 历史拆分说明
+
 本轮是结构拆分，不是新的提分实验。保留正式 Component/Text、L39 Pin、Wire V3/F 和全部默认算法参数，把原 Topology 的内部工作分为两个可独立替换的模块。
 
 代码先保存在 `feature/network-metrics-split`，再快进到统一分支 `integration/component-pin`。日常完整运行仍使用 `tools/run_team_pipeline.py`。不需要新建一套工程，也不需要本轮重建镜像。

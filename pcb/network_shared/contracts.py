@@ -70,6 +70,9 @@ class WireGraph:
     mask: Any
     thickness: Any
     skeleton: Any
+    # Optional half-open raw edge ranges aligned with reference_segments.
+    # Last/defaulted for existing positional WireGraph constructors.
+    reference_segment_edge_ranges: tuple[tuple[tuple[int, int] | None, ...], ...] | None = None
 
 
 @dataclass(frozen=True)

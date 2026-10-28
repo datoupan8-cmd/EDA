@@ -1,0 +1,19 @@
+{
+  "upstream": "https://github.com/baudm/parseq",
+  "revision": "main; individual source files SHA256 recorded",
+  "files": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "NOTICE": "0b0a09b6a5321a43a7cf06e5194ce51e3855e42297930f7bad9421fcb39a93b5",
+    "strhub/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strhub/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strhub/data/utils.py": "75b5e7e66b20d490e4aa00ca0d2dbbc415d693312a803f06e36c269ccd6226c8",
+    "strhub/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strhub/models/utils.py": "2c6ac08edeeb8585ca78f7d8c655ee9b2c68589f96e240c2f0b36907eb13e747",
+    "strhub/models/parseq/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "strhub/models/parseq/model.py": "27420f5b51887fd8763e4902019beb4d09303c82fde2a959e3e21dc84bad791b",
+    "strhub/models/parseq/modules.py": "923dad8df6aa1e379a12794866c96f1133d82fd09ca856c8e3dbfdcf03421680",
+    "configs/main.yaml": "6ef8cbff80a0f41a3c9017cc9088bb1581957026e9707f7a300c2097bdf5d53b",
+    "configs/model/parseq.yaml": "022d231e939c28fd34ca50d9ca6e3eec268680c047f37ce7f06362e8aaa88f45",
+    "configs/charset/94_full.yaml": "073479c34d305113ff41459ecff0e27e3a711b3787e63537d078ab81eb5ce511"
+  }
+}
