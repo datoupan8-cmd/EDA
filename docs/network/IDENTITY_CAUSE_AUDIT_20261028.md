@@ -116,6 +116,7 @@
 
 - 开始提交：`c4236502a0151881182e48b9cb0d7a88359b68ed`。
 - 分支：`feature/pin-l45-validated-20261012`。
+- 诊断实现及完整结果提交：`fedf4e2d02b6f9605182f77dbfcdfbb4b5cfc722`；随后仅补充版本号，不改诊断或推理。
 - 回退标签：`backup/20261028-202344-before-identity-cause-audit`。
 - 冻结输入版本：`1362ec34880e9faed2de7e9a25ac51ca92f6035d63f162d719be92aeec399ce9`，配置 N1/N2＋L39＋供电 V2；模型与配置未修改。
 - 逐例核验预测、Scene、原图与封存哈希；逐例对账原缺失桶，最终仍为 5247。

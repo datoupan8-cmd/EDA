@@ -463,7 +463,8 @@
       "changed_file_count": 4,
       "violations": [],
       "status": "PASSED"
-    }
+    },
+    "staged_diff_check": "PASSED"
   },
   "count_units": {
     "nonrail_members": "per-image deduplicated GT network members: IC owner+pin number, otherwise owner",
@@ -476,5 +477,6 @@
     "runs/identity_cause_full150_20261028",
     "runs/identity_cause_detail150_20261028",
     "runs/identity_cause_final150_20261028"
-  ]
+  ],
+  "audit_implementation_commit": "fedf4e2d02b6f9605182f77dbfcdfbb4b5cfc722"
 }
