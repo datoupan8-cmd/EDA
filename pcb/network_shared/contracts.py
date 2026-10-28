@@ -70,6 +70,11 @@ class WireGraph:
     mask: Any
     thickness: Any
     skeleton: Any
+    # Optional, aligned as [path_id][reference_segment_index]. Each valid
+    # pair is a half-open path-local edge interval [start, end).
+    reference_segment_edge_ranges: tuple[
+        tuple[tuple[int,int] | None,...],...
+    ] | None = None
 
 
 @dataclass(frozen=True)

@@ -2,7 +2,7 @@
 from types import MappingProxyType
 import cv2
 import numpy as np
-from ..wire_stage.v1 import trace_paths,simplify
+from ..wire_stage.v1 import trace_paths,simplify_with_indices
 from .contracts import WireGraph
 
 
@@ -11,9 +11,14 @@ def build_graph(mask,traced=None):
     original=np.asarray(mask).copy()
     thickness=cv2.distanceTransform(original,cv2.DIST_L2,3)
     skeleton=np.asarray(skeleton).copy()
-    reference=tuple(tuple(simplify(p)) for p in paths)
+    simplified=tuple(simplify_with_indices(path) for path in paths)
+    reference=tuple(item.segments for item in simplified)
+    reference_edge_ranges=tuple(item.segment_edge_ranges for item in simplified)
     paths=tuple(tuple(tuple(p) for p in path) for path in paths)
     adjacency=MappingProxyType({p:tuple(neighbors) for p,neighbors in adj.items()})
     for array in (original,thickness,skeleton):array.setflags(write=False)
     height,width=original.shape
-    return WireGraph(width,height,paths,adjacency,reference,original,thickness,skeleton)
+    return WireGraph(
+        width,height,paths,adjacency,reference,original,thickness,skeleton,
+        reference_edge_ranges,
+    )

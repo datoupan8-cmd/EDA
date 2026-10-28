@@ -1,4 +1,7 @@
 """Pixel wire extraction and path tracing. Logical tree edges are never exported as wires."""
+from dataclasses import dataclass
+from bisect import bisect_left
+
 import cv2
 import numpy as np
 from skimage.morphology import skeletonize
@@ -78,6 +81,115 @@ def simplify(path,epsilon=1.0):
     points=np.array([(x,y) for y,x in path],np.float32).reshape(-1,1,2)
     approx=cv2.approxPolyDP(points,epsilon,False).reshape(-1,2)
     return [(tuple(map(float,a)),tuple(map(float,b))) for a,b in zip(approx,approx[1:]) if np.linalg.norm(a-b)>0]
+
+
+@dataclass(frozen=True)
+class IndexedSimplification:
+    """Simplified path geometry and verified indices into its raw path.
+
+    ``source_vertex_indices`` is ``None`` when simplified coordinates cannot
+    be mapped to one unique ordered subsequence of the raw vertices. Each
+    ``segment_edge_ranges`` item is the half-open path-edge interval [start,
+    end) between the corresponding simplified segment endpoints, or ``None``
+    when that provenance is ambiguous.
+    """
+
+    vertices: tuple[tuple[float, float], ...]
+    source_vertex_indices: tuple[int, ...] | None
+    segments: tuple[tuple[tuple[float, float], tuple[float, float]], ...]
+    segment_edge_ranges: tuple[tuple[int, int] | None, ...]
+
+
+def _unique_ordered_vertex_indices(source_points, simplified_points):
+    """Map exact simplifier vertices only if there is one ordered match."""
+    source = [tuple(float(value) for value in point) for point in source_points]
+    simplified = [tuple(float(value) for value in point) for point in simplified_points]
+    if not simplified:
+        return ()
+
+    positions = {}
+    for index, point in enumerate(source):
+        positions.setdefault(point, []).append(index)
+    candidates = [positions.get(point, []) for point in simplified]
+    if any(not indices for indices in candidates):
+        return None
+
+    counts = [1] * len(candidates[0])
+    parent_rows = [None]
+    for layer in range(1, len(candidates)):
+        prefix_counts = []
+        prefix_unique_positions = []
+        total = 0
+        unique_position = None
+        for position, count in enumerate(counts):
+            if count:
+                if total == 0 and count == 1:
+                    total = 1
+                    unique_position = position
+                else:
+                    total = 2
+                    unique_position = None
+            prefix_counts.append(total)
+            prefix_unique_positions.append(unique_position)
+
+        next_counts = []
+        parents = []
+        for current_index in candidates[layer]:
+            cutoff = bisect_left(candidates[layer - 1], current_index)
+            paths = prefix_counts[cutoff - 1] if cutoff else 0
+            next_counts.append(paths)
+            parents.append(
+                prefix_unique_positions[cutoff - 1] if paths == 1 else None
+            )
+        counts = next_counts
+        parent_rows.append(parents)
+
+    if sum(counts) != 1:
+        return None
+    position = counts.index(1)
+    mapped = [0] * len(candidates)
+    for layer in range(len(candidates) - 1, -1, -1):
+        mapped[layer] = candidates[layer][position]
+        if layer:
+            position = parent_rows[layer][position]
+            if position is None:
+                return None
+    return tuple(mapped)
+
+
+def simplify_with_indices(path,epsilon=1.0):
+    """Simplify like :func:`simplify` and retain unambiguous raw vertex IDs.
+
+    OpenCV returns approximated coordinates, not source indices. This helper
+    maps those coordinates back only when they form a unique, exact,
+    order-preserving subsequence of the original float32 input vertices. If
+    repeated coordinates make the mapping ambiguous, geometry is still
+    returned unchanged and source index/range values are marked unknown.
+    """
+    if len(path) == 0:
+        return IndexedSimplification((), (), (), ())
+    points=np.array([(x,y) for y,x in path],np.float32).reshape(-1,1,2)
+    approx=cv2.approxPolyDP(points,epsilon,False).reshape(-1,2)
+    vertices=tuple(tuple(map(float,point)) for point in approx)
+    source_indices=_unique_ordered_vertex_indices(points.reshape(-1,2),approx)
+
+    segments=[]
+    ranges=[]
+    for index,(start,end) in enumerate(zip(approx,approx[1:])):
+        if np.linalg.norm(start-end)>0:
+            segments.append((tuple(map(float,start)),tuple(map(float,end))))
+            interval=None
+            if source_indices is not None:
+                first,last=source_indices[index:index+2]
+                if first < last:
+                    interval=(first,last)
+            ranges.append(interval)
+    return IndexedSimplification(
+        vertices,
+        source_indices,
+        tuple(segments),
+        tuple(ranges),
+    )
 
 def projection(p,a,b):
     p,a,b=np.asarray(p,float),np.asarray(a,float),np.asarray(b,float)
