@@ -1,0 +1,480 @@
+{
+  "ACTUAL_CASE_IDS": [
+    "0001",
+    "0002",
+    "0003",
+    "0004",
+    "0005",
+    "0006",
+    "0007",
+    "0008",
+    "0009",
+    "0010",
+    "0011",
+    "0012",
+    "0013",
+    "0014",
+    "0015",
+    "0016",
+    "0017",
+    "0018",
+    "0019",
+    "0020",
+    "0021",
+    "0022",
+    "0023",
+    "0024",
+    "0025",
+    "0026",
+    "0027",
+    "0028",
+    "0029",
+    "0030",
+    "0031",
+    "0032",
+    "0033",
+    "0034",
+    "0035",
+    "0036",
+    "0037",
+    "0038",
+    "0039",
+    "0040",
+    "0041",
+    "0042",
+    "0043",
+    "0044",
+    "0045",
+    "0046",
+    "0047",
+    "0048",
+    "0049",
+    "0050",
+    "0051",
+    "0052",
+    "0053",
+    "0054",
+    "0055",
+    "0056",
+    "0057",
+    "0058",
+    "0059",
+    "0060",
+    "0061",
+    "0062",
+    "0063",
+    "0064",
+    "0065",
+    "0066",
+    "0067",
+    "0068",
+    "0069",
+    "0070",
+    "0071",
+    "0072",
+    "0073",
+    "0074",
+    "0075",
+    "0076",
+    "0077",
+    "0078",
+    "0079",
+    "0080",
+    "0081",
+    "0082",
+    "0083",
+    "0084",
+    "0085",
+    "0086",
+    "0087",
+    "0088",
+    "0089",
+    "0090",
+    "0091",
+    "0092",
+    "0093",
+    "0094",
+    "0095",
+    "0096",
+    "0097",
+    "0098",
+    "0099",
+    "0100",
+    "0101",
+    "0102",
+    "0103",
+    "0104",
+    "0105",
+    "0106",
+    "0107",
+    "0108",
+    "0109",
+    "0110",
+    "0111",
+    "0112",
+    "0113",
+    "0114",
+    "0115",
+    "0116",
+    "0117",
+    "0118",
+    "0119",
+    "0120",
+    "0121",
+    "0122",
+    "0123",
+    "0124",
+    "0125",
+    "0126",
+    "0127",
+    "0128",
+    "0129",
+    "0130",
+    "0131",
+    "0132",
+    "0133",
+    "0134",
+    "0135",
+    "0136",
+    "0137",
+    "0138",
+    "0139",
+    "0140",
+    "0141",
+    "0142",
+    "0143",
+    "0144",
+    "0145",
+    "0146",
+    "0147",
+    "0148",
+    "0149",
+    "0150"
+  ],
+  "DIAGNOSTIC_ONLY": true,
+  "OFFICIAL_SCORE": false,
+  "GT_opens": 150,
+  "reserved_used": false,
+  "baseline_commit": "c4236502a0151881182e48b9cb0d7a88359b68ed",
+  "input_version_key": "1362ec34880e9faed2de7e9a25ac51ca92f6035d63f162d719be92aeec399ce9",
+  "audit_source_sha256": "964cd3d89a0e4b3c03740d1a316d7f642abb2b71c5b438d0c26d1c26cda2b466",
+  "previous_report_sha256": "d47eee5fd4714d3ce1dde567f97060487620a32a4e31d94c911c813eb569b304",
+  "sealed_predictions_sha256": "9b46a9baa3924bea91941b9797312ab90e1c324b8eeea6657b41f186359a7911",
+  "geometry": {
+    "IoU_threshold": 0.5,
+    "type_or_identity_used_for_matching": false,
+    "one_to_one": true,
+    "competing_matches_kept_ambiguous": true,
+    "threshold_search": false
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Scripts\\python.exe",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "aggregate": {
+    "missing_nonrail_members": {
+      "body_filtered_with_wrong_or_unresolved_identity": 3789,
+      "no_prefilter_box_at_diagnostic_IoU": 473,
+      "candidate_assignment_or_key_collision": 150,
+      "correct_literal_not_in_archived_OCR": 379,
+      "component_type_mismatch": 13,
+      "case_only_key": 129,
+      "fusion_rejected_candidate": 10,
+      "literal_seen_but_not_designator_candidate": 110,
+      "candidate_blocked_by_existing_weight_or_gate": 15,
+      "geometry_ambiguous": 111
+    },
+    "missing_rail_causes": {
+      "power_value_wrong_nonempty": 14,
+      "no_prefilter_box_at_diagnostic_IoU": 31,
+      "power_value_empty": 14,
+      "mixed_symbol_instance_causes": 6,
+      "power_value_case_or_space_only": 2,
+      "fusion_rejected_candidate": 1
+    },
+    "case_only_raw_evidence": {
+      "members_with_casefold_only_literal": 128,
+      "members_with_exact_case_literal": 1
+    },
+    "global_casefold_alias_evidence": {
+      "members_with_global_casefold_alias": 132,
+      "members_with_alias_but_geometry_not_confirmed": 3
+    },
+    "existing_name_on_other_body_members": {
+      "candidate_blocked_by_existing_weight_or_gate": 147,
+      "candidate_assignment_or_key_collision": 33,
+      "correct_literal_not_in_archived_OCR": 7
+    },
+    "original_missing_member_count": 5247,
+    "missing_owner_count": 1943,
+    "missing_rail_count": 68,
+    "missing_nonrail_by_type": {
+      "ic": {
+        "body_filtered_with_wrong_or_unresolved_identity": 2894,
+        "case_only_key": 123,
+        "candidate_assignment_or_key_collision": 110,
+        "no_prefilter_box_at_diagnostic_IoU": 87,
+        "correct_literal_not_in_archived_OCR": 243,
+        "geometry_ambiguous": 99,
+        "literal_seen_but_not_designator_candidate": 94,
+        "candidate_blocked_by_existing_weight_or_gate": 4
+      },
+      "component": {
+        "body_filtered_with_wrong_or_unresolved_identity": 895,
+        "no_prefilter_box_at_diagnostic_IoU": 386,
+        "candidate_assignment_or_key_collision": 40,
+        "correct_literal_not_in_archived_OCR": 136,
+        "component_type_mismatch": 13,
+        "fusion_rejected_candidate": 10,
+        "literal_seen_but_not_designator_candidate": 16,
+        "candidate_blocked_by_existing_weight_or_gate": 11,
+        "case_only_key": 6,
+        "geometry_ambiguous": 12
+      }
+    },
+    "missing_owner_causes_unweighted": {
+      "body_filtered_with_wrong_or_unresolved_identity": 1242,
+      "no_prefilter_box_at_diagnostic_IoU": 405,
+      "candidate_assignment_or_key_collision": 49,
+      "correct_literal_not_in_archived_OCR": 160,
+      "component_type_mismatch": 13,
+      "case_only_key": 11,
+      "fusion_rejected_candidate": 10,
+      "literal_seen_but_not_designator_candidate": 24,
+      "candidate_blocked_by_existing_weight_or_gate": 12,
+      "geometry_ambiguous": 17
+    },
+    "filtered_body_text_evidence": {
+      "members": {
+        "correct_literal_not_in_archived_OCR": 3379,
+        "candidate_blocked_by_existing_weight_or_gate": 118,
+        "component_type_mismatch": 35,
+        "literal_seen_but_not_designator_candidate": 251,
+        "candidate_assignment_or_key_collision": 6
+      },
+      "owners": {
+        "correct_literal_not_in_archived_OCR": 1143,
+        "candidate_blocked_by_existing_weight_or_gate": 19,
+        "component_type_mismatch": 32,
+        "literal_seen_but_not_designator_candidate": 42,
+        "candidate_assignment_or_key_collision": 6
+      }
+    },
+    "filtered_body_identity_state": {
+      "members": {
+        "unresolved": 3789
+      },
+      "owners": {
+        "unresolved": 1242
+      }
+    },
+    "filtered_literal_role_evidence_not_exclusive": {
+      "DESIGNATOR:designator_pattern": 134,
+      "MODEL_TEXT:signal_or_model_pattern": 67,
+      "PIN_NUMBER:pin_number_pattern": 17,
+      "PIN_NUMBER:near_large_box_boundary": 151
+    },
+    "filtered_body_detector_confidence": {
+      "minimum": 0.10049021244049072,
+      "median": 0.7022671103477478,
+      "maximum": 0.9853430986404419
+    },
+    "missing_nonrail_root_situations_by_type": {
+      "component": {
+        "correct_literal_not_in_archived_OCR": 967,
+        "no_prefilter_box_at_diagnostic_IoU": 386,
+        "candidate_blocked_by_existing_weight_or_gate": 21,
+        "candidate_assignment_or_key_collision": 46,
+        "component_type_mismatch": 43,
+        "fusion_rejected_candidate": 10,
+        "literal_seen_but_not_designator_candidate": 34,
+        "case_only_key": 6,
+        "geometry_ambiguous": 12
+      },
+      "ic": {
+        "candidate_blocked_by_existing_weight_or_gate": 112,
+        "case_only_key": 123,
+        "candidate_assignment_or_key_collision": 110,
+        "correct_literal_not_in_archived_OCR": 2791,
+        "no_prefilter_box_at_diagnostic_IoU": 87,
+        "literal_seen_but_not_designator_candidate": 327,
+        "geometry_ambiguous": 99,
+        "component_type_mismatch": 5
+      }
+    },
+    "missing_nonrail_root_situations": {
+      "correct_literal_not_in_archived_OCR": 3758,
+      "no_prefilter_box_at_diagnostic_IoU": 473,
+      "candidate_blocked_by_existing_weight_or_gate": 133,
+      "candidate_assignment_or_key_collision": 156,
+      "component_type_mismatch": 48,
+      "fusion_rejected_candidate": 10,
+      "literal_seen_but_not_designator_candidate": 361,
+      "case_only_key": 129,
+      "geometry_ambiguous": 111
+    },
+    "missing_owner_grammar_flags_not_exclusive": {
+      "members": {
+        "supported_full_key": 4513,
+        "unsupported_full_key": 666,
+        "unsupported_full_key_with_literal_observed": 163
+      }
+    },
+    "missing_rail_symbol_causes": {
+      "power_value_wrong_nonempty": 27,
+      "no_prefilter_box_at_diagnostic_IoU": 44,
+      "power_value_empty": 24,
+      "power_value_case_or_space_only": 2,
+      "fusion_rejected_candidate": 1
+    },
+    "missing_rail_evidence_flags_not_exclusive": {
+      "any_nonempty_wrong_value": 21,
+      "any_empty_value": 18,
+      "any_literal_value_observation": 49,
+      "all_GT_instances_use_empty_value_VCC_fallback": 9
+    }
+  },
+  "rollback_tag": "backup/20261028-202344-before-identity-cause-audit",
+  "branch": "feature/pin-l45-validated-20261012",
+  "frozen_configuration": {
+    "text": "recovery_rotation_vertical_v1",
+    "component": "rotation_vertical_n1_n2_v1",
+    "pin_localization": "l39",
+    "pin_semantics": "l39",
+    "wire": "v3_frame_guard",
+    "topology": "v3_power_terminals_v2",
+    "submission": "official",
+    "component_stage": "BEST",
+    "text_rules": "v4_1",
+    "variant": "baseline",
+    "enable_flying_labels": false,
+    "legacy_pipeline_name": "v4_component"
+  },
+  "models_sha256_from_frozen_run": {
+    "models/component/ocr_v5_server/ch_PP-OCRv5_det_server.onnx": "0f8846b1d4bba223a2a2f9d9b44022fbc22cc019051a602b41a7fda9667e4cad",
+    "models/component/ocr_v5_server/ch_PP-OCRv5_rec_server.onnx": "e09385400eaaaef34ceff54aeb7c4f0f1fe014c27fa8b9905d4709b65746562a",
+    "models/component/parseq/parseq-bb5792a6.pt": "bb5792a68e367476abca029cbf8699abc805f3d3dc7e57aae45c8ec4f7b7cd00",
+    "models/component/parseq_schematic120/best.pt": "f42061a590476675269ec0ded0d4027261d6ff712ed58615f8c4ba5fc8d55417",
+    "models/component/yolo11m_finetune120/best.pt": "38555d3e6b4617429a51e1e5afdfd982e5c58a0c67ba334df12b23fbaec01685",
+    "models/component_yolo11n_baseline_best.pt": "42860935a0626a4445f2e30bf020c8e76ec01a87b816c6aacdf6288657bf1ac5",
+    "models/component_yolo11n_continue_v2_best.pt": "51b4735d19315ba3ada49143e6f912aa414589f7961e140faab177dc6db7e776",
+    "models/easyocr/craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+    "models/easyocr/english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8",
+    "models/ocr_v5/ch_PP-OCRv5_det_mobile.onnx": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae",
+    "models/ocr_v5/ch_PP-OCRv5_rec_mobile.onnx": "5825fc7ebf84ae7a412be049820b4d86d77620f204a041697b0494669b1742c5",
+    "models/ocr_v5/ch_ppocr_mobile_v2.0_cls_mobile.onnx": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c",
+    "models/pin/l45_rc_pair/best.pt": "d8b1babd809f622ba4243becf135ae38e92effdc6fe9dd079526cf67e084fc71",
+    "reports/pin_learned_locator_l1/best.pt": "a488d0dc4897440ab7c0241c9044e1f260d02f8e2151ad80e39bcb121b4eec69",
+    "assets/cpntLibrary.json": "9c2bec334d41119f29a62cd6ff3fb36ae28fa28cbb7aeb3155875a355b38d322",
+    "models/component/component_selective120_candidate/model.json": "229feaad096c90bbab118bf822d513291e0dcf37274fb26e7b66c505be384164"
+  },
+  "frozen_inference_environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Scripts\\python.exe",
+    "cv2_loaded_version": "4.10.0",
+    "packages": {
+      "torch": "2.14.0+cu132",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "opencv-python-headless": "4.14.0.94",
+      "opencv-python": "5.0.0.93",
+      "onnxruntime-gpu": "1.23.2",
+      "rapidocr": "3.9.2",
+      "timm": "0.9.16",
+      "ultralytics": "8.3.203"
+    },
+    "loaded_modules": {
+      "cv2": {
+        "version": "4.10.0",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Lib\\site-packages\\cv2\\__init__.py"
+      },
+      "numpy": {
+        "version": "2.3.5",
+        "file": "C:\\Users\\pps\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\site-packages\\numpy\\__init__.py"
+      },
+      "scipy": {
+        "version": "1.18.1",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\Lib\\site-packages\\scipy\\__init__.py"
+      },
+      "torch": {
+        "version": "2.14.0+cu132",
+        "file": "E:\\EDA\\EDA\\.runtime\\peer_py312\\gpu_imports\\torch\\__init__.py"
+      },
+      "onnxruntime": {
+        "version": "1.23.2",
+        "file": "E:\\EDA\\EDA\\.runtime\\ort_gpu_debug\\onnxruntime\\__init__.py"
+      },
+      "rapidocr": {
+        "version": null,
+        "file": "E:\\EDA\\deliveries\\submission_updated_20261026_v2\\source\\p01_deps\\rapidocr\\__init__.py"
+      },
+      "timm": {
+        "version": "0.9.16",
+        "file": "E:\\EDA\\deliveries\\submission_updated_20261026_v2\\source\\p01_deps\\timm\\__init__.py"
+      }
+    },
+    "onnx_available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "artifact_sha256": {
+    "runs/identity_cause_final150_20261028/report.json": "fcb2de732161370b0920aa33303e2872721ce2eaefdabbbf1c939bb69e2c85b4",
+    "runs/identity_cause_final150_20261028.log": "aedd167acf748141505b28ba67d2682460a6232bb24fa44c474bb8757c037e59",
+    "pcb/topology_stage/identity_cause_audit.py": "964cd3d89a0e4b3c03740d1a316d7f642abb2b71c5b438d0c26d1c26cda2b466",
+    "tests/topology/test_identity_cause_audit.py": "f09ae7586f1b472c5a2dd49b723cbf44cbf6398bea396408aca4f726c00d9910",
+    "pcb/component/latest/text_assignment.py": "bea970436f48bf9ae51078ad81fae8dd5598a93a0a453703b3015c320a54f55b",
+    "pcb/component/latest/text_roles.py": "e5e1e7934789aa1d4ecee17fc52308063fcacf8ef0aa9d63f5ef634f82c72e4d",
+    "pcb/component/selective_filter.py": "61c7a9ab2570dd98cecaf30d3be95aa1d0769220178881b04dc63f9543b9c437",
+    "pcb/component/recovery/candidate_pool.py": "9ab043e27ef173ed93f3ea87601d7e7f4a3d6403deec14db5b555cb4f79195a0",
+    "pcb/component/recovery/power_recovery.py": "32d014b67f7b9d1d918200e152f46ec4b2f38622f299606b5cd42dbc7746cd73",
+    "docs/network/CURRENT150_POWER_AUDIT_20261027.json": "983b6acb02fc2c4c2d20d644c1ed871cbdf85a6abe22d55a99ccfa6cd8a6d700",
+    "docs/network/CURRENT150_BASELINE_CONFIG_20261027.json": "ec370f49beba2302e4f8de2f68b88638fdffec6bad95bda8c4cbe836e398ed83",
+    "runs/current150_power_20261027/comparison/predictions_sealed.json": "9b46a9baa3924bea91941b9797312ab90e1c324b8eeea6657b41f186359a7911",
+    "runs/third_stage_audit_detail_20261027/report.json": "d47eee5fd4714d3ce1dde567f97060487620a32a4e31d94c911c813eb569b304"
+  },
+  "root_situation_owner_counts": {
+    "correct_literal_not_in_archived_OCR": 1303,
+    "no_prefilter_box_at_diagnostic_IoU": 405,
+    "candidate_blocked_by_existing_weight_or_gate": 31,
+    "candidate_assignment_or_key_collision": 55,
+    "component_type_mismatch": 45,
+    "case_only_key": 11,
+    "fusion_rejected_candidate": 10,
+    "literal_seen_but_not_designator_candidate": 66,
+    "geometry_ambiguous": 17
+  },
+  "existing_key_on_other_body_owner_count": 102,
+  "validation": {
+    "data_free_unit_tests_passed": 7,
+    "all150_original_missing_bucket_parity": true,
+    "all150_scene_export_identity_parity": true,
+    "missing_members_total": 5247,
+    "identity_rules_models_configs_thresholds_changed": false,
+    "corrected_predictions_generated": false,
+    "geometry_ambiguity_not_forced_to_error": true,
+    "all_earlier_diagnostic_runs_preserved": true,
+    "change_scope": {
+      "owner": "integration",
+      "base": "c4236502a0151881182e48b9cb0d7a88359b68ed",
+      "changed_file_count": 4,
+      "violations": [],
+      "status": "PASSED"
+    }
+  },
+  "count_units": {
+    "nonrail_members": "per-image deduplicated GT network members: IC owner+pin number, otherwise owner",
+    "owners": "per-image distinct component keys",
+    "rails": "per-image logical power-rail identities, not power-symbol instances",
+    "existing_name_on_other_body": "extra evidence outside the original missing-owner bucket; do not add to 5247"
+  },
+  "retained_diagnostic_runs": [
+    "runs/identity_cause_smoke_20261028",
+    "runs/identity_cause_full150_20261028",
+    "runs/identity_cause_detail150_20261028",
+    "runs/identity_cause_final150_20261028"
+  ]
+}
